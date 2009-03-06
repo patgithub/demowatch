@@ -1,4 +1,4 @@
-﻿de:
+de:
   datetime:
     distance_in_words:
       half_a_minute: 'eine halbe Minute'
@@ -69,15 +69,20 @@
 
     attributes:
       organisation:
+        title: Name
+        link: "Webseite (oder ggf. E-Mailadresse)"
+      event:
         title: Titel
-        link: "Webseite"
+        link: "Webseite (oder ggf. E-Mailadresse)"
+        tag_list: Themen
+        address: Adresse
              
     errors:
       template:
         header:
-          one: "1 Fehler"
-          other: "{{count}} Fehler"
-        body: "Probleme"
+          one: "Es gibt einen Eingabefehler, der beseitigt werden muss!"
+          other: "Es gibt {{count}} Fehler, die beseitigt werden müssen!"
+        body: "Probleme:"
  
       messages:
         inclusion: "ist kein gültiger Wert"
@@ -99,4 +104,4 @@
         less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
         odd: "muss ungerade sein"
         even: "muss gerade sein"
-  
+        google_not_found: "konnte von google maps nicht gefunden werden"
