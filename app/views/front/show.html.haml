@@ -1,4 +1,6 @@
-- content_for :header do
+-t_namespace("views.front.show")
+
+-content_for :header do
   = auto_discovery_link_tag :rss, :controller => 'events', :format => 'rss', :tags => @tag.name
 
 %h1= h @tag.name 
@@ -6,38 +8,38 @@
 .contextmenu
   - if logged_in?
     - if current_user.tags.include? @tag 
-      = link_to 'Thema abbestellen', :controller => :users, :action => :del_tag, :id => current_user, :tag => @tag
+      = link_to t(".theme.unsubscribe"), :controller => :users, :action => :del_tag, :id => current_user, :tag => @tag
     - else
-      = link_to 'Thema abonnieren', :controller => :users, :action => :add_tag, :id => current_user, :tag => @tag
+      = link_to t(".theme.subscribe"), :controller => :users, :action => :add_tag, :id => current_user, :tag => @tag
     |
-  = link_to 'Was bedeutet <i>"' + h( @tag.name)+ '"</i>?', 'http://de.wikipedia.org/wiki/Spezial:Suche?search=' + @tag.name + '&go=Artikel', { :target=>'_new'}
+  = link_to t(".theme.whatis",:tag => @tag.name), 'http://de.wikipedia.org/wiki/Spezial:Suche?search=' + @tag.name + '&go=Artikel', :target=>'_new'
   .rss= link_to image_tag('rss.gif'), :controller => 'events', :format => 'rss', :tags => @tag.name if !@events.empty? 
 
-%h2 Demonstrationen
+%h2=t(".demonstrations.title")
 - if @events.empty? 
-  .q Zu diesem Thema sind zur Zeit keine Demonstrationen eingetragen.
+  .q=t(".demonstrations.empty")
 - else
-  .tabletitle Die folgenden Demonstrationen sind uns zu diesem Thema bekannt:
+  .tabletitle=t(".demonstrations.table.title")
   %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
     %tr
-      %th Termin
-      %th Demo
-      %th Ort
+      %th=t(".demonstrations.table.time")
+      %th=t(".demonstrations.table.name")
+      %th=t(".demonstrations.table.place")
       - if( @with_distance)
-        %th Entfernung
+        %th=t(".demonstrations.table.distance")
       
     - @events.each_with_index do |event, index|
       %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
-        - if event.startdate.strftime('%d.%m.%Y') == Time.now.strftime('%d.%m.%Y')
+        - if l(event.startdate) == l(Time.now)
           %td
             .center
-              .red Heute!
+              .red=t(".demonstrations.table.today")
         - elsif event.startdate <= Time.now && event.startdate > 6.hours.ago
           %td
             .center
-              .red Jetzt!
+              .red=t(".demonstrations.table.now")
         - else
-          %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
+          %td= event.startdate && l(event.startdate)
         %td= link_to h( event.title), event
         %td= h( event.address)
         -if @with_distance       
@@ -45,16 +47,17 @@
             %td= sprintf( "%.0f km", event.distance)  
           - else
             %td
-%h2 Initiatoren
+            
+%h2=t(".initiators.title")
 
 - if @organisations.empty? 
-  .q Zur Zeit sind keine Initiatoren eingetragen, die sich mit diesem Thema besch&auml;ftigen..
+  .q=t(".initiators.empty") 
 - else
-  .tabletitle Die folgenden Organisationen setzen sich f&uuml;r dieses Thema ein:
+  .tabletitle=t(".initiators.table.title")
   %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
     %tr
-      %th Initiator
-      %th Themen
+      %th=t(".initiators.table.initiator")
+      %th=t(".initiators.table.themes")
     - @organisations.each_with_index do |organisation, index|
       %tr{:class => "#{'even' if index.even?}"}
         %td= link_to h( organisation.title), organisation
@@ -63,6 +66,6 @@
 %br
 
 - if !@related_tags.empty?
-  %h2 Verwandte Themen
+  %h2=t(".related.title")
   .q= @related_tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ')
 

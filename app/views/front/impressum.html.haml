@@ -1,57 +1,52 @@
-﻿
-%h1 Impressum
+-t_namespace("views.front.imprint")
 
-%h2 Kontakt
-.q
-  Wir m&ouml;chten auf <i>Demowatch.de</i> m&ouml;glichst viele demokratische Aktionen unterst&uuml;tzen. <u>Aufrufe zu verfassungs- oder gesetzeswidrigen Aktionen werden von uns aus unserer Datenbank schnellstm&ouml;glich gel&ouml;scht</u>. Falls Euch Inhalte auffallen, die diesen Rahmen sprengen oder die falsche Informationen enthalten, gebt uns bitte bescheid. Gennerell sind uns Ideen, Fragen, Lob und Kritik immer willkommen. 
-%h3 Bitte sendet Eure Nachrichten per E-Mail an folgende Adresse:
-.q
-  = link_to 'info@demowatch.de','mailto:info@demowatch.de'
+%h1=t(".title")
 
-%h2 Mitwirkende
-.q
-  Vielen Dank an alle, die ehrenamtlich aber dennoch mit viel Enthusiasmus an der Verwirklichung dieses Projekts teilhaben:
+%h2=t(".contact.title") 
+.q=t(".contact.text") 
+  
+%h3=t(".contact.email.title") 
+.q=link_to t(".contact.email.name"),t(".contact.email.link")
 
-%h3 Idee & Gestaltung
-.q
-  = link_to 'Patrick Hoffmann','mailto:p.hoffmann@demowatch.de'
+%h2=t(".participants.title")
+.q=t(".participants.text")
 
-%h3 Programmierung
-.q
-  = link_to 'Simon Kr&ouml;ger','mailto:s.kroeger@demowatch.de'
-  %br
-  = link_to 'Marc Christenfeldt','mailto:m.christenfeldt@demowatch.de'
+%h3=t(".idea.title")
+.q=link_to t(".idea.name"),t(".idea.link")
 
-%h2 Wir suchen noch...
+%h3=t(".programming.title")
 .q
-  %li Ruby on Rails Entwickler
-  %li Medienarbeiter
-  %li Leute mit guten Ideen für das Projekt
-.q  
-  Falls Du Interesse hast, einfach bei uns
-  = link_to 'melden.','mailto:info@demowatch.de'
+  =link_to t(".programming.name1"),t(".programming.link1")
+  %br=link_to t(".programming.name2"),t(".programming.link2") 
 
-%h2 Demowatch.de ist Open Source
+%h2=t(".jobs.title")
 .q
-  Auf 
+  %li=t(".jobs.job1")
+  %li=t(".jobs.job2")
+  %li=t(".jobs.job3")
+.q
+  =t(".jobs.call.text")
+  =link_to t(".jobs.call.name"),t(".jobs.call.link")
+
+%h2=t(".opensource.title")
+ 
+.q
+  =t(".opensource.text1")
   = link_to 'github','http://github.com/patgithub/demowatch/tree/master'
-  befindet sich unser Repository. Jeder ist eingeladen mitzumachen. 
+  =t(".opensource.text2")
 
-%h2 Verantwortlich laut Telemediengesetz
+%h2=t(".responsibility.title") 
 .q
   Patrick Hoffmann
   %br
   Ruppiner Str. 5
   %br
-  10115 Berlin
-.q
-  = link_to 'p.hoffmann@demowatch.de','mailto:p.hoffmann@demowatch.de'
+  10115 Berlin, Germany
+.q= link_to 'p.hoffmann@demowatch.de','mailto:p.hoffmann@demowatch.de'
 
-%h2 Verwendete Techniken
-
-.q
-  Diese Website wurde mit folgenden Techniken erstellt:
-
+%h2=t(".techniques.title") 
+.q=t(".techniques.text") 
+%br
 .center
   = link_to image_tag('rails.gif'), 'http://rubyonrails.org', { :target=>'_new'}
   = link_to image_tag('ubuntu.gif'), 'http://ubuntu.com', { :target=>'_new'}

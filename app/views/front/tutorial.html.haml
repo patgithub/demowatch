@@ -1,28 +1,18 @@
-﻿
-%h1 Eintragen neuer Demonstrationen
+-t_namespace("views.front.tutorial")
 
-%h2 Nur registrierte Benutzer können Demos eintragen
+%h1=t(".title")
 
-.q 
-  Wer hier eine Demo eintragen will, muss sich bei Demowatch.de registrieren und eine gültige E-Mailadresse angeben. 
-  %b E-Mailadressen von Benutzern werden nicht veröffentlicht oder an Dritte weitergegeben. 
-  Sie dienen uns lediglich dazu, Rückfragen stellen zu können.
-  
-.q Trägt ein Benutzer einen neuen Initiator oder eine neue Demo ein, überprüft das Demowatch-Team anhand der eingegebenen Links, ob die eingegebenen Informationen brauchbar sind. Sinnlose oder unvollständige Daten werden ggf. gelöscht.
+%h2=t(".section1.title") 
+.q=t(".section1.text1")  
+.q=t(".section1.text2")
 
-%h2 Wer ist berechtigt Demos einzutragen?
+%h2=t(".section2.title")
+.q=t(".section2.text")
 
-.q Jeder kann bei Demowatch Initiatoren Demos eintragen. 
-
-%h2 Nun also los...
-
-.q 
-  Erst
-  = link_to 'als Benutzer registrieren', login_path
-  , dann ggf.
-  = link_to 'Initator eingeben', new_organisation_path
-  und 
-  = link_to 'neue Demos eintragen!', new_event_path 
-
+%h2=t(".section3.title")
 .q
-  Wir wünschen Euch Viel Erfolg für Eure Aktionen und danken Euch für Eure Teilnahme bei demowatch.de!
+  = link_to t(".section3.name1"), login_path
+  ,
+  = link_to t(".section3.name2"), new_organisation_path
+  = link_to t(".section3.name3"), new_event_path 
+.q= t(".section3.text")

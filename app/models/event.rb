@@ -15,7 +15,7 @@ class Event < ActiveRecord::Base
   validates_presence_of  :address
   validates_presence_of  :title
   validates_length_of    :title, :within => 3..100
-  validates_presence_of  :link,    :message => 'Link fehlt'
+  validates_presence_of  :link
   validates_presence_of  :tag_list
 
 
@@ -59,7 +59,7 @@ private
       return
     end
     geo=GeoKit::Geocoders::MultiGeocoder.geocode(address)
-    errors.add(:address, "Adresse wurde nicht gefunden") if !geo.success
+    errors.add(:address, I18n.t("activerecord.errors.messages.google_not_found")) if !geo.success
     self.address,self.city,self.latitude,self.longitude = geo.full_address,geo.city,geo.lat,geo.lng if geo.success
 #    puts( geo.state + '##################');
   end
