@@ -97,8 +97,9 @@ de:
 
       index:
         title: "Themen, zu denen demonstriert wird..."
-        demo_only: "Nur Demothemen"
-        all_themes: "Alle Themen"
+        contextmenu:
+          demo_only: "Nur Demothemen"
+          all_themes: "Alle Themen"
         
       press:
         title: "Presse"
@@ -113,7 +114,7 @@ de:
 
 
       show:
-        theme:
+        contextmenu:
           unsubscribe: "Thema abbestellen"
           subscribe: "Thema abonnieren"
           whatis: "Was bedeutet <i>{{tag}}</i>?"
@@ -122,19 +123,22 @@ de:
           emtpy: "Zu diesem Thema sind zur Zeit keine Demonstrationen eingetragen."
           table:
             title: "Die folgenden Demonstrationen sind uns zu diesem Thema bekannt:"
-            time: "Termin"
-            name: "Demo"
-            place: "Ort"
-            distance: "Entfernung"
-            today: "Heute!"
-            now: "Jetzt!"
+            head:
+              time: "Termin"
+              name: "Demo"
+              place: "Ort"
+              distance: "Entfernung"
+            rows:
+              today: "Heute!"
+              now: "Jetzt!"
         initiators:
           title: "Initiatoren"
           empty: "Zur Zeit sind keine Initiatoren eingetragen, die sich mit diesem Thema beschäftigen.."
           table: 
             title: "Die folgenden Organisationen setzen sich für dieses Thema ein:"
-            initiator: "Initiator"
-            themes: "Themen"
+            head:
+              initiator: "Initiator"
+              themes: "Themen"
         related:
           title: "Verwandte Themen"
 

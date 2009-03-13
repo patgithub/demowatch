@@ -3,9 +3,9 @@
 %h1=t(".title")
 
 .contextmenu
-  = link_to t(".demo_only"), :event_cloud
+  = link_to t(".contextmenu.demo_only"), :event_cloud
   |
-  = link_to t(".all_themes"), :all_cloud
+  = link_to t(".contextmenu.all_themes"), :all_cloud
 %br
 .cloud
   - tag_cloud @tags, %w(css0 css1 css2 css3 css4), current_user do |tag, css_class| 

@@ -8,11 +8,11 @@
 .contextmenu
   - if logged_in?
     - if current_user.tags.include? @tag 
-      = link_to t(".theme.unsubscribe"), :controller => :users, :action => :del_tag, :id => current_user, :tag => @tag
+      = link_to t(".contextmenu.unsubscribe"), :controller => :users, :action => :del_tag, :id => current_user, :tag => @tag
     - else
-      = link_to t(".theme.subscribe"), :controller => :users, :action => :add_tag, :id => current_user, :tag => @tag
+      = link_to t(".contextmenu.subscribe"), :controller => :users, :action => :add_tag, :id => current_user, :tag => @tag
     |
-  = link_to t(".theme.whatis",:tag => @tag.name), 'http://de.wikipedia.org/wiki/Spezial:Suche?search=' + @tag.name + '&go=Artikel', :target=>'_new'
+  = link_to t(".contextmenu.whatis",:tag => @tag.name), 'http://de.wikipedia.org/wiki/Spezial:Suche?search=' + @tag.name + '&go=Artikel', :target=>'_new'
   .rss= link_to image_tag('rss.gif'), :controller => 'events', :format => 'rss', :tags => @tag.name if !@events.empty? 
 
 %h2=t(".demonstrations.title")
@@ -22,22 +22,22 @@
   .tabletitle=t(".demonstrations.table.title")
   %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
     %tr
-      %th=t(".demonstrations.table.time")
-      %th=t(".demonstrations.table.name")
-      %th=t(".demonstrations.table.place")
+      %th=t(".demonstrations.table.head.time")
+      %th=t(".demonstrations.table.head.name")
+      %th=t(".demonstrations.table.head.place")
       - if( @with_distance)
-        %th=t(".demonstrations.table.distance")
+        %th=t(".demonstrations.table.head.distance")
       
     - @events.each_with_index do |event, index|
       %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
         - if l(event.startdate) == l(Time.now)
           %td
             .center
-              .red=t(".demonstrations.table.today")
+              .red=t(".demonstrations.table.rows.today")
         - elsif event.startdate <= Time.now && event.startdate > 6.hours.ago
           %td
             .center
-              .red=t(".demonstrations.table.now")
+              .red=t(".demonstrations.table.rows.now")
         - else
           %td= event.startdate && l(event.startdate)
         %td= link_to h( event.title), event
@@ -56,8 +56,8 @@
   .tabletitle=t(".initiators.table.title")
   %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
     %tr
-      %th=t(".initiators.table.initiator")
-      %th=t(".initiators.table.themes")
+      %th=t(".initiators.table.head.initiator")
+      %th=t(".initiators.table.head.themes")
     - @organisations.each_with_index do |organisation, index|
       %tr{:class => "#{'even' if index.even?}"}
         %td= link_to h( organisation.title), organisation
