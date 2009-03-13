@@ -1,10 +1,15 @@
-%h1 Neue Demonstration
+- t_namespace("views.events.new")
+%h1= t(".title")
 
 .contextmenu
-  = link_to 'Zur&uuml;ck zur Liste der Demonstrationen', events_path 
+  = link_to t(".contextmenu.back"), events_path 
 
 - form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_zip);' }) do |f|
   = render :partial => 'fields', :locals => {:f => f}
-  .buttons= f.submit "Erzeugen"
+
+  - # workaround to reactivate namespace after rendering fields
+  - t_namespace("views.events.new") 
+
+  .buttons= f.submit t(".button.submit")
 
 = auto_complete_field 'event_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' ']  }

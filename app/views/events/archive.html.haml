@@ -1,8 +1,8 @@
--t_namespace("views.events.archive")
+- t_namespace("views.events.archive")
 - content_for :header do
   = auto_discovery_link_tag :rss, :format => 'rss'
 
-%h1=t(".title")
+%h1= t(".title")
 
 .contextmenu
   = link_to t(".contextmenu.current"), events_path
@@ -11,26 +11,26 @@
     = link_to t(".contextmenu.new"), new_event_path
     
 %br
-.tabletitle=t(".table.title")
+.tabletitle= t(".table.title")
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
-    %th=t(".table.head.startdate")
-    %th=t(".table.head.title")
-    %th=t(".table.head.city")
+    %th= t(".table.head.startdate")
+    %th= t(".table.head.title")
+    %th= t(".table.head.city")
     - if( @with_distance)
-      %th=t(".table.head.distance")
+      %th= t(".table.head.distance")
   - @events.each_with_index do |event, index|
     %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
       - if event.startdate.strftime('%d.%m.%Y') == Time.now.strftime('%d.%m.%Y')
         %td
           .center
-            .red=t(".table.rows.today")
+            .red= t(".table.rows.today")
       - elsif event.startdate <= Time.now && event.startdate > 6.hours.ago
         %td
           .center
-            .red=t(".table.rows.now")
+            .red= t(".table.rows.now")
       - else
-        %td= event.startdate && l(event.startdate)
+        %td= event.startdate && l(event.startdate.to_date)
       %td= link_to h( event.title), event
       %td= event.city
       -if @with_distance       
@@ -39,4 +39,3 @@
             .right= sprintf( "%.0f km", event.distance)  
         - else
           %td
-= will_paginate @events, :per_page=>80

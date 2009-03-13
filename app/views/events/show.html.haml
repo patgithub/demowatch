@@ -1,3 +1,4 @@
+- t_namespace("views.events.show")
 - content_for :header do
   = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAbmKt_bX8rXoUBM2tWSorIRTnBMjsH0Y2aRb-_04glZphNt2GURSXRZg8NE723uvkLLIsOlfTgHhmzA&dummy=xxxx', 'geocode'
   
@@ -7,33 +8,34 @@
 - if logged_in?
   .contextmenu
     - allow :user => [:owns?, :is_admin?] do
-      = link_to 'Bearbeiten', edit_event_path(@event) 
+      = link_to t(".contextmenu.edit"), edit_event_path(@event) 
       |
-      = link_to 'L&ouml;schen', @event, :confirm => 'Demonstration wirklich l&ouml;schen?', :method => :delete
+      = link_to t(".contextmenu.delete"), @event, :confirm => t(".confirm.delete"), :method => :delete
       |
     - if @event.bookmarked_by_user? current_user
-      = link_to 'Abbestellen', url_for(:controller => 'users',:action => 'unbookmark', :id => current_user, :event => @event)
+      = link_to t(".contextmenu.unsubscribe"), url_for(:controller => 'users',:action => 'unbookmark', :id => current_user, :event => @event)
     - else
-      = link_to 'Abonnieren', url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)
+      = link_to t(".contextmenu.subscribe"), url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)
 
-%h2 Themen
+%h2= t(".themes.title")
 .q= @event.tags.map{|tag| link_to h( tag.name), :controller=>:tag, :action=>tag.name}.join(', ')
 
-%h2 Treffpunkt
+%h2= t(".venue.title")
 .q
-  Diese Aktion
   - if @event.startdate <= 6.hours.ago
-    hat bereits stattgefunden. Sie begann am
+    = t(".venue.startdate.past", :startdate => l(@event.startdate,:format => "long_verbal") )
+  - elsif @event.startdate.to_date.eql?(Time.now.to_date-1)
+    = t(".venue.startdate.yesterday", :startdate => l(@event.startdate,:format => "long_verbal"))
   - elsif @event.startdate <= Time.now
-    %span.red hat schon angefangen!
-    Sie begann am
+    = t(".venue.startdate.now", :startdate => l(@event.startdate,:format => "long_verbal"))
+  - elsif @event.startdate.to_date.eql?(Time.now.to_date+1)
+    = t(".venue.startdate.tomorrow", :startdate => l(@event.startdate,:format => "long_verbal"))
   - elsif @event.startdate <= 7.9.days.from_now
-    == <span class="red">beginnt in #{time_ago_in_words @event.startdate}</span>, am
+    = t(".venue.startdate.soon", :timespan => time_ago_in_words(@event.startdate), :startdate => l(@event.startdate,:format => "long_verbal"))
   - else
-    == beginnt in <b>#{time_ago_in_words @event.startdate}</b>, am
-  %b== #{@event.startdate.strftime('%A, den %d.%m.%Y')} um #{@event.startdate.strftime('%H:%M Uhr')}.
-  == Treffpunkt #{@event.startdate <= 6.hours.ago ? 'war' : 'ist'}
-  %b== #{@event.address}#{' (' + h( @event.location) + ')' if @event.location?}. 
+    = t(".venue.startdate.future", :timespan => time_ago_in_words(@event.startdate), :startdate => l(@event.startdate,:format => "long_verbal"))
+  = t(".venue.address", :address => @event.address)
+  = t(".venue.location", :location => h(@event.location)) if @event.location?
   
 #map_canvas.indent{:style=>"width: 550px; height: 300px; border:solid 1px;"}
   
@@ -43,19 +45,17 @@
   map.addControl(new GLargeMapControl());
   map.setCenter(new GLatLng(#{@event.latitude.to_f}, #{@event.longitude.to_f}), 15);
   map.openInfoWindowHtml(map.getCenter(),"<strong>#{html_escape @event.title},</strong>"+
-  "<br/><br/>#{@event.startdate && @event.startdate.strftime('%A, %d.%m.%Y')},"+
-  "um #{@event.startdate && @event.startdate.strftime('%H:%M Uhr')},<br/>"+
-  "#{html_escape @event.address}<br/>#{'(' + html_escape( @event.location) + ')' if @event.location?}");}
+  "<br/><br/>#{@event.startdate && l(@event.startdate,:format => "long_verbal")},"+
+  "<br/>#{html_escape @event.address}<br/>#{'(' + html_escape( @event.location) + ')' if @event.location?}");}
 
-%h2 Beschreibung
+%h2= t(".description.title")
 .q= sanitize @event.description
 
-%h3 Initiator
+%h3= t(".description.initiator.title")
 .q
-  Diese Demo wurde eingetragen von
+  = t(".description.initiator.text")
   = link_to h( @event.organisation.title), @event.organisation 
 
 - if @event.link
-  %h3 Weitere Informationen
-  .q= sanitize link_to h(@event.link), @event.link, { :target=>'_new'}
-  
+  %h3= t(".description.info.title")
+  .q= sanitize link_to( h(@event.link), @event.link, :target=>'_new')

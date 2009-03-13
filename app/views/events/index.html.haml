@@ -1,43 +1,40 @@
-﻿
+- t_namespace("views.events.index")
 - content_for :header do
   = auto_discovery_link_tag :rss, :format => 'rss'
 
-%h1 Aktuelle Demonstrationen
+%h1= t(".title")
 
 .contextmenu
-  = link_to 'Aktuelle Demos', events_path
-  |
-  = link_to 'Vergangene Demos', archive_events_path
+  = link_to t(".contextmenu.archive"), archive_events_path
   - if logged_in? 
     |
-    = link_to 'Demo eintragen', new_event_path
+    = link_to t(".contextmenu.new"), new_event_path
   |
-  = link_to h("Karte"), "http://maps.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=http://www.demowatch.de/events.rss&g=%2B52%C2%B0+28'+58.22&ie=UTF8&z=7", { :target=>'_new'}
+  = link_to t(".contextmenu.map"), "http://maps.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=http://www.demowatch.de/events.rss&g=%2B52%C2%B0+28'+58.22&ie=UTF8&z=7", { :target=>'_new'}
   .rss= link_to image_tag('rss.gif'), :format => 'rss'
   .ical= link_to image_tag('ical.gif'), :format => 'ical'
     
 %br
-.tabletitle
-  Folgende Aktionen sind uns für die kommende Zeit bekannt:
+.tabletitle= t(".table.title")
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
-    %th Termin 
-    %th Demo
-    %th Ort
+    %th= t(".table.head.startdate")
+    %th= t(".table.head.title")
+    %th= t(".table.head.city")
     - if( @with_distance)
-      %th Entfernung
+      %th= t(".table.head.distance")
   - @events.each_with_index do |event, index|
     %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
       - if event.startdate.strftime('%d.%m.%Y') == Time.now.strftime('%d.%m.%Y')
         %td
           .center
-            .red Heute!
+            .red= t(".table.rows.today")
       - elsif event.startdate <= Time.now && event.startdate > 6.hours.ago
         %td
           .center
-            .red Jetzt!
+            .red= t(".table.rows.now")
       - else
-        %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
+        %td= event.startdate && l(event.startdate.to_date)
       %td= link_to h( event.title), event
       %td= h( event.city)
       -if @with_distance       
@@ -46,5 +43,4 @@
             .right= sprintf( "%.0f km", event.distance)  
         - else
           %td
-= will_paginate @events, :per_page=>80
 %br

@@ -1,5 +1,5 @@
--t_namespace("views.events.edit")
--content_for :header do
+- t_namespace("views.events.edit")
+- content_for :header do
   = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAbmKt_bX8rXoUBM2tWSorIRTnBMjsH0Y2aRb-_04glZphNt2GURSXRZg8NE723uvkLLIsOlfTgHhmzA&dummy=xxxx', 'geocode'
 
 %h1=t(".title")
@@ -11,7 +11,10 @@
 
 - form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_address);' }) do |f|
   = render :partial => 'fields', :locals => {:f => f}
-  -t_namespace("views.events.edit") # workaround
+  
+  - # workaround to reactivate namespace after rendering fields
+  - t_namespace("views.events.edit") 
+  
   .buttons= f.submit t(".button.submit")
 
 = auto_complete_field 'event_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' ']  }

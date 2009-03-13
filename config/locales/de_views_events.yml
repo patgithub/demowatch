@@ -7,7 +7,7 @@ de:
           field:
             title: "Titel der Demonstration"
             themes: "Themen <i>(mehrere durch Komma getrennt)</i>"
-            theme_hint: "Für die Themen wähle bitte <b>kurze und eindeutige Begriffe</b>. Die Wahl der Themen beeinflusst deren Popularität auf <i>Demowatch.de</i>. Es ist also <b>von Vorteil schon vorhandene Begriffe zu benutzen</b>!"
+          theme_hint: "Für die Themen wähle bitte <b>kurze und eindeutige Begriffe</b>. Die Wahl der Themen beeinflusst deren Popularität auf <i>Demowatch.de</i>. Es ist also <b>von Vorteil schon vorhandene Begriffe zu benutzen</b>!"
         venue: 
           title: "Treffpunkt"
           field:
@@ -52,3 +52,62 @@ de:
           back: "Demnoliste"
         button:
           submit: "Speichern"
+
+
+
+      index:
+        title: "Aktuelle Demonstrationen"
+        contextmenu:
+          archive: "Vergangene Demos"
+          new: "Demo eintragen"
+          map: "Karte"
+        table:
+          title: "Folgende Aktionen sind uns für die kommende Zeit bekannt:"
+          head:
+            startdate: "Termin"
+            title: "Demo"
+            city: "Ort"
+            distance: "Entfernung"
+          rows:
+            today: "Heute!"
+            now: "Jetzt!"
+
+
+
+      new:
+        title: "Neue Demonstration"
+        contextmenu:
+          back: "Zurück zur Demoliste"
+        button:
+          submit: "Erzeugen"
+
+
+
+      show:
+        contextmenu:
+          edit: "Bearbeiten"
+          delete: "Löschen"
+          unsubscribe: "Abbestellen"
+          subscribe: "Abonnieren"
+        confirm:
+          delete: "Demonstration wirklich löschen?"
+        themes:
+          title: "Themen"
+        venue:
+          title: "Treffpunkt"
+          startdate:
+            past: "Diese Aktion hat am {{startdate}} stattgefunden."
+            yesterday: "Diese Aktion hat gestern, am {{startdate}} stattgefunden."
+            now: "<span class='red'>Diese Aktion hat schon angefangen</span> und läuft seit <b>{{startdate}}</b>."
+            tomorrow: "<span class='red'>Diese Aktion beginnt morgen</span>, am <b>{{startdate}}</b>."
+            soon: "<span class='red'>Diese Aktion beginnt in {{timespan}}</span>, am <b>{{startdate}}</b>."
+            future: "Diese Aktion beginnt in <b>{{timespan}}</b>, am <b>{{startdate}}</b>."
+          address: "Treffpunkt ist <b>{{address}}</b>"
+          location: "({{location}})"
+        description:
+          title: "Beschreibung"
+          initiator:
+            title: "Initiator"
+            text: "Diese Demo wurde eingetragen von"
+          info:
+            title: "Weitere Informationen"
