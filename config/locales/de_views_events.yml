@@ -1,0 +1,54 @@
+de:
+  views:
+    events:
+      fields:
+        title: "Benötigte Angaben"
+        name:
+          field:
+            title: "Titel der Demonstration"
+            themes: "Themen <i>(mehrere durch Komma getrennt)</i>"
+            theme_hint: "Für die Themen wähle bitte <b>kurze und eindeutige Begriffe</b>. Die Wahl der Themen beeinflusst deren Popularität auf <i>Demowatch.de</i>. Es ist also <b>von Vorteil schon vorhandene Begriffe zu benutzen</b>!"
+        venue: 
+          title: "Treffpunkt"
+          field:
+            address: "Adresse (<i>PLZ oder Straße Nr, PLZ oder Straße Stadt ...</i>)"
+            location: "zusätzliche Treffpunktbeschreibung"
+            startdate: "Termin"
+        information:
+          title: "Informationen"
+          field:
+            description: "Beschreibung"
+            link: "Webseite (oder ggf. E-Mailadresse)"
+            initiator: "Initiator"
+        hint:
+          title: "Hinweis"
+          text: "Wir wollen unseren Besuchern stets möglichst korrekte und seriöse Informationen zu stattfindenden Demonstrationen bieten. <u>Alle verfassungs- oder gesetzeswidrigen Inhalte werden von uns umgehend gelöscht</u> und deren Verfasser ggf. auf <i>Demowatch.de</i> gesperrt!"
+
+
+
+      archive:
+        title: "Vergangene Demonstrationen"
+        contextmenu:
+          current: "Aktuelle Demos"
+          archive: "Vergangene Demos"
+          new: "Demo eintragen"
+        table:
+          title: "Folgende Aktionen sind bereits vorbei:"
+          head:
+            startdate: "Termin"
+            title: "Demo"
+            city: "Ort"
+            distance: "Entfernung"
+          rows:
+            today: "Heute!"
+            now: "Jetzt!"
+
+
+
+      edit:
+        title: "Demonstration bearbeiten"
+        contextmenu:
+          show: "Anzeigen"
+          back: "Demnoliste"
+        button:
+          submit: "Speichern"
