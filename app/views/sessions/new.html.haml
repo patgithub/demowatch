@@ -1,30 +1,23 @@
-%h1 Anmelden
-
-.q
-  Wenn Du Dich bei 
-  %i Demowatch 
-  registriert hast, kannst Du Dich hier anmelden und deine pers&ouml;nlichen Themengebiete via Newsletter abonnieren sowie Informationen zu einzelnen Demos verfolgen.
-
-.q
-  Wenn du noch kein Konto hast, registriere dich
-  =link_to '<b><i>hier.</i></b>', :signup
-
-%h2 Anmeldedaten
+-t_namespace("views.sessions.new")
+%h1= t(".title")
+.q= t(".text")
+.q= link_to t(".signup_first"), :signup
+%h2= t(".login.title")
 
 - form_tag session_path do 
 
   .indent  
-    = label_tag :login, 'Login'
+    = label_tag :login, t(".login.login")
     = text_field_tag :login
 
   .indent
-    = label_tag :password, 'Passwort'
+    = label_tag :password, t(".login.password")
     = password_field_tag :password
 
   .indent
-    = label_tag :remember_me, 'Automatisch einloggen'
+    = label_tag :remember_me, t(".login.auto")
     = check_box_tag :remember_me
 
   .buttons
-    =submit_tag 'Anmelden'
+    =submit_tag t(".login.submit")
 
