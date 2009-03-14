@@ -1,7 +1,8 @@
 !!!
+- t_namespace("views.layouts.application")
 %html{:xmlns=>"http://www.w3.org/1999/xhtml"}
   %head
-    %title Demowatch.de - unabh&auml;ngige Plattform f&uuml;r politische Demonstrationen
+    %title= t(".window_title")
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html;charset=utf-8"}
   
@@ -13,21 +14,21 @@
     #header
       =link_to image_tag('demowatch_beta.gif'), :front
       %ul
-        %li=link_to 'Was ist Demowatch?', :about
+        %li=link_to t(".menu.about"), :about
         -if logged_in?
-          %li=link_to 'Demo eintragen', new_event_path
-          %li=link_to 'Abmelden', :logout
-          %li=link_to 'Einstellungen', user_path(current_user)
+          %li=link_to t(".menu.new_event"), new_event_path
+          %li=link_to t(".menu.logout"), :logout
+          %li=link_to t(".menu.profile"), user_path(current_user)
         -else
-          %li=link_to 'Demo eintragen', tutorial_path
-          %li=link_to 'Anmelden', :login
-          %li=link_to 'Registrieren', :signup
-        %li=link_to 'Presse', :presse
-        %li.last=link_to 'Impressum', :impressum
+          %li=link_to t(".menu.new_event"), tutorial_path
+          %li=link_to t(".menu.login"), :login
+          %li=link_to t(".menu.signup"), :signup
+        %li=link_to t(".menu.press"), :presse
+        %li.last=link_to t(".menu.imprint"), :impressum
 
     .tabs
       %ul
-        - tabs = [['Themen', front_path], ['Demos', events_path], ['Initiatoren', organisations_path]]
+        - tabs = [[t(".tabs.themes"), front_path], [t(".tabs.events"), events_path], [t(".tabs.organisations"), organisations_path]]
         - tabs.each do |label, link|
           %li
             %a{:href=>link, :class=>"xmenu2 #{'selected' if (link == front_path && (request.request_uri == front_path || link + "tag" == request.request_uri[0..link.length+2]) || (request.request_uri == link + "demos") || (request.request_uri == link + "all")) || (link != front_path && link == request.request_uri[0..link.length-1]) }"}
@@ -46,5 +47,5 @@
     #footer
       =image_tag 'people.gif'
 
-      &copy; 2008 Patrick Hoffmann -
-      = link_to 'Haftungsausschluss', :disclaimer
+      &copy; 2008-2009 Patrick Hoffmann -
+      = link_to t(".disclaimer"), :disclaimer

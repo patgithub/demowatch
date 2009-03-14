@@ -1,9 +1,13 @@
-%h1 Neuer Initiator
+- t_namespace("views.organisations.new")
+%h1= t(".title")
 .contextmenu
-  = link_to 'Zurück zur Liste der Initiatoren', organisations_path 
+  = link_to t(".contextmenu.back"), organisations_path 
 %br
 
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}
 
-  .buttons=f.submit "Erzeugen" 
+  - # workaround to reactivate namespace after rendering fields
+  - t_namespace("views.organisations.new") 
+
+  .buttons=f.submit t(".button.submit")

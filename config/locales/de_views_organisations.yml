@@ -1,0 +1,67 @@
+de:
+  views:
+    organisations:
+      fields:
+        title: "Benötigte Angaben"
+        name:
+          field:
+            title: "Name"
+            themes: "Themen <i>(mehrere durch Komma getrennt)</i>"
+          theme_hint: "Für die Themen wähle bitte <b>kurze und eindeutige Begriffe</b>. Die Wahl der Themen beeinflusst deren Popularität auf <i>Demowatch.de</i>. Es ist also <b>von Vorteil schon vorhandene Begriffe zu benutzen</b>!"
+        information:
+          title: "Informationen"
+          field:
+            description: "Beschreibung"
+            link: "Webseite (oder ggf. E-Mailadresse)"
+            initiator: "Initiator"
+        hint:
+          title: "Hinweis"
+          text: "Wir wollen unseren Besuchern stets möglichst korrekte und seriöse Informationen zu stattfindenden Demonstrationen bieten. <u>Alle verfassungs- oder gesetzeswidrigen Inhalte werden von uns umgehend gelöscht</u> und deren Verfasser ggf. auf <i>Demowatch.de</i> gesperrt!"
+
+
+
+      edit:
+        title: "Initiator bearbeiten"
+        contextmenu:
+          show: "Anzeigen"
+          back: "Zurück zur Initiatorenliste"
+        button:
+          submit: "Speichern"
+
+
+
+      index:
+        title: "Initiatoren"
+        contextmenu:
+          new: "Neuer Initiator"
+        table:
+          title: "Folgende Initiatoren sind bei <i>Demowatch.de</i> eingetragen"
+          head:
+            name: "Name"
+            themes: "Themen"
+
+
+
+      new:
+        title: "Neuer Initiator"
+        contextmenu:
+          back: "Zurück zur Initiatorenliste"
+        button:
+          submit: "Erzeugen"
+
+
+
+      show:
+        contextmenu:
+          edit: "Bearbeiten"
+          delete: "Löschen"
+          unsubscribe: "Abbestellen"
+          subscribe: "Abonnieren"
+        confirm:
+          delete: "Initiator wirklich löschen?"
+        themes:
+          title: "Themen"
+        description:
+          title: "Beschreibung"
+          info:
+            title: "Weitere Informationen"

@@ -49,7 +49,7 @@ de:
         title: "Demonstration bearbeiten"
         contextmenu:
           show: "Anzeigen"
-          back: "Demnoliste"
+          back: "Zurück zur Demnoliste"
         button:
           submit: "Speichern"
 

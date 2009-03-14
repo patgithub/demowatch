@@ -1,18 +1,15 @@
-%h1 Initiatoren
+- t_namespace("views.organisations.index")
+%h1= t(".title")
 - if logged_in? 
   .contextmenu
-    = link_to 'Neuer Initiator', new_organisation_path
+    = link_to t(".contextmenu.new"), new_organisation_path
 %br
-.tabletitle
-  Folgende Initiatoren sind bei
-  %i Demowatch.de 
-  eingetragen:
+.tabletitle= t(".table.title")
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
-    %th Initiatoren
-    %th Themen
+    %th= t(".table.head.name")
+    %th= t(".table.head.themes")
   - @organisations.each_with_index do |organisation, index|
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to h( organisation.title), organisation 
       %td= organisation.tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ') 
-= will_paginate @organisations

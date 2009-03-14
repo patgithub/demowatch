@@ -1,11 +1,16 @@
-%h1 Initiator bearbeiten
+- t_namespace("views.organisations.edit")
+%h1=t(".title")
 
 .contextmenu
-  = link_to 'Anzeigen', @organisation  
+  = link_to t(".contextmenu.show"), @organisation  
   |
-  = link_to 'Zurück zu den Initiatoren', organisations_path
+  = link_to t(".contextmenu.back"), organisations_path
 
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}
-  .buttons= f.submit "Speichern"
+
+  - # workaround to reactivate namespace after rendering fields
+  - t_namespace("views.organisations.edit")
+
+  .buttons= f.submit t(".button.submit")
 
