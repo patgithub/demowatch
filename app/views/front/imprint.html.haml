@@ -3,49 +3,49 @@
 %h1=t(".title")
 
 %h2=t(".contact.title") 
-.q=t(".contact.text") 
+%p=t(".contact.text") 
   
 %h3=t(".contact.email.title") 
-.q=link_to t(".contact.email.name"),t(".contact.email.link")
+%p=link_to t(".contact.email.name"),t(".contact.email.link")
 
 %h2=t(".participants.title")
-.q=t(".participants.text")
+%p=t(".participants.text")
 
 %h3=t(".idea.title")
-.q=link_to t(".idea.name"),t(".idea.link")
+%p=link_to t(".idea.name"),t(".idea.link")
 
 %h3=t(".programming.title")
-.q
+%p
   =link_to t(".programming.name1"),t(".programming.link1")
   %br=link_to t(".programming.name2"),t(".programming.link2") 
 
 %h2=t(".jobs.title")
-.q
+%ul
   %li=t(".jobs.job1")
   %li=t(".jobs.job2")
   %li=t(".jobs.job3")
-.q
+%p
   =t(".jobs.call.text")
   =link_to t(".jobs.call.name"),t(".jobs.call.link")
 
 %h2=t(".opensource.title")
  
-.q
+%p
   =t(".opensource.text1")
   = link_to 'github','http://github.com/patgithub/demowatch/tree/master'
   =t(".opensource.text2")
 
 %h2=t(".responsibility.title") 
-.q
+%p
   Patrick Hoffmann
   %br
   Ruppiner Str. 5
   %br
   10115 Berlin, Germany
-.q= link_to 'p.hoffmann@demowatch.de','mailto:p.hoffmann@demowatch.de'
+%p= link_to 'p.hoffmann@demowatch.de','mailto:p.hoffmann@demowatch.de'
 
 %h2=t(".techniques.title") 
-.q=t(".techniques.text") 
+%p=t(".techniques.text") 
 %br
 .center
   = link_to image_tag('rails.gif'), 'http://rubyonrails.org', { :target=>'_new'}

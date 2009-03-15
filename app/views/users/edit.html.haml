@@ -4,14 +4,14 @@
 .contextmenu
   = link_to t(".contextmenu.show"), @user  
 %br
-.q= t(".text")
+%p= t(".text")
  
 - form_for(@user) do |f| 
   = f.error_messages 
 
   %h2= t(".data.title")
 
-  .indent
+  %p
     = f.label :login, t(".data.field.name")
     = f.text_field :login, :size=>60
 
@@ -23,7 +23,7 @@
 
   %h2= t(".subscriptions.title")
 
-  .indent
+  %p
     = f.label :tag_list, t(".subscriptions.field.tag_list")
     = f.text_field :tag_list, :size=>60, :autocomplete => "off" 
     #user_tag_list_auto_complete.auto_complete{:style=>'display:none'}

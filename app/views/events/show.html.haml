@@ -18,10 +18,10 @@
       = link_to t(".contextmenu.subscribe"), url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)
 
 %h2= t(".themes.title")
-.q= @event.tags.map{|tag| link_to h( tag.name), :controller=>:tag, :action=>tag.name}.join(', ')
+%p= @event.tags.map{|tag| link_to h( tag.name), :controller=>:tag, :action=>tag.name}.join(', ')
 
 %h2= t(".venue.title")
-.q
+%p
   - if @event.startdate <= 6.hours.ago
     = t(".venue.startdate.past", :startdate => l(@event.startdate,:format => "long_verbal") )
   - elsif @event.startdate.to_date.eql?(Time.now.to_date-1)
@@ -49,13 +49,13 @@
   "<br/>#{html_escape @event.address}<br/>#{'(' + html_escape( @event.location) + ')' if @event.location?}");}
 
 %h2= t(".description.title")
-.q= sanitize @event.description
+%p= sanitize @event.description
 
 %h3= t(".description.initiator.title")
-.q
+%p
   = t(".description.initiator.text")
   = link_to h( @event.organisation.title), @event.organisation 
 
 - if @event.link
   %h3= t(".description.info.title")
-  .q= sanitize link_to( h(@event.link), @event.link, :target=>'_new')
+  %p= sanitize link_to( h(@event.link), @event.link, :target=>'_new')

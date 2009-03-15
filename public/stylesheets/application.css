@@ -5,14 +5,13 @@ body.main {
   background: #c8dbf1 url(/images/gradient.gif) repeat-x; 	
 }
 
-p {
-/* das hier stört beim TinyMCE
-	margin-left:2em; 
-*/
-}
-
 textarea {
 	width:550px;
+}
+
+p {
+	margin-bottom:.5em;
+	margin-left:2em;
 }
 
 a {
@@ -330,7 +329,7 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 }
 	
 .fieldWithErrors {
-
+	margin-left:2em;
 }
 
 .fieldWithErrors span {
@@ -345,15 +344,11 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 	border-bottom-color: red;border-bottom-style: double; border-bottom-width: 2px;
 	background-color: mistyrose;
  	font-weight: bold;
-  	padding-left: 3px;
+  padding-left: 3px;
 }
 
-.indent, .q {
+.indent  {
 	margin-left:2em;
-}
-
-.q {
-	margin-bottom:.5em
 }
 
 .center {
@@ -372,62 +367,6 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 .red  a{
 	font-weight: bold;
 	color: red;	
-}
-
-/* ***************** pagination ***************** */
-
-.pagination {
-	margin-top: 5px;
-  background: white;
-  text-align: center;
-  /* self-clearing method: */ 
-}
-.pagination a, .pagination span {
-  padding: .1em .3em;
-  margin-right: 1px;  
-}
-.pagination span.disabled {
-  color: #999;
-}
-.pagination span.current {
-  font-weight: bold;
-  background: #276cba;
-  color: white;
-  border: 1px solid #276cba; 
-}
-.pagination a {
-  text-decoration: none;
-  color: #105CB6;
-}
-.pagination a:hover, .pagination a:focus {
-  color: #003;
-  border-color: #003; 
-}
-.pagination .page_info {
-  background: #276cba;
-  color: white;
-  padding: .4em .6em;
-  width: 22em;
-  margin-bottom: .3em;
-  text-align: center; 
-}
-.pagination .page_info b {
-  color: #003;
-  background: #6aa6ed;
-  padding: .1em .25em; 
-}
-.pagination:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden; 
-}
-* html .pagination {
-  height: 1%; 
-}
-*:first-child+html .pagination {
-  overflow: hidden; 
 }
 
 .gmnoprint div {

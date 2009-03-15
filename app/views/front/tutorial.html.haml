@@ -3,16 +3,16 @@
 %h1=t(".title")
 
 %h2=t(".section1.title") 
-.q=t(".section1.text1")  
-.q=t(".section1.text2")
+%p=t(".section1.text1")  
+%p=t(".section1.text2")
 
 %h2=t(".section2.title")
-.q=t(".section2.text")
+%p=t(".section2.text")
 
 %h2=t(".section3.title")
-.q
+%p
   = link_to t(".section3.name1"), login_path
   ,
   = link_to t(".section3.name2"), new_organisation_path
   = link_to t(".section3.name3"), new_event_path 
-.q= t(".section3.text")
+%p= t(".section3.text")

@@ -17,7 +17,7 @@
 
 %h2=t(".demonstrations.title")
 - if @events.empty? 
-  .q=t(".demonstrations.empty")
+  %p=t(".demonstrations.empty")
 - else
   .tabletitle=t(".demonstrations.table.title")
   %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
@@ -51,7 +51,7 @@
 %h2=t(".initiators.title")
 
 - if @organisations.empty? 
-  .q=t(".initiators.empty") 
+  %p=t(".initiators.empty") 
 - else
   .tabletitle=t(".initiators.table.title")
   %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
@@ -67,5 +67,5 @@
 
 - if !@related_tags.empty?
   %h2=t(".related.title")
-  .q= @related_tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ')
+  %p= @related_tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ')
 

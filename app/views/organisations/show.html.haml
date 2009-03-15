@@ -14,11 +14,11 @@
       = link_to t(".contextmenu.subscribe"), url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :organisation => @organisation)
 
 %h2= t(".themes.title")
-.q= @organisation.tags.map{|tag| link_to h(tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ')
+%p= @organisation.tags.map{|tag| link_to h(tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ')
 %h2= t(".description.title")
-.q= sanitize @organisation.description
+%p= sanitize @organisation.description
 - if @organisation.link
   %h3= t(".description.info.title")
-  .q= sanitize(  link_to( h( @organisation.link), @organisation.link, { :target=>'_new'}))
+  %p= sanitize(  link_to( h( @organisation.link), @organisation.link, { :target=>'_new'}))
 
       

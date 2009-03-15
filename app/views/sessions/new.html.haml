@@ -1,23 +1,23 @@
 -t_namespace("views.sessions.new")
 %h1= t(".title")
-.q= t(".text")
-.q= link_to t(".signup_first"), :signup
+%p= t(".text")
+%p= link_to t(".signup_first"), :signup
 %h2= t(".login.title")
 
 - form_tag session_path do 
 
-  .indent  
+  %p  
     = label_tag :login, t(".login.login")
     = text_field_tag :login
 
-  .indent
+  %p
     = label_tag :password, t(".login.password")
     = password_field_tag :password
 
-  .indent
+  %p
     = label_tag :remember_me, t(".login.auto")
     = check_box_tag :remember_me
-
+  
   .buttons
     =submit_tag t(".login.submit")
 

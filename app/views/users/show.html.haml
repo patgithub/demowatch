@@ -7,19 +7,19 @@
 .contextmenu
   =link_to t(".contextmenu.edit"), edit_user_path(@user)
 %br
-.q= t(".text") 
+%p= t(".text") 
 
 %h2= t(".data.title")
 
-.q
+%p
   %b= t(".data.field.name")
   = h @user.login 
 
-.q
+%p
   %b= t(".data.field.email")
   = h @user.email 
 
-.q
+%p
   %b= t(".data.field.plz")
   - unless @user.zip.nil?
     = h @user.zip.zip
@@ -28,22 +28,22 @@
 %h2= t(".owned.title")
 - unless @organisations.empty?
   %h3= t(".owned.organisations.title")
-  .q= @organisations.map{|organisation| link_to h( organisation.title), organisation}.join(', ')
+  %p= @organisations.map{|organisation| link_to h( organisation.title), organisation}.join(', ')
 
 - unless @events.empty?
   %h3= t(".owned.events.title")
-  .q= @events.map{|event| link_to h( event.title), event}.join(', ')
+  %p= @events.map{|event| link_to h( event.title), event}.join(', ')
 
 %h2= t(".subscriptions.title")
 
 %h3= t(".subscriptions.themes.title")
-.q= @user.tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag}}.join(', ')
-.q
+%p= @user.tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag}}.join(', ')
+%p
   = link_to image_tag('rss.gif',:class => 'rss'), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
   = link_to t(".subscriptions.themes.rss"), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
 
 %h3= t(".subscriptions.events_organisations.title")
-.q
+%p
   %ul
     - @user.bookmarks.each do |bm|
       %li= link_to h( bm.title), bm.bookmarkable

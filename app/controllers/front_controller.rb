@@ -18,7 +18,7 @@ class FrontController < ApplicationController
     render :action => 'index'
   end
  
-  def impressum
+  def imprint
   end
 
   def about

@@ -52,7 +52,7 @@ ActionController::Routing::Routes.draw do |map|
   map.front '/', :controller => 'front', :action => 'events'
   map.tag '/tag/:name', :controller => 'front', :action => 'show', :requirements => {:name => /.*/}
   map.about '/about', :controller => 'front', :action => 'about'
-  map.impressum '/impressum', :controller => 'front', :action => 'impressum'
+  map.imprint '/imprint', :controller => 'front', :action => 'imprint'
   map.presse '/presse', :controller => 'front', :action => 'presse'
   map.tutorial '/tutorial', :controller => 'front', :action => 'tutorial'
   map.disclaimer '/disclaimer', :controller => 'front', :action => 'disclaimer'

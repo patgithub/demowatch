@@ -1,32 +1,31 @@
 -t_namespace("views.users.new")
 %h1= t(".title")
-.q= t(".text")
+%p= t(".text")
 %h2= t(".data.title")
 
 - form_for :user, :url => users_path do |f|
-  .indent
+  %p
     = error_messages_for :user
   
-  .indent
+  %p
     = f.label :login, t(".data.field.login")
     = f.text_field :login 
 
-  .indent
+  %p
     = f.label :email, t(".data.field.email")
     = f.text_field :email 
 
-  .indent
+  %p
     = f.label :password, t(".data.field.password")
     = f.password_field :password 
 
-  .indent
+  %p
     = f.label :password_confirmation, t(".data.field.password_confirmation")
     = f.password_field :password_confirmation 
   
   %h2= t(".options.title")
-  .indent= t(".options.text")
-  %br
-  .indent
+  %p= t(".options.text")
+  %p
     = f.label :zip, t(".options.zip")
     = f.text_field :zip, :size=>5, :value=>@zip_str  
 
