@@ -152,7 +152,7 @@ de:
           text2: "Trägt ein Benutzer einen neuen Initiator oder eine neue Demo ein, überprüft das Demowatch-Team anhand der eingegebenen Links, ob die eingegebenen Informationen brauchbar sind. Sinnlose oder unvollständige Daten werden ggf. gelöscht."
         section2:
           title: "Wer ist berechtigt Demos einzutragen?"
-          text: "Jeder kann bei Demowatch Initiatoren Demos eintragen."
+          text: "Jeder kann bei Demowatch Initiatoren und Demos eintragen."
         section3:
           title: "Nun also los..."
           name1: "Erst als Benutzer registrieren"
