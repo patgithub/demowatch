@@ -1,35 +1,34 @@
-﻿
-%h1 Registrierung
-.q Wenn Du Dich bei <i>Demowatch</i> registrierst, kannst Du Dich hier anmelden und deine pers&ouml;nlichen Themengebiete als Newsletter oder RSS-Feed abonnieren und Informationen zu einzelnen Demos vefolgen.
-%h2 Ben&ouml;tigte Daten
+-t_namespace("views.users.new")
+%h1= t(".title")
+.q= t(".text")
+%h2= t(".data.title")
 
 - form_for :user, :url => users_path do |f|
   .indent
     = error_messages_for :user
   
   .indent
-    = f.label :login, 'Login'
+    = f.label :login, t(".data.field.login")
     = f.text_field :login 
 
   .indent
-    = f.label :email, 'E-Mail <i>(f&uuml;r Themenabos)</i>'
+    = f.label :email, t(".data.field.email")
     = f.text_field :email 
 
   .indent
-    = f.label :password, 'Passwort'
+    = f.label :password, t(".data.field.password")
     = f.password_field :password 
 
   .indent
-    = f.label :password_confirmation, 'Passwort best&auml;tigen'
+    = f.label :password_confirmation, t(".data.field.password_confirmation")
     = f.password_field :password_confirmation 
   
-  %h2 Optionale Daten
-  .indent
-    Damit wir die Demos in Deiner Nähe finden können, kannst Du hier den ersten Teil Deiner Postleitzahl eingeben. Du musst es aber nicht!
+  %h2= t(".options.title")
+  .indent= t(".options.text")
   %br
   .indent
-    = f.label :zip, 'PLZ <i>(optional, eine oder mehrere Stellen)</i>'
+    = f.label :zip, t(".options.zip")
     = f.text_field :zip, :size=>5, :value=>@zip_str  
 
   .buttons
-    = submit_tag 'Registrieren'
+    = submit_tag t(".submit")
