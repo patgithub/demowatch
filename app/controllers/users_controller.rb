@@ -7,11 +7,18 @@ class UsersController < ApplicationController
   allow :suspend, :unsuspend, :destroy, :purge, :user => :is_admin?
   allow :show, :edit, :update, :bookmark, :unbookmark, :add_tag, :del_tag, :user => [:owns?, :is_admin?]
   
-  skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
+  skip_before_filter :verify_authenticity_token, :only => ['auto_complete_for_tag_name', 'auto_tag_list']
 
   def auto_complete_for_tag_name
     @tags = Tag.all :conditions => [ 'LOWER(name) LIKE ?', params[:user][:tag_list] + '%' ]
     render :inline => "<%= auto_complete_result(@tags, 'name') %>"
+  end
+
+  def auto_tag_list
+    tags = Tag.all :conditions => [ 'LOWER(name) LIKE ?', params[:keyword] + '%' ]
+    json = tags.map{|t| %|{"caption":"#{t.name}","value":#{t.id}}|}.join(',')
+    response.headers["Content-type"] = 'text/x-json'
+    render :text => "[#{json}]"
   end
 
   def show
@@ -123,7 +130,6 @@ class UsersController < ApplicationController
     @user.save
     redirect_to(:controller=>:tag, :action=>tag.name)
   end
-    
  
   def del_tag
     tag = Tag.find(params[:tag])
@@ -131,7 +137,7 @@ class UsersController < ApplicationController
     @user.save
     redirect_to(:controller=>:tag, :action=>tag.name)
   end    
-    
+
 protected
   def find_user
     @user = User.find(params[:id])

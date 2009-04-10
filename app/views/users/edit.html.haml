@@ -1,4 +1,7 @@
--t_namespace("views.users.edit")
+- content_for :header do
+  = javascript_include_tag 'textboxlist'
+  = stylesheet_link_tag 'textboxlist'
+
 %h1= t(".title")
 
 .contextmenu

@@ -1,14 +1,15 @@
 !!!
-- t_namespace("views.layouts.application")
+
 %html{:xmlns=>"http://www.w3.org/1999/xhtml"}
   %head
     %title= t(".window_title")
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
+    %meta{"name"=>"description", :content=> t(".meta.description")}
+    %meta{"name"=>"keywords", :content=>t(".meta.descriptions")}
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html;charset=utf-8"}
   
     = javascript_include_tag 'prototype', 'effects', 'controls', :cache => true
     = stylesheet_link_tag :all
-    
     = yield :header
   %body.main
     #header
@@ -25,7 +26,6 @@
           %li=link_to t(".menu.signup"), :signup
         %li=link_to t(".menu.press"), :presse
         %li.last=link_to t(".menu.imprint"), :imprint
-
     .tabs
       %ul
         - tabs = [[t(".tabs.themes"), front_path], [t(".tabs.events"), events_path], [t(".tabs.organisations"), organisations_path]]
@@ -35,7 +35,7 @@
               <strong class="xsnazzy"><strong class="xtop"><strong class="xb1"></strong><strong class="xb2"></strong><strong class="xb3"></strong><strong class="xb4"></strong></strong>
               %span.xboxcontent= label
               </strong>
-        
+
     .balloon
       .title
       .body
@@ -43,7 +43,7 @@
           .message= flash[:notice]
         =yield
       .bottom
-        
+
     #footer
       =image_tag 'people.gif'
 

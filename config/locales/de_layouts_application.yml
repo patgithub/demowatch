@@ -1,19 +1,21 @@
 de:
-  views:
-    layouts:
-      application:
-        window_title: "Demowatch.de - unabhängige Plattform für politische Demonstrationen"
-        menu:
-          about: "Was ist Demowatch?"
-          new_event: "Demo eintragen"
-          logout: "Abmelden"
-          profile: "Einstellungen"
-          login: "Anmelden"
-          signup: "Registrieren"
-          press: "Presse"
-          imprint: "Impressum"
-        tabs:
-          themes: "Themen"
-          events: "Demos"
-          organisations: "Initiatoren"
-        disclaimer: "Haftungsausschluss"
+  layouts:
+    application:
+      window_title: "Demowatch.de - unabhängige Plattform für politische Demonstrationen"
+      menu:
+        about: "Was ist Demowatch?"
+        new_event: "Demo eintragen"
+        logout: "Abmelden"
+        profile: "Einstellungen"
+        login: "Anmelden"
+        signup: "Registrieren"
+        press: "Presse"
+        imprint: "Impressum"
+      tabs:
+        themes: "Themen"
+        events: "Demos"
+        organisations: "Initiatoren"
+      disclaimer: "Haftungsausschluss"
+      meta:
+        description: "Freies, zentrales Register für politisch und sozial engagierte demokratische Aktionen"
+        keywords: "demonstration,demo,politisch,sozial,demokratisch,aktion,aufruf,demonstrieren,öffentlich,mahnwache,kundgebung"

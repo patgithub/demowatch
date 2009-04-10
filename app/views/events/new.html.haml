@@ -1,4 +1,3 @@
-- t_namespace("views.events.new")
 %h1= t(".title")
 
 .contextmenu
@@ -6,9 +5,6 @@
 
 - form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_zip);' }) do |f|
   = render :partial => 'fields', :locals => {:f => f}
-
-  - # workaround to reactivate namespace after rendering fields
-  - t_namespace("views.events.new") 
 
   .buttons= f.submit t(".button.submit")
 

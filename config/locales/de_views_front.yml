@@ -1,161 +1,160 @@
 de:
-  views:
-    front:
-      about:
-        title: "Was ist Demowatch?"
-        section1: 
-          title: "Mit <i>Demowatch.de</i> nie mehr eine Demo verpassen!"
-          text: "Ist es Ihnen nicht auch schon mal so ergangen: Sie würde sich gern für bestimmte gesellschaftliche oder politische Themen einsetzen, aber schaffen es einfach nie auf eine Demonstration zu gehen?"
-        section2: 
-          title: "Woran liegt das?"
-          text: "Wir von <i>Demowatch.de</i> haben erkannt, dass ein großes Problem schon darin besteht, von einer Demonstration zu erfahren, bevor diese stattfindet. Es gibt im Internet zwar viele Webseiten von vielen Organisationen, die wiederum viele Aktionen durchführen. Aber wer kennt die schon alle? Und wer hat überhaupt die Zeit, sich auf all diesen Webseiten ständig über neue Aktionen zu informieren?"
-        section3: 
-          title: "Wir jedenfalls nicht!"
-          text: "Deshalb haben wir <i>Demowatch.de</i> entwickelt. <i>Demowatch.de</i> ist eine neue Webseite, die es sich zur Aufgabe macht, politische Demonstrationen zentral für jedermann schnell und einfach zugänglich zu machen. Das Prinzip von <i>Demowatch.de</i> ist simpel: Sie können sich schon auf unserer Startseite einen Überblick über die zur Zeit relevanten Themen verschaffen. Eine sogenannte \"tag cloud\" hebt populäre Themen hervor."
-        section4: 
-          title: "Aber wir wollen noch mehr"
-          text1: "Da die Interessen sicher genauso individuell, wie die Menschen selbst sind, können Sie sich bei uns Ihr persönliches Themenrepertoire zusammenstellen. Sie werden dann per E-Mail automatisch über neue Aktionen zu diesen Themen informiert."
-          text2: "Wenn Sie sich vornehmen an einer Demonstration teilzunehmen, dann abonnieren Sie diese einfach auf <i>Demowatch.de</i>. Dadurch werden Sie rechtzeitig an den Termin erinnert und werden über jegliche Neuigkeiten informiert."
-        section5: 
-          title: "Seriösität"
-          text: "Um eine Demonstration bei <i>Demowatch.de</i> einzutragen, muss man sich anmelden. Da wir seriöse Infroamtionen bieten möchten, achten wir auf brauchbare Inhalte und stellen wenn möglich Rückfragen, wenn Informationen fehlerhaft zu sein scheinen. verfassungsrechtlich bedenkliche Inhalte und Aufrufe zu offensichtlich gewalttätigen Protestaktionen entfernen wir aus unserer Datenbank."
-        section6: 
-          title: "Anonymität"
-          text: "Auf der anderen Seite veröffentlichen wir von unseren Besuchern keinerlei Daten. Der Benutzer bleibt auf <i>Demowatch.de</i> anonym. Zur Zeit hinterlässt er bei der Registrierung lediglich seine E-Mailadresse, damit der Erinnerungsdienst funktioniert und die ersten Stellen seiner Postleitzahl, damit wir Veranstaltungen in seiner Nähe finden können."
-        section7: 
-          title: "Unser Motto:"
-          text: "Ab heute gilt die Ausrede \"Hätte ich davon gehört, wäre ich dabei gewesen!\" nicht mehr! Werden Sie aktiv und bleiben Sie demokratisch!"
+  front:
+    about:
+      title: "Was ist Demowatch?"
+      section1: 
+        title: "Mit <i>Demowatch.de</i> nie mehr eine Demo verpassen!"
+        text: "Ist es Ihnen nicht auch schon mal so ergangen: Sie würde sich gern für bestimmte gesellschaftliche oder politische Themen einsetzen, aber schaffen es einfach nie auf eine Demonstration zu gehen?"
+      section2: 
+        title: "Woran liegt das?"
+        text: "Wir von <i>Demowatch.de</i> haben erkannt, dass ein großes Problem schon darin besteht, von einer Demonstration zu erfahren, bevor diese stattfindet. Es gibt im Internet zwar viele Webseiten von vielen Organisationen, die wiederum viele Aktionen durchführen. Aber wer kennt die schon alle? Und wer hat überhaupt die Zeit, sich auf all diesen Webseiten ständig über neue Aktionen zu informieren?"
+      section3: 
+        title: "Wir jedenfalls nicht!"
+        text: "Deshalb haben wir <i>Demowatch.de</i> entwickelt. <i>Demowatch.de</i> ist eine neue Webseite, die es sich zur Aufgabe macht, politische Demonstrationen zentral für jedermann schnell und einfach zugänglich zu machen. Das Prinzip von <i>Demowatch.de</i> ist simpel: Sie können sich schon auf unserer Startseite einen Überblick über die zur Zeit relevanten Themen verschaffen. Eine sogenannte \"tag cloud\" hebt populäre Themen hervor."
+      section4: 
+        title: "Aber wir wollen noch mehr"
+        text1: "Da die Interessen sicher genauso individuell, wie die Menschen selbst sind, können Sie sich bei uns Ihr persönliches Themenrepertoire zusammenstellen. Sie werden dann per E-Mail automatisch über neue Aktionen zu diesen Themen informiert."
+        text2: "Wenn Sie sich vornehmen an einer Demonstration teilzunehmen, dann abonnieren Sie diese einfach auf <i>Demowatch.de</i>. Dadurch werden Sie rechtzeitig an den Termin erinnert und werden über jegliche Neuigkeiten informiert."
+      section5: 
+        title: "Seriösität"
+        text: "Um eine Demonstration bei <i>Demowatch.de</i> einzutragen, muss man sich anmelden. Da wir seriöse Infroamtionen bieten möchten, achten wir auf brauchbare Inhalte und stellen wenn möglich Rückfragen, wenn Informationen fehlerhaft zu sein scheinen. verfassungsrechtlich bedenkliche Inhalte und Aufrufe zu offensichtlich gewalttätigen Protestaktionen entfernen wir aus unserer Datenbank."
+      section6: 
+        title: "Anonymität"
+        text: "Auf der anderen Seite veröffentlichen wir von unseren Besuchern keinerlei Daten. Der Benutzer bleibt auf <i>Demowatch.de</i> anonym. Zur Zeit hinterlässt er bei der Registrierung lediglich seine E-Mailadresse, damit der Erinnerungsdienst funktioniert und die ersten Stellen seiner Postleitzahl, damit wir Veranstaltungen in seiner Nähe finden können."
+      section7: 
+        title: "Unser Motto:"
+        text: "Ab heute gilt die Ausrede \"Hätte ich davon gehört, wäre ich dabei gewesen!\" nicht mehr! Werden Sie aktiv und bleiben Sie demokratisch!"
 
 
 
-      disclaimer:
-        title: "Haftungsausschluss"
-        section1:
-          title: "Haftung für Inhalte"
-          text: "Obwohl wir uns um Aktualität, Vollständigkeit und Richtigkeit der Inhalte unserer Seiten bemühen, können wir hierfür keine Garantie übernehmen.  Nach § 7 Absatz 1 TDG sind wir als Diensteanbieter für eigene Inhalte auf unseren Seiten nach den allgemeinen Gesetzen verantwortlich. Eine Verpflichtung zur Überwachung übermittelter oder gespeicherter fremder Informationen besteht jedoch nicht (§§ 8-10 TDG). Sobald uns Rechtsverstöße bekannt werden, werden wir die entsprechenden Inhalte umgehend entfernen. Eine dahingehende Haftung wird jedoch erst ab dem Zeitpunkt der Kenntnis konkreter Rechtsverletzungen übernommen."
-        section2:
-          title: "Haftung für Links"
-          text: "Unsere Seiten enthalten Links auf externe Webseiten Dritter. Auf die Inhalte dieser verlinkten Webseiten haben wir keinen Einfluss. Für die Richtigkeit der Inhalte ist immer der jeweilige Anbieter oder Betreiber verantwortlich, weshalb wir diesbezüch keinerlei Gewähr übernehmen. Die fremden Webseiten haben wir zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft Zum Zeitpunkt der Verlinkung waren keinerlei Rechtsverletzungen erkennbar. Eine ständige Überprüfung sämtlicher Inhalte der von uns verlinkten Seiten ohne tatsächliche Anhaltspunkte für einen Rechtsverstoß können wir nicht leisten. Falls uns Rechtsverletzungen bekannt werden, werden wir die entsprechenden Links sofort entfernen."
-        section3:
-          title: "Urheberrecht"
-          text: "Die durch den Betreiber dieser Seite erstellten Inhalte und Werke auf diesen Webseiten unterliegen dem deutschen Urheberrecht. Sämtliche Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Kopien von diesen Seiten sind nur für den privaten Bereich gestattet, nicht jedoch für kommerzielle Zwecke."
-        section4:
-          title: "Datenschutz"
-          text: "Für die Sicherheit der Datenübertragung im Internet können wir keine Gewähr übernehmen, insbesondere besteht bei der Übertragung von Daten per E-Mail die Gefahr des Zugriffs durch Dritte. Im Falle der Erhebung personenbezogener Daten auf unseren Seiten erfolgt die Preisgabe dieser Daten seitens des Nutzers stets auf freiwilliger Basis. Die Inanspruchnahme und Bezahlung aller angebotenen Dienste ist auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms gestattet, soweit dies technisch möglich und zumutbar ist.  Einer Nutzung der im Impressum veröffentlichten Kontaktdaten durch Dritte zu Werbezwecken wird hiermit ausdrücklich widersprochen. Der Betreiber behält sich für den Fall unverlangt zugesandter Werbe- oder Informationsmaterialien ausdrücklich rechtliche Schritte vor."
-        section5:
-          title: "Rechtswirksamkeit dieses Haftungsausschlusses"
-          text: "Sollten einzelne Regelungen oder Formulierungen dieses Haftungsausschlusses unwirksam sein oder werden, bleiben die übrigen Regelungen in ihrem Inhalt und ihrer Gültigkeit hiervon unberührt."
-        source: 
-          text: "Quelle:"
-          name: "anwalt-seiten.de"
-          link: "http://www.anwalt-seiten.de/"
+    disclaimer:
+      title: "Haftungsausschluss"
+      section1:
+        title: "Haftung für Inhalte"
+        text: "Obwohl wir uns um Aktualität, Vollständigkeit und Richtigkeit der Inhalte unserer Seiten bemühen, können wir hierfür keine Garantie übernehmen.  Nach § 7 Absatz 1 TDG sind wir als Diensteanbieter für eigene Inhalte auf unseren Seiten nach den allgemeinen Gesetzen verantwortlich. Eine Verpflichtung zur Überwachung übermittelter oder gespeicherter fremder Informationen besteht jedoch nicht (§§ 8-10 TDG). Sobald uns Rechtsverstöße bekannt werden, werden wir die entsprechenden Inhalte umgehend entfernen. Eine dahingehende Haftung wird jedoch erst ab dem Zeitpunkt der Kenntnis konkreter Rechtsverletzungen übernommen."
+      section2:
+        title: "Haftung für Links"
+        text: "Unsere Seiten enthalten Links auf externe Webseiten Dritter. Auf die Inhalte dieser verlinkten Webseiten haben wir keinen Einfluss. Für die Richtigkeit der Inhalte ist immer der jeweilige Anbieter oder Betreiber verantwortlich, weshalb wir diesbezüch keinerlei Gewähr übernehmen. Die fremden Webseiten haben wir zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft Zum Zeitpunkt der Verlinkung waren keinerlei Rechtsverletzungen erkennbar. Eine ständige Überprüfung sämtlicher Inhalte der von uns verlinkten Seiten ohne tatsächliche Anhaltspunkte für einen Rechtsverstoß können wir nicht leisten. Falls uns Rechtsverletzungen bekannt werden, werden wir die entsprechenden Links sofort entfernen."
+      section3:
+        title: "Urheberrecht"
+        text: "Die durch den Betreiber dieser Seite erstellten Inhalte und Werke auf diesen Webseiten unterliegen dem deutschen Urheberrecht. Sämtliche Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Kopien von diesen Seiten sind nur für den privaten Bereich gestattet, nicht jedoch für kommerzielle Zwecke."
+      section4:
+        title: "Datenschutz"
+        text: "Für die Sicherheit der Datenübertragung im Internet können wir keine Gewähr übernehmen, insbesondere besteht bei der Übertragung von Daten per E-Mail die Gefahr des Zugriffs durch Dritte. Im Falle der Erhebung personenbezogener Daten auf unseren Seiten erfolgt die Preisgabe dieser Daten seitens des Nutzers stets auf freiwilliger Basis. Die Inanspruchnahme und Bezahlung aller angebotenen Dienste ist auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms gestattet, soweit dies technisch möglich und zumutbar ist.  Einer Nutzung der im Impressum veröffentlichten Kontaktdaten durch Dritte zu Werbezwecken wird hiermit ausdrücklich widersprochen. Der Betreiber behält sich für den Fall unverlangt zugesandter Werbe- oder Informationsmaterialien ausdrücklich rechtliche Schritte vor."
+      section5:
+        title: "Rechtswirksamkeit dieses Haftungsausschlusses"
+        text: "Sollten einzelne Regelungen oder Formulierungen dieses Haftungsausschlusses unwirksam sein oder werden, bleiben die übrigen Regelungen in ihrem Inhalt und ihrer Gültigkeit hiervon unberührt."
+      source: 
+        text: "Quelle:"
+        name: "anwalt-seiten.de"
+        link: "http://www.anwalt-seiten.de/"
 
 
 
-      imprint:
-        title: "Impressum"
-        contact:
-          title: "Kontakt"
-          text: "Wir möchten auf <i>Demowatch.de</i> möglichst viele demokratische Aktionen unterstützen. <u>Aufrufe zu verfassungs- oder gesetzeswidrigen Aktionen werden von uns aus unserer Datenbank schnellstmöglich gelöscht</u>. Falls Euch Inhalte auffallen, die diesen Rahmen sprengen oder die falsche Informationen enthalten, gebt uns bitte bescheid. Gennerell sind uns Ideen, Fragen, Lob und Kritik immer willkommen."
-          email:
-            title: "Bitte sendet Eure Nachrichten per E-Mail an folgende Adresse:"
-            name: "info@demowatch.de"
-            link: "mailto:info@demowatch.de"
-        participants:
-          title: "Mitwirkende"
-          text: "Vielen Dank an alle, die ehrenamtlich aber dennoch mit viel Enthusiasmus an der Verwirklichung dieses Projekts teilhaben:"
-        idea:
-          title: "Idee & Gestaltung"
-          name: "Patrick Hoffmann"
-          link: "mailto:p.hoffmann@demowatch.de"
-        programming:
-          title: "Programmierung"
-          name1: "Simon Kröger"
-          link1: "mailto:s.kroeger@demowatch.de"
-          name2: "Marc Christenfeldt"
-          link2: "mailto:m.christenfeldt@demowatch.de"
-        jobs:
-          title: "Wir suchen noch..."
-          job1: "Ruby on Rails Entwickler"
-          job2: "Medienarbeiter"
-          job3: "Leute mit guten Ideen für das Projekt"
-          call: 
-            text: "Falls Du Interesse hast, einfach bei uns"
-            name: "melden."
-            link: "mailto:info@demowatch.de"
-        opensource:
-          title: "Demowatch.de ist Open Source"
-          text1: "Unser git Repository findet man unter:"
-          text2: "Jeder ist eingeladen mitzumachen."
-        responsibility:
-          title: "Verantwortlich laut Telemediengesetz"
-        techniques:
-          title: "Verwendete Techniken"
-          text: "Diese Website wurde mit folgenden Techniken erstellt:"
+    imprint:
+      title: "Impressum"
+      contact:
+        title: "Kontakt"
+        text: "Wir möchten auf <i>Demowatch.de</i> möglichst viele demokratische Aktionen unterstützen. <u>Aufrufe zu verfassungs- oder gesetzeswidrigen Aktionen werden von uns aus unserer Datenbank schnellstmöglich gelöscht</u>. Falls Euch Inhalte auffallen, die diesen Rahmen sprengen oder die falsche Informationen enthalten, gebt uns bitte bescheid. Gennerell sind uns Ideen, Fragen, Lob und Kritik immer willkommen."
+        email:
+          title: "Bitte sendet Eure Nachrichten per E-Mail an folgende Adresse:"
+          name: "info@demowatch.de"
+          link: "mailto:info@demowatch.de"
+      participants:
+        title: "Mitwirkende"
+        text: "Vielen Dank an alle, die ehrenamtlich aber dennoch mit viel Enthusiasmus an der Verwirklichung dieses Projekts teilhaben:"
+      idea:
+        title: "Idee & Gestaltung"
+        name: "Patrick Hoffmann"
+        link: "mailto:p.hoffmann@demowatch.de"
+      programming:
+        title: "Programmierung"
+        name1: "Simon Kröger"
+        link1: "mailto:s.kroeger@demowatch.de"
+        name2: "Marc Christenfeldt"
+        link2: "mailto:m.christenfeldt@demowatch.de"
+      jobs:
+        title: "Wir suchen noch..."
+        job1: "Ruby on Rails Entwickler"
+        job2: "Medienarbeiter"
+        job3: "Leute mit guten Ideen für das Projekt"
+        call: 
+          text: "Falls Du Interesse hast, einfach bei uns"
+          name: "melden."
+          link: "mailto:info@demowatch.de"
+      opensource:
+        title: "Demowatch.de ist Open Source"
+        text1: "Unser git Repository findet man unter:"
+        text2: "Jeder ist eingeladen mitzumachen."
+      responsibility:
+        title: "Verantwortlich laut Telemediengesetz"
+      techniques:
+        title: "Verwendete Techniken"
+        text: "Diese Website wurde mit folgenden Techniken erstellt:"
 
 
 
-      index:
-        title: "Themen, zu denen demonstriert wird..."
-        contextmenu:
-          demo_only: "Nur Demothemen"
-          all_themes: "Alle Themen"
-        
-      press:
-        title: "Presse"
-        announcements: 
-          title: "Meldungen über uns"
-          text: "Hier tragen wir alle ein, die was über uns schreiben und von denen wir wissen:"
-          name: "Sie können gerne neue Publikation melden."
-        linkbutton:
-          title: "Demowatch Link-Button"
-          text: "Zur freien Verwendung diese Bilder über Demowatch (am besten mit Link auf demowatch.de auf die eigene Seite einbinden):"
+    index:
+      title: "Themen, zu denen demonstriert wird..."
+      contextmenu:
+        demo_only: "Nur Demothemen"
+        all_themes: "Alle Themen"
+      
+    press:
+      title: "Presse"
+      announcements: 
+        title: "Meldungen über uns"
+        text: "Hier tragen wir alle ein, die was über uns schreiben und von denen wir wissen:"
+        name: "Sie können gerne neue Publikation melden."
+      linkbutton:
+        title: "Demowatch Link-Button"
+        text: "Zur freien Verwendung diese Bilder über Demowatch (am besten mit Link auf demowatch.de auf die eigene Seite einbinden):"
 
 
 
-      show:
-        contextmenu:
-          unsubscribe: "Thema abbestellen"
-          subscribe: "Thema abonnieren"
-          whatis: "Was bedeutet <i>{{tag}}</i>?"
-        demonstrations:
-          title: "Demonstrationen"
-          emtpy: "Zu diesem Thema sind zur Zeit keine Demonstrationen eingetragen."
-          table:
-            title: "Die folgenden Demonstrationen sind uns zu diesem Thema bekannt:"
-            head:
-              time: "Termin"
-              name: "Demo"
-              place: "Ort"
-              distance: "Entfernung"
-            rows:
-              today: "Heute!"
-              now: "Jetzt!"
-        initiators:
-          title: "Initiatoren"
-          empty: "Zur Zeit sind keine Initiatoren eingetragen, die sich mit diesem Thema beschäftigen.."
-          table: 
-            title: "Die folgenden Organisationen setzen sich für dieses Thema ein:"
-            head:
-              initiator: "Initiator"
-              themes: "Themen"
-        related:
-          title: "Verwandte Themen"
+    show:
+      contextmenu:
+        unsubscribe: "Thema abbestellen"
+        subscribe: "Thema abonnieren"
+        whatis: "Was bedeutet <i>{{tag}}</i>?"
+      demonstrations:
+        title: "Demonstrationen"
+        emtpy: "Zu diesem Thema sind zur Zeit keine Demonstrationen eingetragen."
+        table:
+          title: "Die folgenden Demonstrationen sind uns zu diesem Thema bekannt:"
+          head:
+            time: "Termin"
+            name: "Demo"
+            place: "Ort"
+            distance: "Entfernung"
+          rows:
+            today: "Heute!"
+            now: "Jetzt!"
+      initiators:
+        title: "Initiatoren"
+        empty: "Zur Zeit sind keine Initiatoren eingetragen, die sich mit diesem Thema beschäftigen.."
+        table: 
+          title: "Die folgenden Organisationen setzen sich für dieses Thema ein:"
+          head:
+            initiator: "Initiator"
+            themes: "Themen"
+      related:
+        title: "Verwandte Themen"
 
 
 
-      tutorial:
-        title: "Eintragen neuer Demonstrationen"
-        section1: 
-          title: "Nur registrierte Benutzer können Demos eintragen"
-          text1: "Wer hier eine Demo eintragen will, muss sich bei Demowatch.de registrieren und eine gültige E-Mailadresse angeben. <b>E-Mailadressen von Benutzern werden nicht veröffentlicht oder an Dritte weitergegeben.</b> Sie dienen uns lediglich dazu, Rückfragen stellen zu können."
-          text2: "Trägt ein Benutzer einen neuen Initiator oder eine neue Demo ein, überprüft das Demowatch-Team anhand der eingegebenen Links, ob die eingegebenen Informationen brauchbar sind. Sinnlose oder unvollständige Daten werden ggf. gelöscht."
-        section2:
-          title: "Wer ist berechtigt Demos einzutragen?"
-          text: "Jeder kann bei Demowatch Initiatoren und Demos eintragen."
-        section3:
-          title: "Nun also los..."
-          name1: "Erst als Benutzer registrieren"
-          name2: "dann ggf. Initator eingeben"
-          name3: "und neue Demos eintragen!"
-          text: "Wir wünschen Euch Viel Erfolg für Eure Aktionen und danken Euch für Eure Teilnahme bei demowatch.de!"
+    tutorial:
+      title: "Eintragen neuer Demonstrationen"
+      section1: 
+        title: "Nur registrierte Benutzer können Demos eintragen"
+        text1: "Wer hier eine Demo eintragen will, muss sich bei Demowatch.de registrieren und eine gültige E-Mailadresse angeben. <b>E-Mailadressen von Benutzern werden nicht veröffentlicht oder an Dritte weitergegeben.</b> Sie dienen uns lediglich dazu, Rückfragen stellen zu können."
+        text2: "Trägt ein Benutzer einen neuen Initiator oder eine neue Demo ein, überprüft das Demowatch-Team anhand der eingegebenen Links, ob die eingegebenen Informationen brauchbar sind. Sinnlose oder unvollständige Daten werden ggf. gelöscht."
+      section2:
+        title: "Wer ist berechtigt Demos einzutragen?"
+        text: "Jeder kann bei Demowatch Initiatoren und Demos eintragen."
+      section3:
+        title: "Nun also los..."
+        name1: "Erst als Benutzer registrieren"
+        name2: "dann ggf. Initator eingeben"
+        name3: "und neue Demos eintragen!"
+        text: "Wir wünschen Euch Viel Erfolg für Eure Aktionen und danken Euch für Eure Teilnahme bei demowatch.de!"

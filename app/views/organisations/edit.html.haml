@@ -1,4 +1,3 @@
-- t_namespace("views.organisations.edit")
 %h1=t(".title")
 
 .contextmenu
@@ -8,9 +7,6 @@
 
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}
-
-  - # workaround to reactivate namespace after rendering fields
-  - t_namespace("views.organisations.edit")
 
   .buttons= f.submit t(".button.submit")
 
