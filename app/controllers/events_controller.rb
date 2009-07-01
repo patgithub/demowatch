@@ -65,7 +65,7 @@ class EventsController < ApplicationController
   # GET /events/new.xml
   def new
     @event = Event.new(:startdate => Time.now)
-    @organisations = Organisation.find(:all)
+    @organisations = Organisation.find(:all, :order => 'title')
     
     if @organisations.empty?
       flash[:notice] = 'Zuerst muß ein Initiator erstellt werden.'
@@ -81,7 +81,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    @organisations = Organisation.find(:all)
+    @organisations = Organisation.find(:all, :order => 'title')
   end
 
   # POST /events
