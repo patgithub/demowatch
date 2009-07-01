@@ -65,7 +65,7 @@ class EventsController < ApplicationController
   # GET /events/new.xml
   def new
     @event = Event.new(:startdate => Time.now)
-    @organisations = current_user.organizers.map{|o| o.organisation}
+    @organisations = Organisation.find(:all)
     
     if @organisations.empty?
       flash[:notice] = 'Zuerst muß ein Initiator erstellt werden.'
