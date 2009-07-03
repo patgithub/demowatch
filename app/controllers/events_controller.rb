@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
   before_filter :login_required, :except => [:index, :show, :archive]
   before_filter :find_event, :only => [:show, :edit, :update, :destroy]
-  allow :create, :user => [:has_organisation?, :is_admin?]
   allow :edit, :update, :destroy, :user => [:owns?, :is_admin?]
   
   skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
