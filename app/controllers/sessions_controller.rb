@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
       redirect_back_or_default('/')
       flash[:notice] = "Du hast Dich erfolgreich angemeldet"
     else
+      flash[:notice] = "<div class='red'>Anmeldung war nicht erfolgreich!</div>"
       render :action => 'new'
     end
   end
