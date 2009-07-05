@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :organizers, :dependent => :destroy
   has_many :organisations, :through => :organizers
   has_many :bookmarks, :dependent => :destroy
+  has_many :events
   
   belongs_to :zip,
              :class_name => "Zip",
@@ -109,10 +110,6 @@ class User < ActiveRecord::Base
     @activated
   end
   
-  def events
-    Event.all :joins => {:organisation => :organizers}, :conditions => ['organizers.user_id = ?', id]
-  end
-
   def is_admin?
     role == RoleAdmin
   end

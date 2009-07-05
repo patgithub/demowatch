@@ -1,7 +1,7 @@
 de:
   users:
     edit:
-      title: "Einstellungen"
+      title: "Meine Daten"
       contextmenu:
         show: "Anzeigen"
       text: "Die von Dir hier angegebenen Daten werden von uns streng vertraulich behandelt und weder auf dieser Website veröffentlicht noch an Dritte weitergegeben."

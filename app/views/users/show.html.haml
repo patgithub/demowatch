@@ -33,17 +33,20 @@
   %h3= t(".owned.events.title")
   %p= @events.map{|event| link_to h( event.title), event}.join(', ')
 
-%h2= t(".subscriptions.title")
+- unless @user.tags.empty? && @user.bookmarks.empty?
+  %h2= t(".subscriptions.title")
 
-%h3= t(".subscriptions.themes.title")
-%p= @user.tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag}}.join(', ')
-%p
-  = link_to image_tag('rss.gif',:class => 'rss'), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
-  = link_to t(".subscriptions.themes.rss"), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
+  - unless @user.tags.empty?
+    %h3= t(".subscriptions.themes.title")
+    %p= @user.tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag}}.join(', ')
+    %p
+      = link_to image_tag('rss.gif',:class => 'rss'), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
+      = link_to t(".subscriptions.themes.rss"), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
 
-%h3= t(".subscriptions.events_organisations.title")
-%p
-  %ul
-    - @user.bookmarks.each do |bm|
-      %li= link_to h( bm.title), bm.bookmarkable
+    - unless @user.bookmarks.empty?
+      %h3= t(".subscriptions.events_organisations.title")
+      %p
+        %ul
+          - @user.bookmarks.each do |bm|
+            %li= link_to h( bm.title), bm.bookmarkable
 
