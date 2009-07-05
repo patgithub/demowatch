@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081120014751) do
+ActiveRecord::Schema.define(:version => 20090703113352) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "title",                   :limit => 50, :default => ""
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20081120014751) do
     t.datetime "new_delivered_at"
     t.datetime "updated_delivered_at"
     t.datetime "deleted_at"
+    t.integer  "user_id",              :null => false
   end
 
   create_table "organisations", :force => true do |t|

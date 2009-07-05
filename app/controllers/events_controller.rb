@@ -87,7 +87,7 @@ class EventsController < ApplicationController
   # POST /events.xml
   def create
     @event = Event.new(params[:event])
-
+    @event.user = current_user
     respond_to do |format|
       if @event.save
         flash[:notice] = 'Demonstration wurde erfolgreich eingetragen.'
