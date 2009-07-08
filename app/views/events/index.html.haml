@@ -17,10 +17,10 @@
 .tabletitle
   = t(".table.title")
   .anchor_index
-    - @events.reverse.each_with_index do |event, index|
-      - if index == 0 || event.startdate.to_date.month != @events[-index].startdate.to_date.month
+    - @events.each_with_index do |event, index|
+      - if index == 0 || event.startdate.to_date.month != @events[index-1].startdate.to_date.month
         = " | " if index > 0 
-        = link_to l(event.startdate.to_date,:format=>"%B" + ((event.startdate.to_date.year!=Time.now.year)?" %Y":"") ), events_path + "#" + l(event.startdate.to_date,:format=>"%B-%Y")
+        = link_to l(event.startdate.to_date,:format=>"%B" + ((event.startdate.to_date.year!=Time.now.year)?" %Y":"") ), events_path + "#" + l(event.startdate.to_date,:format=>"%m-%Y")
   
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
@@ -33,7 +33,7 @@
     - if index == 0 || event.startdate.to_date.month != @events[index-1].startdate.to_date.month
       %tr
         %td{:class=> index==0 ? "separator_first" : "separator", :colspan=>@with_distance?4:3}
-          %a{:name => l(event.startdate.to_date,:format=>"%B-%Y") }
+          %a{:name => l(event.startdate.to_date,:format=>"%m-%Y") }
           = l(event.startdate.to_date,:format=>"%B %Y") 
     %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
       - if event.startdate.strftime('%d.%m.%Y') == Time.now.strftime('%d.%m.%Y')
