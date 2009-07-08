@@ -1,6 +1,8 @@
-%h1=t(".title")
+%h1= t(".title.#{@list_type}")
 
 .contextmenu
+  = link_to t(".contextmenu.current_only"), :current_cloud
+  |
   = link_to t(".contextmenu.demo_only"), :event_cloud
   |
   = link_to t(".contextmenu.all_themes"), :all_cloud

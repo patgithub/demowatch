@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }, :collection => { :auto_tag_list => :post }
 
-  map.front '/', :controller => 'front', :action => 'events'
+  map.front '/', :controller => 'front', :action => 'current'
   map.tag '/tag/:name', :controller => 'front', :action => 'show', :requirements => {:name => /.*/}
   map.about '/about', :controller => 'front', :action => 'about'
   map.imprint '/imprint', :controller => 'front', :action => 'imprint'
@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   map.all_cloud 'all', :controller => 'front', :action => 'all'
   map.event_cloud 'demos', :controller => 'front', :action => 'events'
   map.other_cloud 'other', :controller => 'front', :action => 'other'
+  map.current_cloud 'current', :controller => 'front', :action => 'current'
 
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   map.signup '/signup', :controller => 'users', :action => 'new'

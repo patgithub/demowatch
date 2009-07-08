@@ -95,10 +95,17 @@ de:
 
 
     index:
-      title: "Themen, zu denen demonstriert wird..."
+      title: 
+        all: "Alle bekannten Themen"
+        events: "Themen aller Demonstrationen"
+        other: "Themen der Initiatoren"
+        current: "Themen aktueller Demonstrationen"
+        powerless: "Themen, zu denen niemand demonstriert"
       contextmenu:
-        demo_only: "Nur Demothemen"
-        all_themes: "Alle Themen"
+        current_only: "Aktuelle"
+        demo_only: "Demothemen"
+        all_themes: "Alle"
+        powerless_only: "Initiativlos"
       
     presse:
       title: "Presse"
