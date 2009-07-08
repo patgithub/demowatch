@@ -5,13 +5,15 @@
 %br
 .tabletitle
   = t(".table.title")
-  .anchor_index
-    - @organisations.each_with_index do |organisation, index|
-      - if index == 0 || organisation.title.upcase[0] != @organisations[index-1].title.upcase[0]
-        = " | " if index > 0 
-        = link_to organisation.title.upcase.split(//).first.tr('äöü','ÄÖÜ'), organisations_path + "#" + organisation.title.upcase.split(//).first.tr('äöü','ÄÖÜ')
         
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
+  %tr
+    %td{:colspan=>"2"}
+      .anchor_index
+        - @organisations.each_with_index do |organisation, index|
+          - if index == 0 || organisation.title.upcase[0] != @organisations[index-1].title.upcase[0]
+            = " | " if index > 0 
+            = link_to organisation.title.upcase.split(//).first.tr('äöü','ÄÖÜ'), organisations_path + "#" + organisation.title.upcase.split(//).first.tr('äöü','ÄÖÜ')
   %tr
     %th= t(".table.head.name")
     %th= t(".table.head.themes")
@@ -24,3 +26,4 @@
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to h( organisation.title), organisation 
       %td= organisation.tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ') 
+local

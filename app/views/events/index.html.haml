@@ -16,13 +16,15 @@
 %br
 .tabletitle
   = t(".table.title")
-  .anchor_index
-    - @events.each_with_index do |event, index|
-      - if index == 0 || event.startdate.to_date.month != @events[index-1].startdate.to_date.month
-        = " | " if index > 0 
-        = link_to l(event.startdate.to_date,:format=>"%B" + ((event.startdate.to_date.year!=Time.now.year)?" %Y":"") ), events_path + "#" + l(event.startdate.to_date,:format=>"%m-%Y")
-  
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
+  %tr
+    %td{:colspan=>@with_distance?4:3}
+      .anchor_index
+        - @events.each_with_index do |event, index|
+          - if index == 0 || event.startdate.to_date.month != @events[index-1].startdate.to_date.month
+            = " | " if index > 0 
+            = link_to l(event.startdate.to_date,:format=>"%B" + ((event.startdate.to_date.year!=Time.now.year)?" %Y":"") ), events_path + "#" + l(event.startdate.to_date,:format=>"%m-%Y")
+  
   %tr
     %th= t(".table.head.startdate")
     %th= t(".table.head.title")

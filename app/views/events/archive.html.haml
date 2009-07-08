@@ -13,13 +13,15 @@
 
 .tabletitle
   = t(".table.title")
-  .anchor_index
-    - @events.reverse.each_with_index do |event, index|
-      - if index == 0 || event.startdate.to_date.year != @events[-index].startdate.to_date.year
-        = " | " if index > 0 
-        = link_to event.startdate.to_date.year, archive_events_path + "#" + String(event.startdate.to_date.year)
 
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
+  %tr
+    %td{:colspan=>@with_distance?4:3}
+      .anchor_index
+        - @events.reverse.each_with_index do |event, index|
+          - if index == 0 || event.startdate.to_date.year != @events[-index].startdate.to_date.year
+            = " | " if index > 0 
+            = link_to event.startdate.to_date.year, archive_events_path + "#" + String(event.startdate.to_date.year)
   %tr
     %th= t(".table.head.startdate")
     %th= t(".table.head.title")
