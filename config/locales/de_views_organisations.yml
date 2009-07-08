@@ -34,7 +34,7 @@ de:
       contextmenu:
         new: "Neuer Initiator"
       table:
-        title: "Folgende Initiatoren sind bei <i>Demowatch.de</i> eingetragen"
+        title: "Folgende Initiatoren sind bei <i>Demowatch.de</i> eingetragen:"
         head:
           name: "Name"
           themes: "Themen"

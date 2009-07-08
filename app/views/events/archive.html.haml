@@ -10,7 +10,15 @@
     = link_to t(".contextmenu.new"), new_event_path
     
 %br
-.tabletitle= t(".table.title")
+
+.tabletitle
+  = t(".table.title")
+  .anchor_index
+    - @events.reverse.each_with_index do |event, index|
+      - if index == 0 || event.startdate.to_date.year != @events[-index].startdate.to_date.year
+        = " | " if index > 0 
+        = link_to event.startdate.to_date.year, archive_events_path + "#" + String(event.startdate.to_date.year)
+
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
     %th= t(".table.head.startdate")
@@ -22,6 +30,7 @@
     - if index == 0 || event.startdate.to_date.year != @events[index-1].startdate.to_date.year
       %tr
         %td{:class=> index==0 ? "separator_first" : "separator", :colspan=>@with_distance?4:3}
+          %a{:name => event.startdate.to_date.year}
           = event.startdate.to_date.year
     %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
       - if event.startdate.strftime('%d.%m.%Y') == Time.now.strftime('%d.%m.%Y')
