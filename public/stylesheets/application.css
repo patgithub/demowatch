@@ -199,13 +199,24 @@ table tr td {
 	vertical-align: top;
 }
 
-table tr td.year {
+table tr td.separator {
   text-align: center;
   font-size: 1.5em;
 	vertical-align: top;
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table tr td.separator_first {
+  text-align: center;
+  font-size: 1.5em;
+	vertical-align: top;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: black;
