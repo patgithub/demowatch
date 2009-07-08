@@ -9,7 +9,7 @@
     - @organisations.each_with_index do |organisation, index|
       - if index == 0 || organisation.title.upcase[0] != @organisations[index-1].title.upcase[0]
         = " | " if index > 0 
-        = link_to String(organisation.title.upcase[0,1]), organisations_path + "#" + String(organisation.title.upcase[0,1])
+        = link_to organisation.title.upcase.split(//).first.tr('äöü','ÄÖÜ'), organisations_path + "#" + organisation.title.upcase.split(//).first.tr('äöü','ÄÖÜ')
         
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
@@ -19,8 +19,8 @@
     - if index == 0 || organisation.title.upcase[0] != @organisations[index-1].title.upcase[0]
       %tr
         %td{:class=> index==0 ? "separator_first" : "separator", :colspan=>2}
-          %a{:name => String(organisation.title.upcase[0,1])}
-          = String(organisation.title.upcase[0,1])
+          %a{:name => organisation.title.upcase.split(//).first.tr('äöü','ÄÖÜ')}
+          = organisation.title.upcase.split(//).first.tr('äöü','ÄÖÜ')
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to h( organisation.title), organisation 
       %td= organisation.tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ') 
