@@ -26,4 +26,3 @@
     %tr{:class => "#{'even' if index.even?}"}
       %td= link_to h( organisation.title), organisation 
       %td= organisation.tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ') 
-local
