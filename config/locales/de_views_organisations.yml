@@ -47,7 +47,7 @@ de:
         back: "Zurück zur Initiatorenliste"
       button:
         submit: "Erzeugen"
-      warning: "<div class='red'>Hier bitte erst die Daten des Initiators und <u>nicht</u> die der Demo eingeben!</div>"
+      warning: "<div class='red'>Hier bitte die Daten des Initiators und <u>nicht</u> die der Demo eingeben!</div>"
 
 
 
