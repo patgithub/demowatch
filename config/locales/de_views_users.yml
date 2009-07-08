@@ -11,6 +11,11 @@ de:
           name: "Name"
           email: "E-Mail <i>(für Themenabos)</i>"
           zip: "PLZ <i>(optional, eine oder mehrere Stellen)</i>"
+      password:
+        title: "Passwort ändern"
+        field:
+          password: "Neues Passwort"
+          password_confirmation: "Neuen Passwort bestätigen"
       subscriptions:
         title: "Abonnements"
         field:

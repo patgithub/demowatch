@@ -25,14 +25,14 @@
     = f.label :zip, t(".data.field.zip")
     = f.text_field :zip, :size=>5, :value=>@str_zip  
 
-  %h2= t(".subscriptions.title")
+  %h2= t(".password.title")
   
   %p
-    = f.label :password, t(".data.field.password")
+    = f.label :password, t(".password.field.password")
     = f.password_field :password 
 
   %p
-    = f.label :password_confirmation, t(".data.field.password_confirmation")
+    = f.label :password_confirmation, t(".password.field.password_confirmation")
     = f.password_field :password_confirmation 
   
   %h2= t(".subscriptions.title")
