@@ -23,6 +23,10 @@
     - if( @with_distance)
       %th= t(".table.head.distance")
   - @events.each_with_index do |event, index|
+    - if index > 0 && event.startdate.to_date.year != @events[index-1].startdate.to_date.year
+      %tr
+        %td.year{:colspan=>@with_distance?4:3}
+          = event.startdate.to_date.year
     %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
       - if event.startdate.strftime('%d.%m.%Y') == Time.now.strftime('%d.%m.%Y')
         %td
