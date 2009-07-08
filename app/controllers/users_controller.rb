@@ -56,12 +56,12 @@ class UsersController < ApplicationController
     @user.zip = Zip.find_by_zip( params[:user][:zip])    
     params[:user].delete('zip')
     @user.attributes = params[:user]
-    if( @user.save!)
+    if @user.valid? && @user.save!
 #    if @user.update_attributes( params[:user])
       flash[:notice] = 'Einstellungen wurden erfolgreich ge&auml;ndert.'
       redirect_to(@user) 
     else
-      render :action => "edit"
+      render :action => 'edit'
     end
   end
   
