@@ -1,5 +1,13 @@
 de:
   events:
+    flash:
+      create:
+        success: "Demonstration wurde erfolgreich eingetragen."
+      update:
+        success: "Demonstration wurde erfolgreich ge&auml;ndert."
+      add_comment:
+        success: "Kommentar wurde gespeichert"
+      delete_comment_success: "Kommentar wurde entfernt"
     fields:
       title: "Benötigte Angaben"
       name:

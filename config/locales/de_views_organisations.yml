@@ -1,5 +1,10 @@
 de:
   organisations:
+    flash:
+      create:
+        success: "Initiator wurde erfolgreich eingetragen."
+      update:
+        success: "Initiator wurde erfolgreich ge&auml;ndert."
     fields:
       title: "Benötigte Angaben"
       name:

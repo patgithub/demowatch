@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     if @user.errors.empty?
       self.current_user = @user
       redirect_back_or_default('/')
-      flash[:notice] = "Vielen Dank f&uuml;r die Anmeldung!"
+      flash[:notice] = t("users.flash.create.success")
     else
       render :action => 'new'
     end
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
     @user.attributes = params[:user]
     if @user.valid? && @user.save!
 #    if @user.update_attributes( params[:user])
-      flash[:notice] = 'Einstellungen wurden erfolgreich ge&auml;ndert.'
+      flash[:notice] = t("users.flash.update.success")
       redirect_to(@user) 
     else
       render :action => 'edit'
@@ -69,7 +69,7 @@ class UsersController < ApplicationController
     self.current_user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
     if logged_in? && !current_user.active?
       current_user.activate!
-      flash[:notice] = "Dein Konto wurde aktiviert!"
+      flash[:notice] = t("users.flash.activate.success")
     end
     redirect_back_or_default('/')
   end

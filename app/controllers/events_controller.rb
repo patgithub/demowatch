@@ -66,12 +66,6 @@ class EventsController < ApplicationController
     @event = Event.new(:startdate => Time.now)
     @organisations = Organisation.find(:all, :order => 'title')
     
-    if @organisations.empty?
-      flash[:notice] = 'Zuerst muß ein Initiator erstellt werden.'
-      redirect_to new_organisation_path 
-      return
-    end  
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @event }
@@ -90,7 +84,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     respond_to do |format|
       if @event.save
-        flash[:notice] = 'Demonstration wurde erfolgreich eingetragen.'
+        flash[:notice] = t("events.flash.create.success")
         format.html { redirect_to(@event) }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
       else
@@ -106,7 +100,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update_attributes(params[:event])
-        flash[:notice] = 'Demonstration wurde erfolgreich ge&auml;ndert.'
+        flash[:notice] = t("events.flash.update.success")
         format.html { redirect_to(@event) }
         format.xml  { head :ok }
       else
@@ -135,7 +129,7 @@ class EventsController < ApplicationController
       c = @event.comments.create params[:comment]
 
       CommentMailer::deliver_mail(current_user, c)
-      flash[:notice] = 'Kommentar wurde gespeichert'
+      flash[:notice] = t("events.flash.add_comment.success")
 
       format.html { redirect_to(@event) }
       format.xml  { head :ok }
@@ -147,7 +141,7 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
       Comment.delete params[:comment_id]
 
-      flash[:notice] = 'Kommentar wurde entfernt'
+      flash[:notice] = t("events.flash.delete_comment.success")
 
       format.html { redirect_to(@event) }
       format.xml  { head :ok }

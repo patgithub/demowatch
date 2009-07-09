@@ -30,12 +30,12 @@ class ApplicationController < ActionController::Base
   
 protected
   def permission_denied(exception)
-    flash[:notice] = 'Du hast keine Berechtigung.'
+    flash[:notice] = t("layouts.application.flash.no_permission")
     redirect_to :front
   end
   
   def not_found(exception)
-    flash[:notice] = 'Kein Eintrag vorhanden.'
+    flash[:notice] = t("layouts.application.flash.not_found")
     redirect_to :front
   end
 

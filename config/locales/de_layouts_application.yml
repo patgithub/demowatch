@@ -19,3 +19,6 @@ de:
       meta:
         description: "Freies, zentrales Register für politisch und sozial engagierte demokratische Aktionen"
         keywords: "demonstration,demo,politisch,sozial,demokratisch,aktion,aufruf,demonstrieren,öffentlich,mahnwache,kundgebung"
+      flash:
+        no_permission: "Du hast keine Berechtigung."
+        not_found: "Kein Eintrag vorhanden."

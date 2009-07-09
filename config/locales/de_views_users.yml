@@ -1,5 +1,12 @@
 de:
   users:
+    flash:
+      create:
+        success: "Vielen Dank f&uuml;r die Anmeldung!"
+      update:
+        success: "Einstellungen wurden erfolgreich ge&auml;ndert."
+      activate:
+        success: "Dein Konto wurde aktiviert!"
     edit:
       title: "Meine Daten"
       contextmenu:

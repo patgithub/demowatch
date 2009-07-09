@@ -52,7 +52,7 @@ class OrganisationsController < ApplicationController
     @organisation.organizers.build(:user => current_user, :role => 1)
     respond_to do |format|
       if @organisation.save
-        flash[:notice] = 'Initiator wurde erfolgreich eingetragen.'
+        flash[:notice] = t("organisations.flash.create.success")
         format.html { redirect_to(@organisation) }
         format.xml  { render :xml => @organisation, :status => :created, :location => @organisation }
         InitiatorMailer::deliver_mail(current_user, @organisation)
@@ -68,7 +68,7 @@ class OrganisationsController < ApplicationController
   def update
     respond_to do |format|
       if @organisation.update_attributes(params[:organisation])
-        flash[:notice] = 'Initiator wurde erfolgreich ge&auml;ndert.'
+        flash[:notice] = t("organisations.flash.update.success")
         format.html { redirect_to(@organisation) }
         format.xml  { head :ok }
       else
