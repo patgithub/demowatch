@@ -69,8 +69,9 @@
   %hr
   .comment_created_at
     = l(comment.created_at,:format => :long)
-    - allow :user => :is_admin? do
-      .admin= link_to "(" + comment.user.login + ")", comment.user
+    -if logged_in?
+      - allow :user => :is_admin? do
+        .admin= link_to "(" + comment.user.login + ")", comment.user
   %h4 
     = String( index+1) + ")"
     = link_to h(comment.title), event_path(@event) + "#" + String(comment.id)
