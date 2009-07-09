@@ -2,15 +2,16 @@
 
 - if logged_in? 
   .contextmenu
-    - allow :user => [:owns?, :is_admin?] do
-      = link_to t(".contextmenu.edit"), edit_organisation_path(@organisation) 
-      |
-      = link_to t(".contextmenu.delete"), @organisation, :confirm => t(".confirm.delete"), :method => :delete
-      |
     - if @organisation.bookmarked_by_user? current_user
       = link_to t(".contextmenu.unsubscribe"), url_for(:controller => 'users',:action => 'unbookmark', :id => current_user, :organisation => @organisation)
     - else
       = link_to t(".contextmenu.subscribe"), url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :organisation => @organisation)
+    - allow :user => [:owns?, :is_admin?] do
+      .div{ :class => organisation_owner_class}
+        |
+        = link_to t(".contextmenu.edit"), edit_organisation_path(@organisation) 
+        |
+        = link_to t(".contextmenu.delete"), @organisation, :confirm => t(".confirm.delete"), :method => :delete
 
 %h2= t(".themes.title")
 %p= @organisation.tags.map{|tag| link_to h(tag.name), {:controller=>:tag, :action=>tag.name}}.join(', ')
@@ -19,5 +20,3 @@
 - if @organisation.link
   %h3= t(".description.info.title")
   %p= sanitize(  link_to( h( @organisation.link), @organisation.link, { :target=>'_new'}))
-
-      

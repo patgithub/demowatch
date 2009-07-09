@@ -403,3 +403,22 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
   margin-bottom: 5px;
   text-align: center;
 }
+
+hr  {
+  border-top: 1px solid #c8dbf1;
+  border-bottom: 0px;
+  text-align: center;
+}
+
+.admin a {
+ 	font-style: italic;
+	color: red;	
+}
+
+.owner , .admin{
+	display: inline;	
+}
+
+.owner a {
+	color: #276cba;	
+}

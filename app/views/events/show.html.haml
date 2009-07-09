@@ -6,16 +6,17 @@
 
 - if logged_in?
   .contextmenu
-    - allow :user => [:owns?, :is_admin?] do
-      = link_to t(".contextmenu.edit"), edit_event_path(@event) 
-      |
-      = link_to t(".contextmenu.delete"), @event, :confirm => t(".confirm.delete"), :method => :delete
-      |
     - if @event.bookmarked_by_user? current_user
       = link_to t(".contextmenu.unsubscribe"), url_for(:controller => 'users',:action => 'unbookmark', :id => current_user, :event => @event)
     - else
       = link_to t(".contextmenu.subscribe"), url_for(:controller => 'users',:action => 'bookmark', :id => current_user, :event => @event)
-
+    - allow :user => [:owns?, :is_admin?] do
+      %div{ :class => event_owner_class}
+        | 
+        = link_to t(".contextmenu.edit"), edit_event_path(@event)
+        |
+        = link_to t(".contextmenu.delete"), @event, :confirm => t(".confirm.delete"), :method => :delete
+        
 %h2= t(".themes.title")
 %p= @event.tags.map{|tag| link_to h( tag.name), :controller=>:tag, :action=>tag.name}.join(', ')
 
@@ -54,7 +55,3 @@
 %p
   = t(".description.initiator.text")
   = link_to h( @event.organisation.title), @event.organisation 
-
-- if @event.link
-  %h3= t(".description.info.title")
-  %p= sanitize link_to( h(@event.link), @event.link, :target=>'_new')
