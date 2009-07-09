@@ -86,13 +86,11 @@ de:
         job3: "Übersetzer (englisch, spanisch, französisch, türkisch)"
         job4: "Leute mit guten Ideen für das Projekt"
         call: 
-          text: "Falls Du Interesse hast, einfach bei uns"
-          name: "melden."
+          text: "Falls Du Interesse hast, einfach bei uns melden."
           link: "mailto:info@demowatch.de"
       opensource:
         title: "Demowatch.de ist Open Source"
-        text1: "Unser git Repository findet man unter:"
-        text2: "Jeder ist eingeladen mitzumachen."
+        text: "Unser git Repository findet man unter: Jeder ist eingeladen mitzumachen."
       responsibility:
         title: "Verantwortlich laut Telemediengesetz"
       techniques:
