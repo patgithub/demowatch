@@ -422,3 +422,13 @@ hr  {
 .owner a {
 	color: #276cba;	
 }
+
+.comment_created_at {
+  float: right;
+  color: #888888;
+  font-size: .7em;
+}
+
+.comment_context {
+  text-align: right;
+}

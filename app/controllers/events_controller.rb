@@ -129,6 +129,31 @@ class EventsController < ApplicationController
     end
   end
   
+  def add_comment
+    respond_to do |format|
+      @event = Event.find(params[:comment][:commentable_id])
+      c = @event.comments.create params[:comment]
+
+      CommentMailer::deliver_mail(current_user, c)
+      flash[:notice] = 'Kommentar wurde gespeichert'
+
+      format.html { redirect_to(@event) }
+      format.xml  { head :ok }
+    end
+  end
+
+  def delete_comment
+    respond_to do |format|
+      @event = Event.find(params[:id])
+      Comment.delete params[:comment_id]
+
+      flash[:notice] = 'Kommentar wurde entfernt'
+
+      format.html { redirect_to(@event) }
+      format.xml  { head :ok }
+    end
+  end
+  
 protected
   def find_event
     @event = Event.find(params[:id])

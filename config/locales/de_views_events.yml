@@ -110,3 +110,17 @@ de:
           text: "Diese Demo wurde eingetragen von"
         info:
           title: "Weitere Informationen"
+      comments:
+        add:
+          title: "Neuen Kommentar eingeben"
+        list:
+          title: "Kommentare"
+        field:
+          title: "Titel"
+          comment: "Kommentar"
+        context:
+          delete: "Löschen"
+        confirm:
+          delete: "Wollen Sie diesen Kommentar wirklich löschen?"
+      button:
+        add_comment: "Kommentar senden"

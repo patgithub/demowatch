@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :organizers, :dependent => :destroy
   has_many :organisations, :through => :organizers
   has_many :bookmarks, :dependent => :destroy
+  has_many :comments
   has_many :events
   
   belongs_to :zip,
@@ -127,10 +128,10 @@ class User < ActiveRecord::Base
         item.user == self
       when User
         item == self 
+      when Comment
+        item.user == self 
     end
   end
-
-
     
   def self.find_by_event( event)
     tag_ids = []

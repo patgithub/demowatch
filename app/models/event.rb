@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
                    :lat_column_name => :latitude,
                    :lng_column_name => :longitude
   acts_as_paranoid
-
+  acts_as_commentable
 
 #  before_validation_on_create :geocode_address
   

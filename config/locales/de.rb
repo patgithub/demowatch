@@ -28,7 +28,7 @@
         :day_abbr => "%a",
         :month_abbr => "%b",
         :short => "%e.%m. %H:%M",
-        :long => "%A, %e. %B %Y, %H:%M",      
+        :long => "%A, %d. %B %Y, %H:%M",      
         :long_verbal => "%A, den %d. %B %Y um %H:%M Uhr",
         :nice => lambda do |time|
           now = Time.now
