@@ -1,5 +1,7 @@
 - content_for :header do
-  = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAbmKt_bX8rXoUBM2tWSorIRTnBMjsH0Y2aRb-_04glZphNt2GURSXRZg8NE723uvkLLIsOlfTgHhmzA&dummy=xxxx', 'geocode', 'tiny_mce/tiny_mce' 
+  - if cookies[:maps]
+    = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAbmKt_bX8rXoUBM2tWSorIRTnBMjsH0Y2aRb-_04glZphNt2GURSXRZg8NE723uvkLLIsOlfTgHhmzA&dummy=xxxx', 'geocode'
+  = javascript_include_tag 'tiny_mce/tiny_mce' 
   
 .ical= link_to image_tag('ical.gif'), :format => 'ics'
 %h1= h @event.title
@@ -16,7 +18,7 @@
         = link_to t(".contextmenu.edit"), edit_event_path(@event)
         |
         = link_to t(".contextmenu.delete"), @event, :confirm => t(".confirm.delete"), :method => :delete
-        
+         
 %h2= t(".themes.title")
 %p= @event.tags.map{|tag| link_to h( tag.name), :controller=>:tag, :action=>tag.name}.join(', ')
 
@@ -36,17 +38,22 @@
     = t(".venue.startdate.future", :timespan => time_ago_in_words(@event.startdate), :startdate => l(@event.startdate,:format => "long_verbal"))
   = t(".venue.address", :address => @event.address)
   = t(".venue.location", :location => h(@event.location)) if @event.location?
-  
-#map_canvas.indent{:style=>"width: 550px; height: 300px; border:solid 1px;"}
-  
-:javascript
-  if (GBrowserIsCompatible()) {
-  var map = new GMap2(document.getElementById("map_canvas"));
-  map.addControl(new GLargeMapControl());
-  map.setCenter(new GLatLng(#{@event.latitude.to_f}, #{@event.longitude.to_f}), 15);
-  map.openInfoWindowHtml(map.getCenter(),"<strong>#{html_escape @event.title},</strong>"+
-  "<br/><br/>#{@event.startdate && l(@event.startdate,:format => "long_verbal")},"+
-  "<br/>#{html_escape @event.address}<br/>#{'(' + html_escape( @event.location) + ')' if @event.location?}");}
+
+-if cookies[:maps]  
+  #map_canvas.indent{:style=>"width: 550px; height: 300px; border:solid 1px;"}
+  .center= link_to "Karte ausblenden", { :controller => "events", :action => "maps_off", :id => @event.id }
+
+  :javascript
+    if (GBrowserIsCompatible()) {
+    var map = new GMap2(document.getElementById("map_canvas"));
+    map.addControl(new GLargeMapControl());
+    map.setCenter(new GLatLng(#{@event.latitude.to_f}, #{@event.longitude.to_f}), 15);
+    map.openInfoWindowHtml(map.getCenter(),"<strong>#{html_escape @event.title},</strong>"+
+    "<br/><br/>#{@event.startdate && l(@event.startdate,:format => "long_verbal")},"+
+    "<br/>#{html_escape @event.address}<br/>#{'(' + html_escape( @event.location) + ')' if @event.location?}");}
+-else
+  %h2 Karte
+  .center= link_to "Karte anzeigen", { :controller => "events", :action => "maps_on", :id => @event.id }, :confirm => t(".confirm.maps")
 
 %h2= t(".description.title")
 %p= sanitize @event.description

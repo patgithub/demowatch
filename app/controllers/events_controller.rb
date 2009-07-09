@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :login_required, :except => [:index, :show, :archive]
+  before_filter :login_required, :except => [:index, :show, :archive, :maps_on, :maps_off]
   before_filter :find_event, :only => [:show, :edit, :update, :destroy]
   allow :edit, :update, :destroy, :user => [:owns?, :is_admin?]
   
@@ -151,6 +151,22 @@ class EventsController < ApplicationController
 
       format.html { redirect_to(@event) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def maps_on
+    respond_to do |format|
+      @event = Event.find(params[:id])
+      cookies[:maps] = true
+      format.html { redirect_to(@event) }
+    end
+  end
+  
+  def maps_off
+    respond_to do |format|
+      @event = Event.find(params[:id])
+      cookies.delete :maps
+      format.html { redirect_to(@event) }
     end
   end
   

@@ -90,6 +90,7 @@ de:
         subscribe: "Abonnieren"
       confirm:
         delete: "Demonstration wirklich löschen?"
+        maps: "Bitte beachten Sie, dass Google Maps die IP Ihres Rechners speichern kann, wenn die Karten angezeigt werden."
       themes:
         title: "Themen"
       venue:
