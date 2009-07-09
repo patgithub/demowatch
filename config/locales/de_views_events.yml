@@ -113,6 +113,7 @@ de:
       comments:
         add:
           title: "Neuen Kommentar eingeben"
+          hint: "Hier können Sie einen Kommentar oder weitere Hinweise zu dieser Veranstaltung eingeben. Dabei wird Ihr Name den anderen Benutzern <u>nicht</u> angezeigt!"
         list:
           title: "Kommentare"
         field:

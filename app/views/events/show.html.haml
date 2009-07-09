@@ -86,6 +86,7 @@
   - if @event.link
     %hr
     %h2= t(".comments.add.title")
+    %p= t(".comments.add.hint")
     - form_for(Comment.new, :url => { :action => "add_comment" }) do |f|
       = f.hidden_field :commentable_id, :value => @event.id
       = f.hidden_field :commentable_type, :value => 1
