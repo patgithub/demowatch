@@ -72,12 +72,19 @@ de:
         name1: "Simon Kröger"
         link1: "mailto:s.kroeger@demowatch.de"
         name2: "Marc Christenfeldt"
-        link2: "mailto:m.christenfeldt@demowatch.de"
+        link3: "mailto:m.christenfeldt@demowatch.de"
+      mediawork:
+        title: "Medienarbeit"
+        name1: "Wolfgang Eitel"
+        link1: "mailto:w.eitel@demowatch.de"
+        name2: "Sven Heldt"
+        link2: "mailto:s.heldt@demowatch.de"
       jobs:
         title: "Wir suchen noch..."
         job1: "Ruby on Rails Entwickler"
         job2: "Medienarbeiter"
-        job3: "Leute mit guten Ideen für das Projekt"
+        job3: "Übersetzer (englisch, spanisch, französisch, türkisch)"
+        job4: "Leute mit guten Ideen für das Projekt"
         call: 
           text: "Falls Du Interesse hast, einfach bei uns"
           name: "melden."
