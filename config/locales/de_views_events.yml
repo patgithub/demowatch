@@ -60,6 +60,8 @@ de:
         archive: "Vergangene Demos"
         new: "Demo eintragen"
         map: "Karte"
+      confirm:
+        maps: "Hinweis: Dieser Link führt Sie auf die Seiten von Google Maps."
       table:
         title: "Folgende Aktionen sind uns für die kommende Zeit bekannt:"
         head:
