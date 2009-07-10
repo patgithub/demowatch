@@ -136,3 +136,6 @@ de:
           delete: "Wollen Sie diesen Kommentar wirklich löschen?"
       button:
         add_comment: "Kommentar senden"
+      card:
+        show: "Karte anzeigen"
+        hide: "Karte ausblenden"

@@ -126,13 +126,18 @@ class EventsController < ApplicationController
   def add_comment
     respond_to do |format|
       @event = Event.find(params[:comment][:commentable_id])
-      c = @event.comments.create params[:comment]
-
-      CommentMailer::deliver_mail(current_user, c)
-      flash[:notice] = t("events.flash.add_comment.success")
-
-      format.html { redirect_to(@event) }
-      format.xml  { head :ok }
+      c = Comment.create(params[:comment])
+      if c.update_attributes(params[:comment])
+        @event.comments << c
+        CommentMailer::deliver_mail(current_user, c)
+        flash[:notice] = t("events.flash.add_comment.success")
+        format.html { redirect_to(@event) }
+        format.xml  { head :ok }
+      else
+        format.html { redirect_to(@event) }
+        format.xml  { render :xml => c.errors, :status => :unprocessable_entity }
+      end
+            
     end
   end
 

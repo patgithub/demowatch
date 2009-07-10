@@ -41,7 +41,7 @@
 
 -if cookies[:maps]  
   #map_canvas.indent{:style=>"width: 550px; height: 300px; border:solid 1px;"}
-  .center= link_to "Karte ausblenden", { :controller => "events", :action => "maps_off", :id => @event.id }
+  .center= link_to t(".card.hide"), { :controller => "events", :action => "maps_off", :id => @event.id }
 
   :javascript
     if (GBrowserIsCompatible()) {
@@ -52,8 +52,7 @@
     "<br/><br/>#{@event.startdate && l(@event.startdate,:format => "long_verbal")},"+
     "<br/>#{html_escape @event.address}<br/>#{'(' + html_escape( @event.location) + ')' if @event.location?}");}
 -else
-  %h2 Karte
-  .center= link_to "Karte anzeigen", { :controller => "events", :action => "maps_on", :id => @event.id }, :confirm => t(".confirm.maps")
+  .center= link_to t(".card.show"), { :controller => "events", :action => "maps_on", :id => @event.id }, :confirm => t(".confirm.maps")
 
 %h2= t(".description.title")
 %p= sanitize @event.description
@@ -62,8 +61,6 @@
 %p
   = t(".description.initiator.text")
   = link_to h( @event.organisation.title), @event.organisation 
-
--# @event.comments.create(:title => "fourth comment.", :comment => "This is the fourth comment.")
 
 %h3= t(".description.info.title")
 %p= sanitize link_to( h(@event.link), @event.link, :target=>'_new')
