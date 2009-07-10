@@ -1,0 +1,107 @@
+en:
+  datetime:
+    distance_in_words:
+      half_a_minute: 'half a minute'
+      less_than_x_seconds:
+        zero: 'less than a second'
+        one: 'less than a second'
+        other: 'less than {{count}} seconds'
+      x_seconds:
+        one: 'one second'
+        other: '{{count}} seconds'
+      less_than_x_minutes:
+        zero: 'less than a minute'
+        one: 'less than a minute'
+        other: 'less than {{count}} minutes'
+      x_minutes:
+        one: 'one minute'
+        other: '{{count}} minutes'
+      about_x_hours:
+        one: 'about an hour'
+        other: 'about {{count}} hours'
+      x_days:
+        one: 'one day'
+        other: '{{count}} days'
+      about_x_months:
+        one: 'about a month'
+        other: 'about {{count}} month'
+      x_months:
+        one: 'one month'
+        other: '{{count}} moth'
+      about_x_years:
+        one: 'about one year'
+        other: 'about {{count}} years'
+      over_x_years:
+        one: 'more than one year'
+        other: 'more than {{count}} year'
+      
+  number:
+    format:
+      precision: 2
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: 'â‚¬'
+        format: '%n%u'
+        separator:
+        delimiter:
+        precision:
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+ 
+  support:
+    array:
+      sentence_connector: "and"
+      skip_last_comma: true
+        
+  activerecord:
+    models:
+      organisation: "Promoter"
+
+    attributes:
+      organisation:
+        title: Name
+        link: "Website (or e-mail address)"
+      event:
+        title: Title
+        link: "Website (or e-mail address)"
+        tag_list: Topic
+        address: Address
+             
+    errors:
+      template:
+        header:
+          one: "An input error occured. Please check your fields."
+          other: "{{count}} input errors occured. Please check your fields."
+        body: "Errors:"
+ 
+      messages:
+        inclusion: "is not a valid value"
+        exclusion: "is not available"
+        invalid: "is not valid"
+        confirmation: "does not agree with the confirmation"
+        accepted: "must be accepted"
+        empty: "should not be emoty"
+        blank: "should not be empty"
+        too_long: "is too long (not more than {{count}} characters)"
+        too_short: "is too short (not less than {{count}} characters)"
+        wrong_length: "has the wrong length (must be exactly {{count}} characters long)"
+        taken: "is already assigned"
+        not_a_number: "is not a number"
+        greater_than: "must be greater than {{count}}"
+        greater_than_or_equal_to: "must be equal or greater than {{count}}"
+        equal_to: "must be {{count}}"
+        less_than: "must be smaller than {{count}}"
+        less_than_or_equal_to: "must be smaller or equal to {{count}}"
+        odd: "must be an uneven number"
+        even: "must be an even number"
+        google_not_found: "could not be found on Google maps"

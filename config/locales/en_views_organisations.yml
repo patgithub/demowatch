@@ -1,0 +1,72 @@
+en:
+  organisations:
+    flash:
+      create:
+         success: "Promoter has been successfully registered."
+      update:
+         success: "Promoter has been successfully updated."
+    fields:
+      title: "Required Information"
+      name:
+        field:
+          title: "Name"
+          themes: "Topics <i>(separated by commas)</i>"
+        theme_hint: "For the topics please select <b>short and unambiguous terms</b>. The choice of subjects has a direct implact on the popularity on <i> Demowatch.eu </i>. It is therefore <b>an advantage to use existing terms</b>!"
+      information:
+        title: "Information"
+        field:
+          description: "Description"
+          link: "Website (or e-mail address)"
+          initiator: "Promoter"
+      hint:
+        title: "Notice"
+        text: "We want to offer our visitors always as accurate and reliable information of demonstrations taking place. <u>All unconstitutional or illegal content will be deleted</u> by us immediately, and its author, if applicable, will be locked <i>Demowatch.de</i>!"
+
+
+
+    edit:
+      title: "Edit Promoter"
+      contextmenu:
+        show: "Show"
+        back: "Back to list of promoters"
+      button:
+        submit: "Save"
+
+
+
+    index:
+      title: "Promoters"
+      contextmenu:
+        new: "New Promoter"
+      table:
+        title: "The following promoters are listet on <i>Demowatch.eu</i>:"
+        head:
+          name: "Name"
+          themes: "Topics"
+
+
+
+    new:
+      title: "New Promoter"
+      contextmenu:
+        back: "Back to list of promoters"
+      button:
+        submit: "Create"
+      warning: "<div class='red'>Please enter only the data from the promoter and <u>not</u> the actual demonstration!</div>"
+
+
+
+    show:
+      contextmenu:
+        edit: "Edit"
+        delete: "Delete"
+        unsubscribe: "Unsubscribe"
+        subscribe: "Subscribe"
+      confirm:
+        delete: "Really delete Promoter?"
+      themes:
+        title: "Topics"
+      description:
+        title: "Description"
+        info:
+          title: "Further Information"

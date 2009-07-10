@@ -1,0 +1,173 @@
+en:
+  front:
+    about:
+      title: "What is Demowatch?"
+      section1: 
+        title: "Never miss a Demonstration using <i>Demowatch.eu</i>!"
+        text: "Did this ever happened to you: You would like to apply for certain sociual or political issues but never made it to participate at a demonstration?"
+      section2: 
+        title: "Why is that?"
+        text: "We have recognized that a major problem already is to find out a demonstration before they take place. On the Internet there are many websites of many organizations, in turn, many actions. But anyone who already knows all? And who ever has the time to focus on all these websites to get informed about new actions?"
+      section3: 
+        title: "In any case, we don't!"
+        text: "That's why we built <i>Demowatch.eu</i>. <i>Demowatch.eu</i> is a new website that is committed making political demonstrations centrally, quickly and easily accessible for everyone. The principle of <i>Demowatch.eu</i> is simple: You can start on our home page with an overview of the topics we currently provide. A so-called 'tag cloud' highlights popular topics."
+      section4:
+        title: "But we want even more"
+        text1: "Since the interests certainly are as individual as people themselves, you can prepare your personal repertoire of topics by yourself. You will be informend by e-mail automatically on new actions to these issues."
+        text2: "If you would like to participate on a specific demonstration, you can simply subscribe at <i>Demowatch.eu</i>. This will take you right to the appointment and/or remind you about any news to this demonstration."
+      section5: 
+        title: "Reliability" 
+        text: "To submit a demonstration at <i>Demowatch.eu</i>, you must register. Because we wish to offer reliable information, we take care to provide useful content, and if possible, contact the promoter, where data incorrectly appears to be. Constitutionally disturbing content and clearly calls for violent protest actions will be removed from our database."
+      section6: 
+        title: "Anonymity"
+        text: "On the other hand we do not publish our visitors of any personal data. The user and visitor stays on <i>Demowatch.eu</i> completely anonymous. At the time he only leaves his e-mail address during registration so that the reminder service can work and the first digits of the zip code, so events in its vicinity can be found."
+      section7: 
+        title: "Our Maxim:"
+        text: "Starting today the excuse 'If I had heard, I would have been!' is no longer valid! Stay tuned and remain democratically!"
+
+
+
+    disclaimer:
+      title: "Disclaimer"
+      section1:
+        title: "Liability for Content"
+        text: "Obwohl wir uns um Aktualität, Vollständigkeit und Richtigkeit der Inhalte unserer Seiten bemühen, können wir hierfür keine Garantie übernehmen.  Nach § 7 Absatz 1 TDG sind wir als Diensteanbieter für eigene Inhalte auf unseren Seiten nach den allgemeinen Gesetzen verantwortlich. Eine Verpflichtung zur Überwachung übermittelter oder gespeicherter fremder Informationen besteht jedoch nicht (§§ 8-10 TDG). Sobald uns Rechtsverstöße bekannt werden, werden wir die entsprechenden Inhalte umgehend entfernen. Eine dahingehende Haftung wird jedoch erst ab dem Zeitpunkt der Kenntnis konkreter Rechtsverletzungen übernommen."
+      section2:
+        title: "Liability for Links"
+        text: "Unsere Seiten enthalten Links auf externe Webseiten Dritter. Auf die Inhalte dieser verlinkten Webseiten haben wir keinen Einfluss. Für die Richtigkeit der Inhalte ist immer der jeweilige Anbieter oder Betreiber verantwortlich, weshalb wir diesbezüch keinerlei Gewähr übernehmen. Die fremden Webseiten haben wir zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft Zum Zeitpunkt der Verlinkung waren keinerlei Rechtsverletzungen erkennbar. Eine ständige Überprüfung sämtlicher Inhalte der von uns verlinkten Seiten ohne tatsächliche Anhaltspunkte für einen Rechtsverstoß können wir nicht leisten. Falls uns Rechtsverletzungen bekannt werden, werden wir die entsprechenden Links sofort entfernen."
+      section3:
+        title: "Copyright"
+        text: "Die durch den Betreiber dieser Seite erstellten Inhalte und Werke auf diesen Webseiten unterliegen dem deutschen Urheberrecht. Sämtliche Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Kopien von diesen Seiten sind nur für den privaten Bereich gestattet, nicht jedoch für kommerzielle Zwecke."
+      section4:
+        title: "Data Privacy Protection"
+        text: "Für die Sicherheit der Datenübertragung im Internet können wir keine Gewähr übernehmen, insbesondere besteht bei der Übertragung von Daten per E-Mail die Gefahr des Zugriffs durch Dritte. Im Falle der Erhebung personenbezogener Daten auf unseren Seiten erfolgt die Preisgabe dieser Daten seitens des Nutzers stets auf freiwilliger Basis. Die Inanspruchnahme und Bezahlung aller angebotenen Dienste ist auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms gestattet, soweit dies technisch möglich und zumutbar ist.  Einer Nutzung der im Impressum veröffentlichten Kontaktdaten durch Dritte zu Werbezwecken wird hiermit ausdrücklich widersprochen. Der Betreiber behält sich für den Fall unverlangt zugesandter Werbe- oder Informationsmaterialien ausdrücklich rechtliche Schritte vor."
+      section5:
+        title: "Rechtswirksamkeit dieses Haftungsausschlusses"
+        text: "Sollten einzelne Regelungen oder Formulierungen dieses Haftungsausschlusses unwirksam sein oder werden, bleiben die übrigen Regelungen in ihrem Inhalt und ihrer Gültigkeit hiervon unberührt."
+      source: 
+        text: "Source:"
+        name: "anwalt-seiten.de"
+        link: "http://www.anwalt-seiten.de/"
+
+
+
+    imprint:
+      title: "Imprint"
+      contact:
+        title: "Contact"
+        text: "We want to support as many democratic actions as possible on <i>Demowatch.eu</i>.<u>Calls for unconstitutional or illegal actions are quickly deleted from our database</u>. If you notice the content of this scope please let us know. Any ideas, questions, praise and criticism is always very welcome."
+        email:
+          title: "Plase send us a messsage via e-mail to the following address:"
+          name: "info@demowatch.de"
+          link: "mailto:info@demowatch.de"
+      participants:
+        title: "Contributors"
+        text: "Many thanks to all who volunteer with plenty of enthusiasm on this project:"
+      idea:
+        title: "Concept & Design"
+        name: "Patrick Hoffmann"
+        link: "mailto:p.hoffmann@demowatch.de"
+      programming:
+        title: "Coding"
+        name1: "Simon Kröger"
+        link1: "mailto:s.kroeger@demowatch.de"
+        name2: "Marc Christenfeldt"
+        link3: "mailto:m.christenfeldt@demowatch.de"
+      mediawork:
+        title: "PR and Media"
+        name1: "Wolfgang Eitel"
+        link1: "mailto:w.eitel@demowatch.de"
+        name2: "Sven Heldt"
+        link2: "mailto:s.heldt@demowatch.de"
+      jobs:
+        title: "We are looking for..."
+        job1: "Ruby on Rails Developer"
+        job2: "PR and Media People"
+        job3: "Translators (English, Spanish, French, Turkish)"
+        job4: "Everyone with new ideas for this project"
+        call: 
+          text: "If you are interested in helping, please contact us."
+          link: "mailto:info@demowatch.de"
+      opensource:
+        title: "Demowatch.de is Open Source"
+        text1: "You can find our git repository here: Everyone is invited to join."
+      responsibility:
+        title: "Responsible according to Telemedia Act"
+      techniques:
+        title: "Used Techniques"
+        text: "This website was built with the following techniques:"
+
+
+
+    index:
+      title: 
+        all: "All known topics"
+        events: "Topics of all demonstrations"
+        other: "Topics of all promoters"
+        current: "Topics of recent demonstrations"
+        powerless: "Topics no one is demonstrating"
+      contextmenu:
+        current_only: "Recent"
+        demo_only: "Demonstration topics"
+        all_themes: "All"
+        powerless_only: "Without promoter"
+      
+
+    presse:
+      title: "Press"
+      announcements: 
+        title: "Reviews about us"
+        text: "Here we record all websites and newspapers we know which wrote something about us:"
+        name: "You're very welcome to report new publications."
+      linkbutton:
+        title: "Demowatch Link-Button"
+        text: "Please use these images for free on your own website (link it to demowatch.eu):"
+
+
+
+    show:
+      contextmenu:
+        unsubscribe: "Unsubscribe topic"
+        subscribe: "Subscribe topic"
+        whatis: "What means <i>{{tag}}</i>?"
+      demonstrations:
+        title: "Demonstrations"
+        emtpy: "No demonstrations are currently listet to this topic."
+        table:
+          title: "The following demonstrations are known to this topic:"
+          head:
+            time: "Date"
+            name: "Action"
+            place: "Location"
+            distance: "Distance"
+          rows:
+            today: "Today!"
+            now: "Now!"
+      initiators:
+        title: "Promoters"
+        empty: "Currently there are no promoters listet which who are interested in this topic.."
+        table: 
+          title: "The following organisations supporting this topic:"
+          head:
+            initiator: "Promoters"
+            themes: "Topics"
+      related:
+        title: "Related topics"
+
+
+
+    tutorial:
+      title: "How to post a new demonstration"
+      section1: 
+        title: "Only registered users can post a new demonstration"
+        text1: "If you would like to post a new demonstration you have to register at Demowatch.eu with a valid e-mail address. <b>Your e-mail address is kept strictly confidential and will not be published on this website or given to any third parties</>. Your address is only used for callbacks in case of any lack of clarity."
+        text2: "Everytime a new promoter or demonstration is posted on this website our team double-check all the relevant information and your links wether the content is useable. Senseless or incomplete data may be deleted."
+      section2:
+        title: "Who is entitled to post a new demonstration?"
+        text: "Everyone!"
+      section3:
+        title: "Let's go..."
+        name1: "First sign up for an account."
+        name2: "then may create a promoter"
+        name3: "and finally post new demonstrations!"
+        text: "We wish you great success for your actions and thank you very much for your participation in demowatch.eu!"

@@ -1,0 +1,24 @@
+en:
+  layouts:
+    application:
+      window_title: "Demowatch.eu - Independent Platform of Political Demonstrations"
+      menu:
+        about: "What is Demowatch?"
+        new_event: "Enter a Demonstration"
+        logout: "Logout"
+        profile: "My Preferences"
+        login: "Login"
+        signup: "Sign up"
+        press: "Press"
+        imprint: "Imprint"
+      tabs:
+        themes: "Topics"
+        events: "Demos"
+        organisations: "Promoter"
+      disclaimer: "Disclaimer"
+      meta:
+        description: "Free, centralized index of politically and socially engaged democratic actions"
+        keywords: "demonstration,demo,political,social,democratic,action,appeal,demonstrate,public,picket,rally"
+      flash:
+        no_permission: "Access denied."
+        not_found: "No entry available."
