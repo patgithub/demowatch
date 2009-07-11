@@ -156,7 +156,7 @@ class EventsController < ApplicationController
   def maps_on
     respond_to do |format|
       @event = Event.find(params[:id])
-      cookies[:maps] = true
+      cookies[:maps] = { :value => true, :expires => 10.years.from_now }
       format.html { redirect_to(@event) }
     end
   end
