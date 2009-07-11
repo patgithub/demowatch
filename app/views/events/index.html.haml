@@ -4,6 +4,9 @@
 %h1= t(".title")
 
 .contextmenu
+  .balancer
+  .balancer
+  .balancer
   = link_to t(".contextmenu.archive"), archive_events_path
   - if logged_in? 
     |
@@ -12,6 +15,7 @@
   = link_to t(".contextmenu.map"), "http://maps.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=http://www.demowatch.de/events.rss&g=%2B52%C2%B0+28'+58.22&ie=UTF8&z=7", { :target=>'_new', :confirm => cookies[:maps]?nil:t(".confirm.maps") }
   .rss= link_to image_tag('rss.gif'), :format => 'rss'
   .ical= link_to image_tag('ical.gif'), :format => 'ical'
+  .twitter= link_to image_tag('twitter.gif'), "http://twitter.com/demowatchderss"
     
 %br
 .tabletitle

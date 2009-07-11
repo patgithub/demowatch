@@ -47,10 +47,17 @@ small {
 	color: #276cba;
 }
 
-.rss, .ical {
+.rss, .ical, .twitter{
 	float: right;
   margin-top: 2px;
   margin-left: 2px;
+}
+
+.balancer{
+	float: left;
+  margin-top: 2px;
+  margin-left: 2px;
+  width: 16px;
 }
 
 .views {
