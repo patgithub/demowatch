@@ -3,7 +3,7 @@
   
     :date => {
       :formats => {
-        :default => "%d.%m.%Y",
+        :default => "%m/%e/%Y",
         :short => "%e. %b",
         :long => "%e. %B %Y",
         :day_abbr => "%a",
@@ -23,8 +23,8 @@
       :formats => {
         :default => "%d.%m.%Y %H:%M",
         :time => "%H:%M",
-        :day_month => "%B %d.",
-        :day_month_year => "%d.%m.%Y",
+        :day_month => "%m/%d",
+        :day_month_year => "%m/%d/%Y",
         :day_abbr => "%a",
         :month_abbr => "%b",
         :short => "%e.%m. %H:%M",

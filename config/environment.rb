@@ -13,7 +13,6 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
 
-  puts config.i18n.load_path
   config.i18n.default_locale = :de
   
   # Settings in config/environments/* take precedence over those specified here.
