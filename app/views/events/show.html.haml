@@ -1,6 +1,6 @@
 - content_for :header do
   - if cookies[:maps]
-    = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=" + google_maps_key + "&dummy=xxxx', 'geocode'
+    = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=' + google_maps_key + '&dummy=xxxx', 'geocode'
   = javascript_include_tag 'tiny_mce/tiny_mce' 
   
 .ical= link_to image_tag('ical.gif'), :format => 'ics'
