@@ -27,8 +27,12 @@ class ApplicationController < ActionController::Base
     logger.debug "* Locale set to '#{I18n.locale}'"
   end
   def redirect_to_www_demowatch_de
-    if !request.host.include?('localhost') && request.host.match( /^www\.demowatch\.de/i).nil?
-      redirect_to "http://www.demowatch.de" + request.path, :status=>:moved_permanently
+    if !request.host.include?('localhost') 
+      if extract_locale_from_accept_language_header == 'de' && request.host.match( /^www\.demowatch\.de/i).nil?
+        redirect_to "http://www.demowatch.de" + request.path, :status=>:moved_permanently
+      elsif request.host.match( /^www\.demowatch\.eu/i).nil?
+        redirect_to "http://www.demowatch.eu" + request.path, :status=>:moved_permanently
+      end
     end
   end  
   

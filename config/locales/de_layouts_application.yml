@@ -3,6 +3,7 @@ de:
     application:
       window_title: "Demowatch.de - unabhängige Plattform für politische Demonstrationen"
       title: "Demonstrationsverzeichnis"
+      subtitle: "unabhängige Plattform für politische Demonstrationen"
       menu:
         about: "Was ist Demowatch?"
         new_event: "Demo eintragen"
@@ -23,3 +24,5 @@ de:
       flash:
         no_permission: "Du hast keine Berechtigung."
         not_found: "Kein Eintrag vorhanden."
+      images:
+        subtitle: "subtitle_de.gif"

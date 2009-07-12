@@ -13,7 +13,13 @@
     = yield :header
   %body.main
     #header
-      =link_to image_tag('demowatch_beta.gif', :alt => t(".title")), :front
+      - if request.host.match( /^localhost/i)
+        =link_to image_tag('title_localhost_beta.gif', :alt => t(".title")), :front
+      - elsif request.host.match( /^www\.demowatch\.de/i)
+        =link_to image_tag('title_de_beta.gif', :alt => t(".title")), :front
+      - else
+        =link_to image_tag('title_eu_beta.gif', :alt => t(".title")), :front
+      =link_to image_tag(t('.images.subtitle'), :alt => t(".subtitle")), :front
       %ul
         %li=link_to t(".menu.about"), :about
         -if logged_in?

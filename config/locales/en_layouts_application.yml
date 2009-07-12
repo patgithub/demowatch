@@ -3,6 +3,7 @@ en:
     application:
       window_title: "Demowatch.eu - Independent Platform of Political Demonstrations"
       title: "Demo Index"
+      subtitle: "Independent Platform of Political Demonstrations"
       menu:
         about: "What is Demowatch?"
         new_event: "Enter a Demonstration"
@@ -23,3 +24,5 @@ en:
       flash:
         no_permission: "Access denied."
         not_found: "No entry available."
+      images:
+        subtitle: "subtitle_en.gif"
