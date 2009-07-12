@@ -22,10 +22,10 @@ class ApplicationController < ActionController::Base
   before_filter :redirect_to_www_demowatch_de
   before_filter :set_locale
   def set_locale
-    # if params[:locale] is nil then I18n.default_locale will be used
-    I18n.locale = params[:locale]
+    logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
+    I18n.locale = extract_locale_from_accept_language_header
+    logger.debug "* Locale set to '#{I18n.locale}'"
   end
-  # zur hauptdomain umleiten
   def redirect_to_www_demowatch_de
     if !request.host.include?('localhost') && request.host.match( /^www\.demowatch\.de/i).nil?
       redirect_to "http://www.demowatch.de" + request.path, :status=>:moved_permanently
@@ -42,6 +42,9 @@ protected
     flash[:notice] = t("layouts.application.flash.not_found")
     redirect_to :front
   end
-
+private
+  def extract_locale_from_accept_language_header
+    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+  end  # zur hauptdomain umleiten
 
 end
