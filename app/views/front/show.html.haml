@@ -40,7 +40,8 @@
             %a{:name => event.startdate.to_date.year}
             = event.startdate.to_date.year
       %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
-        %td.center= startdate_thisyear(event)
+        %td.center
+          %nobr= startdate_thisyear(event)
         %td= link_to h( event.title), event
         %td= h( event.address)
         -if @with_distance       
