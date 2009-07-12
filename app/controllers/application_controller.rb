@@ -20,7 +20,11 @@ class ApplicationController < ActionController::Base
   
   
   before_filter :redirect_to_www_demowatch_de
-
+  before_filter :set_locale
+  def set_locale
+    # if params[:locale] is nil then I18n.default_locale will be used
+    I18n.locale = params[:locale]
+  end
   # zur hauptdomain umleiten
   def redirect_to_www_demowatch_de
     if !request.host.include?('localhost') && request.host.match( /^www\.demowatch\.de/i).nil?
