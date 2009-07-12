@@ -141,6 +141,8 @@ de:
             distance: "Entfernung"
           rows:
             today: "Heute!"
+            yesterday: "Gestern"
+            tomorrow: "Morgen!"
             now: "Jetzt!"
       initiators:
         title: "Initiatoren"

@@ -42,10 +42,18 @@
           %a{:name => l(event.startdate.to_date,:format=>"%m-%Y") }
           = l(event.startdate.to_date,:format=>"%B %Y") 
     %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
-      - if event.startdate.strftime('%d.%m.%Y') == Time.now.strftime('%d.%m.%Y')
+      - if event.startdate.to_date == Time.now.to_date
         %td
           .center
             .red= t(".table.rows.today")
+      - elsif event.startdate.to_date == Time.now.to_date - 1
+        %td
+          .center
+            = t(".table.rows.yesterday")
+      - elsif event.startdate.to_date == Time.now.to_date + 1
+        %td
+          .center
+            = t(".table.rows.tomorrow")
       - elsif event.startdate <= Time.now && event.startdate > 6.hours.ago
         %td
           .center

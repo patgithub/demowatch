@@ -48,7 +48,8 @@ de:
           distance: "Entfernung"
         rows:
           today: "Heute!"
-          now: "Jetzt!"
+          yesterday: "Gestern"
+          tomorrow: "Morgen!"
 
 
 
@@ -79,6 +80,8 @@ de:
           distance: "Entfernung"
         rows:
           today: "Heute!"
+          yesterday: "Gestern"
+          tomorrow: "Morgen!"
           now: "Jetzt!"
 
 
