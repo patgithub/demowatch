@@ -7,6 +7,13 @@ de:
         success: "Einstellungen wurden erfolgreich ge&auml;ndert."
       activate:
         success: "Dein Konto wurde aktiviert!"
+      subscribe:
+        event: "Du hast erfolgreich Infos zu dieser Demonstration abonniert."
+        organisation: "Du hast erfolgreich Infos zu diesem Initiator abonniert."
+      unsubscribe:
+        event: "Du hast erfolgreich Infos zu dieser Demonstration abbestellt." 
+        organisation: "Du hast erfolgreich Infos zu diesem Initiator abbestellt."
+        
     edit:
       title: "Meine Daten"
       contextmenu:

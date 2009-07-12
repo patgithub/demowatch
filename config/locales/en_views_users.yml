@@ -7,6 +7,13 @@ en:
         success: "Preferences successfully updated."
       activate:
         success: "Your account has been activated!"
+      subscribe:
+        event: "You have successfully subscribed informations about this demo."
+        organisation: "You have successfully subscribed informations about this promoter."
+      unsubscribe:
+        event: "You have successfully unsubscribed informations about this demo."
+        organisation: "You have successfully unsubscribed informations about this promoter."
+
     edit:
       title: "Preferences"
       contextmenu:

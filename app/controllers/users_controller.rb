@@ -98,12 +98,12 @@ class UsersController < ApplicationController
     if params[:event]
       event = Event.find(params[:event].to_i)
       @user.bookmarks.build(:title => event.title, :bookmarkable => event)
-      flash[:notice] = "Du hast erfolgreich Infos zu dieser Demonstration abonniert." if @user.save
+      flash[:notice] = t("users.flash.subscribe.event") if @user.save
       redirect_to event
     elsif params[:organisation]
       organisation = Organisation.find(params[:organisation].to_i)
       @user.bookmarks.build(:title => organisation.title, :bookmarkable => organisation)
-      flash[:notice] = "Du hast erfolgreich Infos zu diesem Initiator abonniert." if @user.save
+      flash[:notice] = t("users.flash.subscribe.organisation") if @user.save
       redirect_to organisation
     else
       redirect_to :front
@@ -113,11 +113,11 @@ class UsersController < ApplicationController
   def unbookmark
     if params[:event]
       Bookmark.destroy_all :user_id => params[:id], :bookmarkable_id => params[:event], :bookmarkable_type => 'Event'  
-      flash[:notice] = "Du hast erfolgreich Infos zu dieser Demonstration abbestellt." 
+      flash[:notice] = t("users.flash.unsubscribe.event")
       redirect_to event_path(params[:event])
     elsif params[:organisation]
       Bookmark.destroy_all :user_id => params[:id], :bookmarkable_id => params[:organisation], :bookmarkable_type => 'Organisation'  
-      flash[:notice] = "Du hast erfolgreich Infos zu diesem Initiator abbestellt."
+      flash[:notice] = t("users.flash.unsubscribe.organisation")
       redirect_to organisation_path(params[:organisation])  
     else
       redirect_to :front
