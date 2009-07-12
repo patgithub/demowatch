@@ -34,7 +34,10 @@ en:
       over_x_years:
         one: 'more than one year'
         other: 'more than {{count}} year'
-      
+      today: "Today!"
+      yesterday: "Yesterday"
+      tomorrow: "Tomorrow!"
+      now: "Now!"      
   number:
     format:
       precision: 2

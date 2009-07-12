@@ -2,6 +2,7 @@ en:
   layouts:
     application:
       window_title: "Demowatch.eu - Independent Platform of Political Demonstrations"
+      title: "Demo Index"
       menu:
         about: "What is Demowatch?"
         new_event: "Enter a Demonstration"
@@ -18,7 +19,7 @@ en:
       disclaimer: "Disclaimer"
       meta:
         description: "Free, centralized index of politically and socially engaged democratic actions"
-        keywords: "demonstration,demo,political,social,democratic,action,appeal,demonstrate,public,picket,rally"
+        keywords: "demonstration,demo index,demo,political,social,democratic,action,appeal,demonstrate,public,picket,rally"
       flash:
         no_permission: "Access denied."
         not_found: "No entry available."

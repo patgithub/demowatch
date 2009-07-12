@@ -90,7 +90,7 @@ en:
           link: "mailto:info@demowatch.de"
       opensource:
         title: "Demowatch.de is Open Source"
-        text1: "You can find our git repository here: Everyone is invited to join."
+        text: "You can find our git repository here: Everyone is invited to join."
       responsibility:
         title: "Responsible according to Telemedia Act"
       techniques:
@@ -111,7 +111,7 @@ en:
         demo_only: "Demonstration topics"
         all_themes: "All"
         powerless_only: "Without promoter"
-      
+
 
     presse:
       title: "Press"
@@ -140,9 +140,6 @@ en:
             name: "Action"
             place: "Location"
             distance: "Distance"
-          rows:
-            today: "Today!"
-            now: "Now!"
       initiators:
         title: "Promoters"
         empty: "Currently there are no promoters listet which who are interested in this topic.."
