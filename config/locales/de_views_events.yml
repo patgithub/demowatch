@@ -46,10 +46,6 @@ de:
           title: "Demo"
           city: "Ort"
           distance: "Entfernung"
-        rows:
-          today: "Heute!"
-          yesterday: "Gestern"
-          tomorrow: "Morgen!"
 
 
 
@@ -78,11 +74,6 @@ de:
           title: "Demo"
           city: "Ort"
           distance: "Entfernung"
-        rows:
-          today: "Heute!"
-          yesterday: "Gestern"
-          tomorrow: "Morgen!"
-          now: "Jetzt!"
 
 
 

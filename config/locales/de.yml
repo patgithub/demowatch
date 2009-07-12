@@ -34,6 +34,10 @@ de:
       over_x_years:
         one: 'mehr als einem Jahr'
         other: 'mehr als {{count}} Jahren'
+      today: "Heute!"
+      yesterday: "Gestern"
+      tomorrow: "Morgen!"
+      now: "Jetzt!"
       
   number:
     format:

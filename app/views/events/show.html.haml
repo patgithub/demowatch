@@ -24,18 +24,7 @@
 
 %h2= t(".venue.title")
 %p
-  - if @event.startdate <= 6.hours.ago
-    = t(".venue.startdate.past", :startdate => l(@event.startdate,:format => "long_verbal") )
-  - elsif @event.startdate.to_date.eql?(Time.now.to_date-1)
-    = t(".venue.startdate.yesterday", :startdate => l(@event.startdate,:format => "long_verbal"))
-  - elsif @event.startdate <= Time.now
-    = t(".venue.startdate.now", :startdate => l(@event.startdate,:format => "long_verbal"))
-  - elsif @event.startdate.to_date.eql?(Time.now.to_date+1)
-    = t(".venue.startdate.tomorrow", :startdate => l(@event.startdate,:format => "long_verbal"))
-  - elsif @event.startdate <= 7.9.days.from_now
-    = t(".venue.startdate.soon", :timespan => time_ago_in_words(@event.startdate), :startdate => l(@event.startdate,:format => "long_verbal"))
-  - else
-    = t(".venue.startdate.future", :timespan => time_ago_in_words(@event.startdate), :startdate => l(@event.startdate,:format => "long_verbal"))
+  = startdate_nice(@event)
   = t(".venue.address", :address => @event.address)
   = t(".venue.location", :location => h(@event.location)) if @event.location?
 

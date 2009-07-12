@@ -139,11 +139,6 @@ de:
             name: "Demo"
             place: "Ort"
             distance: "Entfernung"
-          rows:
-            today: "Heute!"
-            yesterday: "Gestern"
-            tomorrow: "Morgen!"
-            now: "Jetzt!"
       initiators:
         title: "Initiatoren"
         empty: "Zur Zeit sind keine Initiatoren eingetragen, die sich mit diesem Thema beschäftigen.."

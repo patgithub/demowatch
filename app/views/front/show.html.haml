@@ -4,6 +4,7 @@
 %h1= h @tag.name 
 
 .contextmenu
+  .balancer
   - if logged_in?
     - if current_user.tags.include? @tag 
       = link_to t(".contextmenu.unsubscribe"), :controller => :users, :action => :del_tag, :id => current_user, :tag => @tag
@@ -20,6 +21,12 @@
   .tabletitle=t(".demonstrations.table.title")
   %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
     %tr
+      %td{:colspan=>@with_distance?4:3}
+        .anchor_index
+          - index_with_year(@events).each_with_index do |year, index|
+            = " | " if index > 0 
+            = link_to year, "#" + String(year)
+    %tr
       %th=t(".demonstrations.table.head.time")
       %th=t(".demonstrations.table.head.name")
       %th=t(".demonstrations.table.head.place")
@@ -27,17 +34,13 @@
         %th=t(".demonstrations.table.head.distance")
       
     - @events.each_with_index do |event, index|
+      - if index == 0 || event.startdate.to_date.year != @events[index-1].startdate.to_date.year
+        %tr
+          %td{:class=> index==0 ? "separator_first" : "separator", :colspan=>@with_distance?4:3}
+            %a{:name => event.startdate.to_date.year}
+            = event.startdate.to_date.year
       %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
-        - if l(event.startdate) == l(Time.now)
-          %td
-            .center
-              .red=t(".demonstrations.table.rows.today")
-        - elsif event.startdate <= Time.now && event.startdate > 6.hours.ago
-          %td
-            .center
-              .red=t(".demonstrations.table.rows.now")
-        - else
-          %td= event.startdate && l(event.startdate)
+        %td= startdate_thisyear(event)
         %td= link_to h( event.title), event
         %td= h( event.address)
         -if @with_distance       

@@ -10,10 +10,9 @@
   %tr
     %td{:colspan=>"2"}
       .anchor_index
-        - @organisations.each_with_index do |organisation, index|
-          - if index == 0 || organisation.title.upcase[0] != @organisations[index-1].title.upcase[0]
-            = " | " if index > 0 
-            = link_to organisation.title.upcase.split(//).first.tr('äöü','ÄÖÜ'), organisations_path + "#" + organisation.title.upcase.split(//).first.tr('äöü','ÄÖÜ')
+        - index_with_literals(@organisations).each_with_index do |letter, index|
+          = " | " if index > 0 
+          = link_to letter, "#" + letter
   %tr
     %th= t(".table.head.name")
     %th= t(".table.head.themes")
