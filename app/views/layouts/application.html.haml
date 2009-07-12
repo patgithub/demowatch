@@ -13,7 +13,7 @@
     = yield :header
   %body.main
     #header
-      =link_to image_tag('demowatch_beta.gif'), :front
+      =link_to image_tag('demowatch_beta.gif', :alt => t(".title"), :front
       %ul
         %li=link_to t(".menu.about"), :about
         -if logged_in?
