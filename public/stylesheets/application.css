@@ -439,3 +439,21 @@ hr  {
 .comment_context {
   text-align: right;
 }
+
+.yesterday {
+}
+
+.tomorrow {
+	font-weight: bold;
+	color: orange;	
+}
+
+.today {
+	font-weight: bold;
+	color: red;	
+}
+
+.now  {
+	font-weight: bold;
+	color: red;	
+}
