@@ -94,7 +94,6 @@ de:
         subscribe: "Abonnieren"
       confirm:
         delete: "Demonstration wirklich löschen?"
-        maps: "Bitte beachten Sie, dass Google Maps die IP Ihres Rechners speichern kann, wenn die Karten angezeigt werden."
       themes:
         title: "Themen"
       venue:
@@ -131,5 +130,14 @@ de:
       button:
         add_comment: "Kommentar senden"
       card:
-        show: "Karte anzeigen"
         hide: "Karte ausblenden"
+      openlayers_maps:
+        confirm: "Bitte beachten Sie, dass openlayers.org die IP Ihres Rechners speichern und diese der URL dieser Seite zuordnen kann, wenn die Karten angezeigt werden."
+        show: "OpenLayers-Karte"
+      google_maps:
+        confirm: "Bitte beachten Sie, dass Google Maps die IP Ihres Rechners speichern und diese der URL dieser Seite zuordnen kann, wenn die Karten angezeigt werden."
+        show: "Google Maps-Karte"
+      yahoo_maps:
+        confirm: "Bitte beachten Sie, dass Yahoo Maps die IP Ihres Rechners speichern und diese der URL dieser Seite zuordnen kann, wenn die Karten angezeigt werden."
+        show: "Yahoo Maps-Karte"
+

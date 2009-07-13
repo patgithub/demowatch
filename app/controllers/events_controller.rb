@@ -67,19 +67,19 @@ class EventsController < ApplicationController
 #        :icon => "/img/marker.png"
       if cookies[:google_maps]
         @map = Mapstraction.new("map_div",:google)
-        @map.center_zoom_init([@event.latitude, @event.longitude],16)
+        @map.center_zoom_init([@event.latitude, @event.longitude],15)
         @map.control_init(:small => true)
         @map.marker_init(Marker.new([@event.latitude, @event.longitude]))
       end
       if cookies[:yahoo_maps]
         @map = Mapstraction.new("map_div",:yahoo)
-        @map.center_zoom_init([@event.latitude, @event.longitude],16)
+        @map.center_zoom_init([@event.latitude, @event.longitude],15)
         @map.control_init(:small => true)
         @map.marker_init(Marker.new([@event.latitude, @event.longitude]))
       end
       if cookies[:openlayers_maps]
         @map = Mapstraction.new("map_div",:openlayers)
-        @map.center_zoom_init([@event.latitude, @event.longitude],16)
+        @map.center_zoom_init([@event.latitude, @event.longitude],15)
         @map.control_init(:small => true)
         @map.marker_init(Marker.new([@event.latitude, @event.longitude]))
       end
