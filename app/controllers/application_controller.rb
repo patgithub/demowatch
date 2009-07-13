@@ -22,15 +22,21 @@ class ApplicationController < ActionController::Base
   before_filter :redirect_to_www_demowatch_de
   before_filter :set_locale
   def set_locale
-    logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
-    I18n.locale = extract_locale_from_accept_language_header
-    logger.debug "* Locale set to '#{I18n.locale}'"
+    if request.host.include?('localhost') 
+      I18n.locale = 'de'
+    else
+      #logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
+      if request.host.match( /^www\.demowatch\.de/i) 
+        I18n.locale = 'de'
+      else
+        I18n.locale = 'en'
+      end
+    end
+    #logger.debug "* Locale set to '#{I18n.locale}'"
   end
   def redirect_to_www_demowatch_de
     if !request.host.include?('localhost') 
-      if extract_locale_from_accept_language_header == 'de' && request.host.match( /^www\.demowatch\.de/i).nil?
-        redirect_to "http://www.demowatch.de" + request.path, :status=>:moved_permanently
-      elsif extract_locale_from_accept_language_header == 'en' && request.host.match( /^www\.demowatch\.eu/i).nil?
+      if request.host.match( /^www\.demowatch\.de/i).nil? || request.host.match( /^www\.demowatch\.eu/i).nil?
         redirect_to "http://www.demowatch.eu" + request.path, :status=>:moved_permanently
       end
     end
