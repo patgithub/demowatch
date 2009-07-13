@@ -1,7 +1,16 @@
 - content_for :header do
-  - if cookies[:maps]
-    = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=' + google_maps_key + '&dummy=xxxx', 'geocode'
   = javascript_include_tag 'tiny_mce/tiny_mce' 
+  - if cookies[:google_maps]
+    = Mapstraction.header(:google, :host=>request.host)
+    = @map.to_html
+  - if cookies[:yahoo_maps]
+    = Mapstraction.header(:yahoo, :host=>request.host)
+    = @map.to_html
+  - if cookies[:openlayers_maps]
+    = Mapstraction.header(:openlayers, :host=>request.host)
+    = @map.to_html
+
+
   
 .ical= link_to image_tag('ical.gif'), :format => 'ics'
 %h1= h @event.title
@@ -28,20 +37,27 @@
   = t(".venue.address", :address => @event.address)
   = t(".venue.location", :location => h(@event.location)) if @event.location?
 
--if cookies[:maps]  
-  #map_canvas.indent{:style=>"width: 550px; height: 300px; border:solid 1px;"}
-  .center= link_to t(".card.hide"), { :controller => "events", :action => "maps_off", :id => @event.id }
-
-  :javascript
-    if (GBrowserIsCompatible()) {
-    var map = new GMap2(document.getElementById("map_canvas"));
-    map.addControl(new GLargeMapControl());
-    map.setCenter(new GLatLng(#{@event.latitude.to_f}, #{@event.longitude.to_f}), 15);
-    map.openInfoWindowHtml(map.getCenter(),"<strong>#{html_escape @event.title},</strong>"+
-    "<br/><br/>#{@event.startdate && l(@event.startdate,:format => "long_verbal")},"+
-    "<br/>#{html_escape @event.address}<br/>#{'(' + html_escape( @event.location) + ')' if @event.location?}");}
+-if cookies[:google_maps] || cookies[:yahoo_maps] || cookies[:openlayers_maps]
+  #map_canvas.indent{:style=>"width: 550px; height: 300px; border:solid 1px black;"}
+    = @map.div(:width => 550, :height => 300)
+  .center
+    - if !cookies[:google_maps]
+      = link_to t(".google_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:google}, :confirm => t(".google_maps.confirm")
+      |
+    - if !cookies[:yahoo_maps]
+      = link_to t(".yahoo_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:yahoo}, :confirm => t(".yahoo_maps.confirm")
+      |
+    - if !cookies[:openlayers_maps]
+      = link_to t(".openlayers_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:openlayers}, :confirm => t(".openlayers_maps.confirm")
+      |
+    = link_to t(".card.hide"), { :controller => "events", :action => "maps_off", :id => @event.id}
 -else
-  .center= link_to t(".card.show"), { :controller => "events", :action => "maps_on", :id => @event.id }, :confirm => t(".confirm.maps")
+  .center
+    = link_to t(".google_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:google}, :confirm => t(".google_maps.confirm")
+    |
+    = link_to t(".yahoo_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:yahoo}, :confirm => t(".yahoo_maps.confirm")
+    |
+    = link_to t(".openlayers_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:openlayers}, :confirm => t(".openlayers_maps.confirm")
 
 %h2= t(".description.title")
 %p= sanitize @event.description

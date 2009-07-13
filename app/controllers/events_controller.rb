@@ -57,6 +57,32 @@ class EventsController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @event }
       format.ics  { render :inline => ical([@event]) }
+    
+# verschiedene zoomintervale:
+#   openlayers        0 .. 17
+#   yahoo
+# (opt.) parameter fuer marker_init:
+#        :info_bubble => render_to_string(:partial => 'bubble')
+#        :label => ''CGI.escapeHTML( @event.title), 
+#        :icon => "/img/marker.png"
+      if cookies[:google_maps]
+        @map = Mapstraction.new("map_div",:google)
+        @map.center_zoom_init([@event.latitude, @event.longitude],16)
+        @map.control_init(:small => true)
+        @map.marker_init(Marker.new([@event.latitude, @event.longitude]))
+      end
+      if cookies[:yahoo_maps]
+        @map = Mapstraction.new("map_div",:yahoo)
+        @map.center_zoom_init([@event.latitude, @event.longitude],16)
+        @map.control_init(:small => true)
+        @map.marker_init(Marker.new([@event.latitude, @event.longitude]))
+      end
+      if cookies[:openlayers_maps]
+        @map = Mapstraction.new("map_div",:openlayers)
+        @map.center_zoom_init([@event.latitude, @event.longitude],16)
+        @map.control_init(:small => true)
+        @map.marker_init(Marker.new([@event.latitude, @event.longitude]))
+      end
     end
   end
 
@@ -156,15 +182,16 @@ class EventsController < ApplicationController
   def maps_on
     respond_to do |format|
       @event = Event.find(params[:id])
-      cookies[:maps] = { :value => true, :expires => 10.years.from_now }
+      delete_maps_cookies()
+      cookies[params[:type] + '_maps'] = { :value => true, :expires => 10.years.from_now }
       format.html { redirect_to(@event) }
     end
   end
   
   def maps_off
     respond_to do |format|
+      delete_maps_cookies()
       @event = Event.find(params[:id])
-      cookies.delete :maps
       format.html { redirect_to(@event) }
     end
   end
@@ -172,6 +199,13 @@ class EventsController < ApplicationController
 protected
   def find_event
     @event = Event.find(params[:id])
+  end
+
+  def delete_maps_cookies
+    map_suppliers = %w{google yahoo openlayers}
+    map_suppliers.each do |supplier|
+      cookies.delete( supplier + '_maps')
+    end
   end
   
   def ical events
