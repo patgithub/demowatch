@@ -146,7 +146,7 @@ en:
         table: 
           title: "The following organisations supporting this topic:"
           head:
-            initiator: "Promoters"
+            initiator: "Promoter"
             themes: "Topics"
       related:
         title: "Related topics"
