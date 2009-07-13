@@ -12,8 +12,9 @@ class SessionsController < ApplicationController
         cookies[:auth_token] = { :value => self.current_user.remember_token , :expires => self.current_user.remember_token_expires_at }
       end
       redirect_back_or_default('/')
-      flash[:notice] = "Du hast Dich erfolgreich angemeldet"
+      flash[:notice] = t("sessions.flash.create.success")
     else
+      flash[:notice] = t("sessions.flash.create.failed")
       render :action => 'new'
     end
   end
@@ -22,7 +23,7 @@ class SessionsController < ApplicationController
     self.current_user.forget_me if logged_in?
     cookies.delete :auth_token
     reset_session
-    flash[:notice] = "Du hast Dich erfolgreich abgemeldet"
+    flash[:notice] = t("sessions.flash.destroy.success")
     redirect_back_or_default('/')
   end
 end

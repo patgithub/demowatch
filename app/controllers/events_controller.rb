@@ -1,7 +1,6 @@
 class EventsController < ApplicationController
-  before_filter :login_required, :except => [:index, :show, :archive]
+  before_filter :login_required, :except => [:index, :show, :archive, :maps_on, :maps_off]
   before_filter :find_event, :only => [:show, :edit, :update, :destroy]
-  allow :create, :user => [:has_organisation?, :is_admin?]
   allow :edit, :update, :destroy, :user => [:owns?, :is_admin?]
   
   skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
@@ -25,7 +24,7 @@ class EventsController < ApplicationController
     options = Event.find_options_for_find_tagged_with(@tags, options) if @tags
     
     respond_to do |format|
-      format.html { @events = Event.paginate(options.merge :page => params[:page], :per_page => 80) }
+      format.html { @events = Event.all(options) }
       format.xml  { render :xml => Event.all(options) }
       format.rss  { @events = Event.all(options); render :layout => false }
       format.ics  { render :inline => ical(Event.all(options)) }
@@ -44,7 +43,7 @@ class EventsController < ApplicationController
     options = Event.find_options_for_find_tagged_with(@tags, options) if @tags
     
     respond_to do |format|
-      format.html { @events = Event.paginate(options.merge :page => params[:page], :per_page => 80) }
+      format.html { @events = Event.all(options) }
       format.xml  { render :xml => Event.all(options) }
       format.rss  { @events = Event.all(options); render :layout => false }
       format.ics  { render :inline => ical(Event.all(options)) }
@@ -65,14 +64,8 @@ class EventsController < ApplicationController
   # GET /events/new.xml
   def new
     @event = Event.new(:startdate => Time.now)
-    @organisations = current_user.organizers.map{|o| o.organisation}
+    @organisations = Organisation.find(:all, :order => 'title')
     
-    if @organisations.empty?
-      flash[:notice] = 'Zuerst muß ein Initiator erstellt werden.'
-      redirect_to new_organisation_path 
-      return
-    end  
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @event }
@@ -81,21 +74,21 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    @organisations = Organisation.find(:all)
+    @organisations = Organisation.find(:all, :order => 'title')
   end
 
   # POST /events
   # POST /events.xml
   def create
     @event = Event.new(params[:event])
-
+    @event.user = current_user
     respond_to do |format|
       if @event.save
-        flash[:notice] = 'Demonstration wurde erfolgreich eingetragen.'
+        flash[:notice] = t("events.flash.create.success")
         format.html { redirect_to(@event) }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
       else
-        @organisations = Organisation.find(:all)
+        @organisations = Organisation.find(:all, :order => 'title')
         format.html { render :action => "new" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
       end
@@ -107,11 +100,11 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update_attributes(params[:event])
-        flash[:notice] = 'Demonstration wurde erfolgreich ge&auml;ndert.'
+        flash[:notice] = t("events.flash.update.success")
         format.html { redirect_to(@event) }
         format.xml  { head :ok }
       else
-        @organisations = Organisation.find(:all)
+        @organisations = Organisation.find(:all, :order => 'title')
         format.html { render :action => "edit" }
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
       end
@@ -127,6 +120,52 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(events_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def add_comment
+    respond_to do |format|
+      @event = Event.find(params[:comment][:commentable_id])
+      c = Comment.create(params[:comment])
+      if c.update_attributes(params[:comment])
+        @event.comments << c
+        CommentMailer::deliver_mail(current_user, c)
+        flash[:notice] = t("events.flash.add_comment.success")
+        format.html { redirect_to(@event) }
+        format.xml  { head :ok }
+      else
+        format.html { redirect_to(@event) }
+        format.xml  { render :xml => c.errors, :status => :unprocessable_entity }
+      end
+            
+    end
+  end
+
+  def delete_comment
+    respond_to do |format|
+      @event = Event.find(params[:id])
+      Comment.delete params[:comment_id]
+
+      flash[:notice] = t("events.flash.delete_comment.success")
+
+      format.html { redirect_to(@event) }
+      format.xml  { head :ok }
+    end
+  end
+  
+  def maps_on
+    respond_to do |format|
+      @event = Event.find(params[:id])
+      cookies[:maps] = { :value => true, :expires => 10.years.from_now }
+      format.html { redirect_to(@event) }
+    end
+  end
+  
+  def maps_off
+    respond_to do |format|
+      @event = Event.find(params[:id])
+      cookies.delete :maps
+      format.html { redirect_to(@event) }
     end
   end
   

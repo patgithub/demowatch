@@ -7,11 +7,18 @@ class UsersController < ApplicationController
   allow :suspend, :unsuspend, :destroy, :purge, :user => :is_admin?
   allow :show, :edit, :update, :bookmark, :unbookmark, :add_tag, :del_tag, :user => [:owns?, :is_admin?]
   
-  skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
+  skip_before_filter :verify_authenticity_token, :only => ['auto_complete_for_tag_name', 'auto_tag_list']
 
   def auto_complete_for_tag_name
     @tags = Tag.all :conditions => [ 'LOWER(name) LIKE ?', params[:user][:tag_list] + '%' ]
     render :inline => "<%= auto_complete_result(@tags, 'name') %>"
+  end
+
+  def auto_tag_list
+    tags = Tag.all :conditions => [ 'LOWER(name) LIKE ?', params[:keyword] + '%' ]
+    json = tags.map{|t| %|{"caption":"#{t.name}","value":#{t.id}}|}.join(',')
+    response.headers["Content-type"] = 'text/x-json'
+    render :text => "[#{json}]"
   end
 
   def show
@@ -35,7 +42,7 @@ class UsersController < ApplicationController
     if @user.errors.empty?
       self.current_user = @user
       redirect_back_or_default('/')
-      flash[:notice] = "Vielen Dank f&uuml;r die Anmeldung!"
+      flash[:notice] = t("users.flash.create.success")
     else
       render :action => 'new'
     end
@@ -49,12 +56,12 @@ class UsersController < ApplicationController
     @user.zip = Zip.find_by_zip( params[:user][:zip])    
     params[:user].delete('zip')
     @user.attributes = params[:user]
-    if( @user.save!)
+    if @user.valid? && @user.save!
 #    if @user.update_attributes( params[:user])
-      flash[:notice] = 'Einstellungen wurden erfolgreich ge&auml;ndert.'
+      flash[:notice] = t("users.flash.update.success")
       redirect_to(@user) 
     else
-      render :action => "edit"
+      render :action => 'edit'
     end
   end
   
@@ -62,7 +69,7 @@ class UsersController < ApplicationController
     self.current_user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
     if logged_in? && !current_user.active?
       current_user.activate!
-      flash[:notice] = "Dein Konto wurde aktiviert!"
+      flash[:notice] = t("users.flash.activate.success")
     end
     redirect_back_or_default('/')
   end
@@ -91,12 +98,12 @@ class UsersController < ApplicationController
     if params[:event]
       event = Event.find(params[:event].to_i)
       @user.bookmarks.build(:title => event.title, :bookmarkable => event)
-      flash[:notice] = "Du hast erfolgreich Infos zu dieser Demonstration abonniert." if @user.save
+      flash[:notice] = t("users.flash.subscribe.event") if @user.save
       redirect_to event
     elsif params[:organisation]
       organisation = Organisation.find(params[:organisation].to_i)
       @user.bookmarks.build(:title => organisation.title, :bookmarkable => organisation)
-      flash[:notice] = "Du hast erfolgreich Infos zu diesem Initiator abonniert." if @user.save
+      flash[:notice] = t("users.flash.subscribe.organisation") if @user.save
       redirect_to organisation
     else
       redirect_to :front
@@ -106,11 +113,11 @@ class UsersController < ApplicationController
   def unbookmark
     if params[:event]
       Bookmark.destroy_all :user_id => params[:id], :bookmarkable_id => params[:event], :bookmarkable_type => 'Event'  
-      flash[:notice] = "Du hast erfolgreich Infos zu dieser Demonstration abbestellt." 
+      flash[:notice] = t("users.flash.unsubscribe.event")
       redirect_to event_path(params[:event])
     elsif params[:organisation]
       Bookmark.destroy_all :user_id => params[:id], :bookmarkable_id => params[:organisation], :bookmarkable_type => 'Organisation'  
-      flash[:notice] = "Du hast erfolgreich Infos zu diesem Initiator abbestellt."
+      flash[:notice] = t("users.flash.unsubscribe.organisation")
       redirect_to organisation_path(params[:organisation])  
     else
       redirect_to :front
@@ -123,7 +130,6 @@ class UsersController < ApplicationController
     @user.save
     redirect_to(:controller=>:tag, :action=>tag.name)
   end
-    
  
   def del_tag
     tag = Tag.find(params[:tag])
@@ -131,7 +137,7 @@ class UsersController < ApplicationController
     @user.save
     redirect_to(:controller=>:tag, :action=>tag.name)
   end    
-    
+
 protected
   def find_user
     @user = User.find(params[:id])

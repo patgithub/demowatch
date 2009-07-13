@@ -1,40 +1,47 @@
 !!!
+
 %html{:xmlns=>"http://www.w3.org/1999/xhtml"}
   %head
-    %title Demowatch.de - unabh&auml;ngige Plattform f&uuml;r politische Demonstrationen
+    %title= t(".window_title")
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
+    %meta{"name"=>"description", :content=> t(".meta.description")}
+    %meta{"name"=>"keywords", :content=>t(".meta.descriptions")}
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html;charset=utf-8"}
   
     = javascript_include_tag 'prototype', 'effects', 'controls', :cache => true
     = stylesheet_link_tag :all
-    
     = yield :header
   %body.main
     #header
-      =link_to image_tag('demowatch_beta.gif'), :front
+      - if request.host.match( /^localhost/i)
+        =link_to image_tag('title_localhost_beta.gif', :alt => t(".title")), :front
+      - elsif request.host.match( /^www\.demowatch\.de/i)
+        =link_to image_tag('title_de_beta.gif', :alt => t(".title")), :front
+      - else
+        =link_to image_tag('title_eu_beta.gif', :alt => t(".title")), :front
+      =link_to image_tag(t('.images.subtitle'), :alt => t(".subtitle")), :front
       %ul
-        %li=link_to 'Was ist Demowatch?', :about
+        %li=link_to t(".menu.about"), :about
         -if logged_in?
-          %li=link_to 'Demo eintragen', new_event_path
-          %li=link_to 'Abmelden', :logout
-          %li=link_to 'Einstellungen', user_path(current_user)
+          %li=link_to t(".menu.new_event"), new_event_path
+          %li=link_to t(".menu.logout"), :logout
+          %li=link_to t(".menu.profile"), user_path(current_user)
         -else
-          %li=link_to 'Demo eintragen', tutorial_path
-          %li=link_to 'Anmelden', :login
-          %li=link_to 'Registrieren', :signup
-        %li=link_to 'Presse', :presse
-        %li.last=link_to 'Impressum', :impressum
-
+          %li=link_to t(".menu.new_event"), tutorial_path
+          %li=link_to t(".menu.login"), :login
+          %li=link_to t(".menu.signup"), :signup
+        %li=link_to t(".menu.press"), :presse
+        %li.last=link_to t(".menu.imprint"), :imprint
     .tabs
       %ul
-        - tabs = [['Themen', front_path], ['Demos', events_path], ['Initiativen', organisations_path]]
+        - tabs = [[t(".tabs.themes"), front_path], [t(".tabs.events"), events_path], [t(".tabs.organisations"), organisations_path]]
         - tabs.each do |label, link|
           %li
-            %a{:href=>link, :class=>"xmenu2 #{'selected' if (link == front_path && (request.request_uri == front_path || link + "tag" == request.request_uri[0..link.length+2]) || (request.request_uri == link + "demos") || (request.request_uri == link + "all")) || (link != front_path && link == request.request_uri[0..link.length-1]) }"}
+            %a{:href=>link, :class=>"xmenu2 #{'selected' if (link == front_path && (request.request_uri == front_path || link + "tag" == request.request_uri[0..link.length+2]) || (request.request_uri == link + "demos") || (request.request_uri == link + "all") || (request.request_uri == link + "current")) || (link != front_path && link == request.request_uri[0..link.length-1]) }"}
               <strong class="xsnazzy"><strong class="xtop"><strong class="xb1"></strong><strong class="xb2"></strong><strong class="xb3"></strong><strong class="xb4"></strong></strong>
               %span.xboxcontent= label
               </strong>
-        
+
     .balloon
       .title
       .body
@@ -42,9 +49,9 @@
           .message= flash[:notice]
         =yield
       .bottom
-        
+
     #footer
       =image_tag 'people.gif'
 
-      &copy; 2008 Patrick Hoffmann -
-      = link_to 'Haftungsausschluss', :disclaimer
+      &copy; 2008-2009 Patrick Hoffmann -
+      = link_to t(".disclaimer"), :disclaimer

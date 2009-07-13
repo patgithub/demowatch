@@ -1,0 +1,18 @@
+en:
+  sessions:
+    flash:
+      create:
+        success: "You have been signed in"
+        failed: "<div class='red'>Signing in failed!</div>"
+      destroy:
+        success: "You have been logged out successfully"
+    new:
+      title: "Sign up"
+      text: "After sucessful registration, you can login here and subscribe to different topics to receive an individual newsletter or keep track about the demonstration topics you are interested in via RSS feed."
+      signup_first: "<b>Not registered yet? Create an account here!</b>"
+      login:
+        title: "Sign up data"
+        login: "Login"
+        password: "Passphrase"
+        auto: "Log in automatically on this computer"
+        submit: "Sign up"

@@ -1,24 +1,40 @@
 class FrontController < ApplicationController
  
+ 
   def index
   end
   
   def all
     @tags = Tag.counts
+    @list_type = "all"
     render :action => 'index'
   end
   
   def events
     @tags = Event.tag_counts
+    @list_type = "events"
     render :action => 'index'
   end
 
   def other
     @tags = Tag.counts :conditions => "taggable_type IN ('Organisation', 'User')"
+    @list_type = "other"
+    render :action => 'index'
+  end
+
+  def current
+    @tags = Tag.counts :conditions => "taggable_type='event' AND EXISTS (SELECT * FROM events e WHERE startdate > '#{1.day.ago.to_formatted_s(:db)}' AND taggable_id=e.id)"
+    @list_type = "current"
     render :action => 'index'
   end
  
-  def impressum
+  def powerless
+    @tags = Tag.counts :conditions => "taggable_type='event' AND NOT EXISTS (SELECT * FROM events e WHERE startdate > '#{1.day.ago.to_formatted_s(:db)}' AND taggable_id=e.id)"
+    @list_type = "powerless"
+    render :action => 'index'
+  end
+  
+  def imprint
   end
 
   def about

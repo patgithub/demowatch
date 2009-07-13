@@ -1,26 +1,29 @@
-﻿
-%h1 Presse
+%h1=t(".title")
 
-%h2 Meldungen über uns
-
-.q
-  Hier tragen wir alle ein, die was über uns schreiben und von denen wir wissen:
+%h2=t(".announcements.title")
+%p
+  =t(".announcements.text")
   %ul
-    %li= link_to h("12.1.2009 - hamburger-anon.blogspot.com"), "http://hamburger-anon.blogspot.com/search/label/Demowatch.de", { :target=>'_new'}
-    %li= link_to h("21.12.2008 - whyweprotest.net"), "http://forums.whyweprotest.net/222-deutsch/ger-operation-demowatch-de-34202/", { :target=>'_new'}
-    %li= link_to h("15.12.2008 - toleranzcafe.foren-city.de"), "http://toleranzcafe.foren-city.de/topic,165,-was-geht-wann-warum-und-wo.html", { :target=>'_new'}
-    %li= link_to h("14.12.2008 - de.indymedia.org"), "http://de.indymedia.org/2008/12/236097.shtml", { :target=>'_new'}
-    %li= link_to h("6.12.2008 - netzwertig.com"), "http://netzwertig.com/2008/12/06/samstag-app-fieber-demowatch-device-dode-und-mehr/", { :target=>'_new'}
-    %li= link_to h("5.12.2008 - alles2null.de"), "http://www.alles2null.de/berufs-demonstanten-haben-jetzt-ein-zentrales-organisations-portal/2023/", { :target=>'_new'}
-    %li= link_to h("3.12.2008 - MoMB"), "http://momb.socio-kybernetics.net/beta/demowatch", { :target=>'_new'}
-    %li= link_to h("30.11.2008 - eliterator.blog.de"), "http://eliterator.blog.de/2008/11/30/demowatch-de-erinnerungsservice-demos-netz-5133206", { :target=>'_new'}
-    %li= link_to h("23.11.2008 - twitter.com"), "http://twitter.com/silentdan/statuses/1019360729", { :target=>'_new'}
-  Sie können gerne 
-  =link_to h("neue Publikation melden."), "mailto:info@demowatch.de"
+    %li= link_to l(Date.new(2009,5,26))+"- rhein-zeitung.de", "http://rhein-zeitung.de/on/09/05/26/service/computer/surftippderwoche/t/rzo568562.html", :target=>'_new'
+    %li= link_to l(Date.new(2009,5,15))+"- maerkischeallgemeine.de", "http://www.maerkischeallgemeine.de/cms/beitrag/11506876/7249920/Demowatch-informiert-bundesweit-ueber-Kundgebungen.html", :target=>'_new'
+    %li= link_to l(Date.new(2009,5,13))+"- magazine.web.de", "http://magazine.web.de/de/themen/digitale-welt/internet/8143926-Wo-bitte-geht-s-zur-naechsten-Demo,cc=000007159700081439261IPUH8.html", :target=>'_new'
+    %li= link_to l(Date.new(2009,5,13))+"- arcor.de", "http://www.arcor.de/content/pc_technik/internet/surftipp_der_woche/56259230,1,artikel,Demowatch+informiert+bundesweit+ueber+Kundgebungen.html", :target=>'_new'
+    %li= link_to l(Date.new(2009,5,13))+"- wz-newsline.de", "http://www.wz-newsline.de/?redid=520009", :target=>'_new'
+    %li= link_to l(Date.new(2009,5,13))+"- nzwonline.de", "http://www.nwzonline.de/index_aktuelles_ticker_article.php?id=243149", :target=>'_new'
+    %li= link_to l(Date.new(2009,3,31))+"- LandkartenBLOG.de", "http://landkartenindex.blogspot.com/2009/03/demowarchde-demos-in-deutschland.html", :target=>'_new'
+    %li= link_to l(Date.new(2009,1,12))+"- hamburger-anon.blogspot.com", "http://hamburger-anon.blogspot.com/search/label/Demowatch.de", :target=>'_new'
+    %li= link_to l(Date.new(2008,12,21))+" - whyweprotest.net", "http://forums.whyweprotest.net/222-deutsch/ger-operation-demowatch-de-34202/", :target=>'_new'
+    %li= link_to l(Date.new(2008,12,15))+" - toleranzcafe.foren-city.de", "http://toleranzcafe.foren-city.de/topic,165,-was-geht-wann-warum-und-wo.html", :target=>'_new'
+    %li= link_to l(Date.new(2008,12,14))+" - de.indymedia.org", "http://de.indymedia.org/2008/12/236097.shtml", :target=>'_new'
+    %li= link_to l(Date.new(2008,12,9))+" - niftz.com", "http://www.niftz.com/wie-eine-demonstration-finden", :target=>'_new'
+    %li= link_to l(Date.new(2008,12,6))+" - netzwertig.com", "http://netzwertig.com/2008/12/06/samstag-app-fieber-demowatch-device-dode-und-mehr/", :target=>'_new'
+    %li= link_to l(Date.new(2008,12,5))+" - alles2null.de", "http://www.alles2null.de/berufs-demonstanten-haben-jetzt-ein-zentrales-organisations-portal/2023/", :target=>'_new'
+    %li= link_to l(Date.new(2008,12,5))+" - netznews.org", "http://www.netznews.org/?p=1770", :target=>'_new'
+    %li= link_to l(Date.new(2008,12,3))+" - MoMB", "http://momb.socio-kybernetics.net/beta/demowatch", :target=>'_new'
+    %li= link_to l(Date.new(2008,11,30))+" - eliterator.blog.de", "http://eliterator.blog.de/2008/11/30/demowatch-de-erinnerungsservice-demos-netz-5133206", :target=>'_new'
+    %li= link_to l(Date.new(2008,11,23))+" - twitter.com", "http://twitter.com/silentdan/statuses/1019360729", :target=>'_new'
+%p=link_to h(t(".announcements.name")), "mailto:info@demowatch.de"
   
-%h2 Demowatch Link-Button
-.q 
-  Zur freien Verwendung diese Bilder über Demowatch (am besten mit Link auf demowatch.de auf die eigene Seite einbinden):
-.q
-  .center
-    = image_tag('demowatch_linkbutton.gif')
+%h2=t(".linkbutton.title")
+%p=t(".linkbutton.text")
+%p.center= image_tag('demowatch_linkbutton.gif')

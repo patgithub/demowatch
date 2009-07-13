@@ -5,14 +5,13 @@ body.main {
   background: #c8dbf1 url(/images/gradient.gif) repeat-x; 	
 }
 
-p {
-/* das hier stört beim TinyMCE
-	margin-left:2em; 
-*/
-}
-
 textarea {
 	width:550px;
+}
+
+p {
+	margin-bottom:.5em;
+	margin-left:2em;
 }
 
 a {
@@ -48,10 +47,17 @@ small {
 	color: #276cba;
 }
 
-.rss, .ical {
+.rss, .ical, .twitter{
 	float: right;
   margin-top: 2px;
   margin-left: 2px;
+}
+
+.balancer{
+	float: left;
+  margin-top: 2px;
+  margin-left: 2px;
+  width: 16px;
 }
 
 .views {
@@ -200,6 +206,31 @@ table tr td {
 	vertical-align: top;
 }
 
+table tr td.separator {
+  text-align: center;
+  font-size: 1.5em;
+	vertical-align: top;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table tr td.separator_first {
+  text-align: center;
+  font-size: 1.5em;
+	vertical-align: top;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 table tr.even {
 	background: #c8dbf1;
 }
@@ -330,7 +361,7 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 }
 	
 .fieldWithErrors {
-
+	margin-left:2em;
 }
 
 .fieldWithErrors span {
@@ -345,15 +376,11 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 	border-bottom-color: red;border-bottom-style: double; border-bottom-width: 2px;
 	background-color: mistyrose;
  	font-weight: bold;
-  	padding-left: 3px;
+  padding-left: 3px;
 }
 
-.indent, .q {
+.indent  {
 	margin-left:2em;
-}
-
-.q {
-	margin-bottom:.5em
 }
 
 .center {
@@ -374,62 +401,59 @@ a.xmenu2:hover .xboxcontentd {background:#fff; border-color:#888; border-top:1px
 	color: red;	
 }
 
-/* ***************** pagination ***************** */
-
-.pagination {
-	margin-top: 5px;
-  background: white;
-  text-align: center;
-  /* self-clearing method: */ 
-}
-.pagination a, .pagination span {
-  padding: .1em .3em;
-  margin-right: 1px;  
-}
-.pagination span.disabled {
-  color: #999;
-}
-.pagination span.current {
-  font-weight: bold;
-  background: #276cba;
-  color: white;
-  border: 1px solid #276cba; 
-}
-.pagination a {
-  text-decoration: none;
-  color: #105CB6;
-}
-.pagination a:hover, .pagination a:focus {
-  color: #003;
-  border-color: #003; 
-}
-.pagination .page_info {
-  background: #276cba;
-  color: white;
-  padding: .4em .6em;
-  width: 22em;
-  margin-bottom: .3em;
-  text-align: center; 
-}
-.pagination .page_info b {
-  color: #003;
-  background: #6aa6ed;
-  padding: .1em .25em; 
-}
-.pagination:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden; 
-}
-* html .pagination {
-  height: 1%; 
-}
-*:first-child+html .pagination {
-  overflow: hidden; 
-}
-
 .gmnoprint div {
 	line-height: 1.2em;
+}
+
+.anchor_index {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+hr  {
+  border-top: 1px solid #c8dbf1;
+  border-bottom: 0px;
+  text-align: center;
+}
+
+.admin a {
+ 	font-style: italic;
+	color: red;	
+}
+
+.owner , .admin{
+	display: inline;	
+}
+
+.owner a {
+	color: #276cba;	
+}
+
+.comment_created_at {
+  float: right;
+  color: #888888;
+  font-size: .7em;
+}
+
+.comment_context {
+  text-align: right;
+}
+
+.yesterday {
+}
+
+.tomorrow {
+	font-weight: bold;
+	color: orange;	
+}
+
+.today {
+	font-weight: bold;
+	color: red;	
+}
+
+.now  {
+	font-weight: bold;
+	color: red;	
 }

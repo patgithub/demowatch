@@ -8,17 +8,19 @@ class Event < ActiveRecord::Base
                    :lat_column_name => :latitude,
                    :lng_column_name => :longitude
   acts_as_paranoid
-
+  acts_as_commentable
 
 #  before_validation_on_create :geocode_address
   
   validates_presence_of  :address
   validates_presence_of  :title
   validates_length_of    :title, :within => 3..100
+  validates_presence_of  :link
   validates_presence_of  :tag_list
 
 
   belongs_to :organisation
+  belongs_to :user
   
 
 # SEO friendly URLs
@@ -37,12 +39,16 @@ class Event < ActiveRecord::Base
   end
 
   def link= value
-    if value =~ /@/
-      self [:link]='mailto:'+value unless value =~ /^mailto:/
-    elsif value =~ /^http:\/\//
+    if value == ''
       self [:link]=value
     else
-      self [:link]='http://'+value
+      if value =~ /@/
+        self [:link]='mailto:'+value unless value =~ /^mailto:/
+      elsif value =~ /^http:\/\//
+        self [:link]=value
+      else
+        self [:link]='http://'+value
+      end
     end
   end
   
@@ -54,7 +60,7 @@ private
       return
     end
     geo=GeoKit::Geocoders::MultiGeocoder.geocode(address)
-    errors.add(:address, "Adresse wurde nicht gefunden") if !geo.success
+    errors.add(:address, I18n.t("activerecord.errors.messages.google_not_found")) if !geo.success
     self.address,self.city,self.latitude,self.longitude = geo.full_address,geo.city,geo.lat,geo.lng if geo.success
 #    puts( geo.state + '##################');
   end

@@ -1,0 +1,54 @@
+%h1=t(".title")
+
+%h2=t(".contact.title") 
+%p=t(".contact.text") 
+  
+%h3=t(".contact.email.title") 
+%p=link_to t(".contact.email.name"),t(".contact.email.link")
+
+%h2=t(".participants.title")
+%p=t(".participants.text")
+
+%h3=t(".idea.title")
+%p=link_to t(".idea.name"),t(".idea.link")
+
+%h3=t(".programming.title")
+%p
+  =link_to t(".programming.name1"),t(".programming.link1")
+  %br=link_to t(".programming.name2"),t(".programming.link2") 
+
+%h3=t(".mediawork.title")
+%p
+  =link_to t(".mediawork.name1"),t(".mediawork.link1") 
+  %br=link_to t(".mediawork.name2"),t(".mediawork.link2") 
+
+%h2=t(".jobs.title")
+%ul
+  %li=t(".jobs.job1")
+  %li=t(".jobs.job2")
+  %li=t(".jobs.job3")
+  %li=t(".jobs.job4")
+%p
+  =link_to t(".jobs.call.text"),t(".jobs.call.link")
+
+%h2=t(".opensource.title")
+ 
+%p
+  = link_to t(".opensource.text"),'http://github.com/patgithub/demowatch/tree/master'
+
+%h2=t(".responsibility.title") 
+%p
+  Patrick Hoffmann
+  %br
+  Ruppiner Str. 5
+  %br
+  10115 Berlin, Germany
+%p= link_to 'p.hoffmann@demowatch.de','mailto:p.hoffmann@demowatch.de'
+
+%h2=t(".techniques.title") 
+%p=t(".techniques.text") 
+%br
+.center
+  = link_to image_tag('rails.gif'), 'http://rubyonrails.org', { :target=>'_new'}
+  = link_to image_tag('ubuntu.gif'), 'http://ubuntu.com', { :target=>'_new'}
+  = link_to image_tag('mysql.gif'), 'http://mysql.org', { :target=>'_new'}

@@ -5,13 +5,16 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.1.2' unless defined? RAILS_GEM_VERSION
-L10N_LANG = :de 
+RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
+
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+
+  config.i18n.default_locale = :en
+  
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
@@ -69,7 +72,6 @@ Rails::Initializer.run do |config|
   
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
-  
   
   # sanitize whitelist:
   # from tinymce-config: bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo, link,unlink
@@ -156,6 +158,6 @@ GeoKit::Geocoders::geocoder_ca = false
 # geocoder you are going to use.
 GeoKit::Geocoders::provider_order = [:google,:us]
 
-ActionMailer::Base.register_template_extension('haml')
+#ActionMailer::Base.register_template_extension('haml')
 ActionMailer::Base.default_charset = "UTF-8"
 

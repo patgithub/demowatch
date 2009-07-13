@@ -1,36 +1,48 @@
-%h1 Einstellungen
+- content_for :header do
+  = javascript_include_tag 'textboxlist'
+  = stylesheet_link_tag 'textboxlist'
+
+%h1= t(".title")
 
 .contextmenu
-  = link_to 'Anzeigen', @user  
+  = link_to t(".contextmenu.show"), @user
 %br
-.q
-  Die von Dir hier angegebenen Daten werden von uns streng vertraulich
-  behandelt und weder auf dieser Website ver&ouml;ffentlicht noch an
-  Dritte weitergegeben.
-
+%p= t(".text")
+ 
 - form_for(@user) do |f| 
-  = f.error_messages 
+  %p
+    = error_messages_for :user
 
-  %h2 Daten
+  %h2= t(".data.title")
 
-  .indent
-    = f.label :login, 'Name'
+  %p
+    = f.label :login, t(".data.field.name")
     = f.text_field :login, :size=>60
 
-    = f.label :email, 'E-Mail <i>(f&uuml;r Themenabos)</i>'
+    = f.label :email, t(".data.field.email")
     = f.text_field :email, :size=>60
 
-    = f.label :zip, 'PLZ <i>(optional, eine oder mehrere Stellen)</i>'
+    = f.label :zip, t(".data.field.zip")
     = f.text_field :zip, :size=>5, :value=>@str_zip  
 
-  %h2 Abonnements
+  %h2= t(".password.title")
+  
+  %p
+    = f.label :password, t(".password.field.password")
+    = f.password_field :password 
 
-  .indent
-    = f.label :tag_list, 'Themen <i>(mehrere durch Komma getrennt)</i>'
+  %p
+    = f.label :password_confirmation, t(".password.field.password_confirmation")
+    = f.password_field :password_confirmation 
+  
+  %h2= t(".subscriptions.title")
+
+  %p
+    = f.label :tag_list, t(".subscriptions.field.tag_list")
     = f.text_field :tag_list, :size=>60, :autocomplete => "off" 
     #user_tag_list_auto_complete.auto_complete{:style=>'display:none'}
 
   .buttons
-    = f.submit "Speichern"
+    = f.submit t(".submit")
 
 = auto_complete_field 'user_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' '] }

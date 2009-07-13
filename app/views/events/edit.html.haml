@@ -1,15 +1,16 @@
 - content_for :header do
-  = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAbmKt_bX8rXoUBM2tWSorIRTnBMjsH0Y2aRb-_04glZphNt2GURSXRZg8NE723uvkLLIsOlfTgHhmzA&dummy=xxxx', 'geocode'
+  = javascript_include_tag 'http://maps.google.com/maps?file=api&amp;v=2&amp;key=' + google_maps_key + '&dummy=xxxx', 'geocode'
 
-%h1 Demonstration bearbeiten
+%h1=t(".title")
 
 .contextmenu
-  = link_to 'Show', @event 
+  = link_to t(".contextmenu.show"), @event 
   |
-  = link_to 'Back', events_path
+  = link_to t(".contextmenu.back"), events_path
 
 - form_for(@event, :html => { :onSubmit => 'return geocodeAddress(event_address);' }) do |f|
   = render :partial => 'fields', :locals => {:f => f}
-  .buttons= f.submit "Speichern"
+  
+  .buttons= f.submit t(".button.submit")
 
 = auto_complete_field 'event_tag_list', {:url => { :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' ']  }

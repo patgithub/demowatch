@@ -1,0 +1,135 @@
+en:
+  events:
+    flash:
+      create:
+        success: "Demonstration has been successfully submitted."
+      update:
+        success: "Demonstration has been successfully updated."
+      add_comment:
+        success: "Comment submitted"
+      delete_comment_success: "Comment deleted"
+    fields:
+      title: "Required information"
+      name:
+        field:
+          title: "Title"
+          themes: "Topics <i>(separated by commas)</i>"
+        theme_hint: "For the topics please select <b>short and unambiguous terms</b>. The choice of subjects has a direct implact on the popularity on <i> Demowatch.eu </i>. It is therefore <b>an advantage to use existing terms</b>!"
+      venue: 
+        title: "Concourse"
+        field:
+          address: "Address (<i>ZIP or Street No, ZIP or Street City ...</i>)"
+          location: "Additional concourse notes"
+          startdate: "Date"
+      information:
+        title: "Informationen"
+        field:
+          description: "Description"
+          link: "Website (or e-mail address)"
+          initiator: "Promoter"
+      hint:
+        title: "Notice"
+        text: "We want to offer our visitors always as accurate and reliable information of demonstrations taking place. <u>All unconstitutional or illegal content will be deleted</u> by us immediately, and its author, if applicable, will be locked <i>Demowatch.de</i>!"
+
+
+
+    archive:
+      title: "Past demonstrations"
+      contextmenu:
+        current: "Current Demonstrations"
+        archive: "Past demonstrations"
+        new: "New Demonstration"
+      table:
+        title: "The following actions have already passed:"
+        head:
+          startdate: "Date"
+          title: "Demonstration"
+          city: "Location"
+          distance: "Distance"
+
+
+
+    edit:
+      title: "Edit demonstration"
+      contextmenu:
+        show: "Show"
+        back: "Back to list of demonstrations"
+      button:
+        submit: "Save"
+
+
+
+    index:
+      title: "Current demonstrations"
+      contextmenu:
+        archive: "Past demonstrations"
+        new: "New demonstration"
+        map: "Map"
+      confirm:
+        maps: "Note: This link will forward you to Google Maps."
+      table:
+        title: "The following actions are known for the next time:"
+        head:
+          startdate: "Date"
+          title: "Demonstration"
+          city: "Location"
+          distance: "Distance"
+
+
+
+    new:
+      title: "New Demonstration"
+      contextmenu:
+        back: "Back to list of demonstrations"
+      button:
+        submit: "Create"
+
+
+
+    show:
+      contextmenu:
+        edit: "Edit"
+        delete: "Delete"
+        unsubscribe: "Unsubscribe"
+        subscribe: "Subscribe"
+      confirm:
+        delete: "Really delete Demonstration"
+        maps: "Please note Google Maps is able to store your IP address when accessing and viewing the maps."
+      themes:
+        title: "Topics"
+      venue:
+        title: "Concourse"
+        startdate:
+          past: "This action took place on {{startdate}}."
+          yesterday: "This action took place yesterday, {{startdate}}."
+          now: "<span class='red'>This action is already in progress</span> since <b>{{startdate}}</b>."
+          tomorrow: "<span class='red'>This action will start </span>at <b>{{startdate}}</b>."
+          soon: "<span class='red'>This action will start in {{timespan}}</span> on <b>{{startdate}}</b>."
+          future: "This action will start in <b>{{timespan}}</b> on <b>{{startdate}}</b>."
+        address: "Meeting place is <b>{{address}}</b>"
+        location: "({{location}})"
+      description:
+        title: "Description"
+        initiator:
+          title: "Promoter"
+          text: "This demonstration was submitted by"
+        info:
+          title: "Additional Information"
+      comments:
+        add:
+          title: "Leave a comment"
+          hint: "You can add a comment or additional information to this action here. You name will <u>not</u> be shown to other users!"
+        list:
+          title: "Comments"
+        field:
+          title: "Topic"
+          comment: "Comment"
+        context:
+          delete: "Delete"
+        confirm:
+          delete: "Would you really like to delete this comment?"
+      button:
+        add_comment: "Submit comment"
+      card:
+        show: "Show map"
+        hide: "Hide map"

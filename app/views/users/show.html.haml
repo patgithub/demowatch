@@ -1,53 +1,52 @@
 - content_for :header do
   = auto_discovery_link_tag :rss, :controller => 'events', :format => 'rss', :tags => @user.tags.join(',')
 
-
 %h1= @user.login
 
 .contextmenu
-  =link_to 'Bearbeiten', edit_user_path(@user)
+  =link_to t(".contextmenu.edit"), edit_user_path(@user)
 %br
-.q 
-  Die von Dir hier angegebenen Daten werden von uns streng vertraulich 
-  behandelt und weder auf dieser Website ver&ouml;ffentlicht noch an 
-  Dritte weitergegeben.
+%p= t(".text") 
 
-%h2 Deine Daten
+%h2= t(".data.title")
 
-.q
-  %b Name:
+%p
+  %b= t(".data.field.name")
   = h @user.login 
 
-.q
-  %b Email:
+%p
+  %b= t(".data.field.email")
   = h @user.email 
 
-.q
-  %strong PLZ:
+%p
+  %b= t(".data.field.plz")
   - unless @user.zip.nil?
     = h @user.zip.zip
     = h @user.zip.name
      
-%h2 Von Dir verwaltete Inhalte
+%h2= t(".owned.title")
 - unless @organisations.empty?
-  %h3 Initiativen
-  .q= @organisations.map{|organisation| link_to h( organisation.title), organisation}.join(', ')
+  %h3= t(".owned.organisations.title")
+  %p= @organisations.map{|organisation| link_to h( organisation.title), organisation}.join(', ')
 
 - unless @events.empty?
-  %h3 Demonstrationen
-  .q= @events.map{|event| link_to h( event.title), event}.join(', ')
+  %h3= t(".owned.events.title")
+  %p= @events.map{|event| link_to h( event.title), event}.join(', ')
 
-%h2 Deine Abonnements
+- unless @user.tags.empty? && @user.bookmarks.empty?
+  %h2= t(".subscriptions.title")
 
-%h3 Themen
-.q= @user.tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag}}.join(', ')
-.q
-  = link_to image_tag('rss.gif',:class => 'rss'), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
-  = link_to 'Diese Themen als RSS Feed abonnieren', :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
+  - unless @user.tags.empty?
+    %h3= t(".subscriptions.themes.title")
+    %p= @user.tags.map{|tag| link_to h( tag.name), {:controller=>:tag, :action=>tag}}.join(', ')
+    %p
+      = link_to image_tag('rss.gif',:class => 'rss'), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
+      = link_to t(".subscriptions.themes.rss"), :controller => 'events', :format => 'rss', :tags => @user.tags.join(',') if !@user.tags.empty? 
 
-%h3 Demos & Inititativen
-.q
-  %ul
-    - @user.bookmarks.each do |bm|
-      %li= link_to h( bm.title), bm.bookmarkable
+    - unless @user.bookmarks.empty?
+      %h3= t(".subscriptions.events_organisations.title")
+      %p
+        %ul
+          - @user.bookmarks.each do |bm|
+            %li= link_to h( bm.title), bm.bookmarkable
 

@@ -1,0 +1,18 @@
+de:
+  sessions:
+    flash:
+      create:
+        success: "Du hast Dich erfolgreich angemeldet"
+        failed: "<div class='red'>Anmeldung war nicht erfolgreich!</div>"
+      destroy:
+        success: "Du hast Dich erfolgreich abgemeldet"
+    new:
+      title: "Anmelden"
+      text: "Wenn Du Dich bei <i>Demowatch</i> registriert hast, kannst Du Dich hier anmelden und deine persönlichen Themengebiete via Newsletter abonnieren sowie Informationen zu einzelnen Demos verfolgen."
+      signup_first: "<b>Wenn du noch kein Konto hast, registriere dich hier.</b>"
+      login:
+        title: "Anmeldedaten"
+        login: "Login"
+        password: "Passwort"
+        auto: "Automatisch einloggen"
+        submit: "Anmelden"

@@ -2,11 +2,15 @@ class UserMailer < ActionMailer::Base
   def signup_notification(user)
     setup_email(user)
     @subject    += 'Bitte Dein Konto auf Demowatch.de aktivieren!'
-  
     @body[:url]  = "http://www.demowatch.eu/activate/#{user.activation_code}"
-  
   end
-  
+ 
+  def resignup_notification(user)
+    setup_email(user)
+    @subject    += 'Deine Registrierung auf demowatch.de'
+    @body[:url]  = "http://www.demowatch.eu/activate/#{user.activation_code}"
+  end
+ 
   def activation(user)
     setup_email(user)
     @subject    += 'Dein Konto auf Demowatch.de wurde aktiviert'

@@ -1,11 +1,12 @@
-%h1 Themen, zu denen demonstriert wird...
+%h1= t(".title.#{@list_type}")
 
 .contextmenu
-  = link_to 'Nur Demothemen', :event_cloud
+  = link_to t(".contextmenu.current_only"), :current_cloud
   |
-  = link_to 'Alle Themen', :all_cloud
+  = link_to t(".contextmenu.demo_only"), :event_cloud
+  |
+  = link_to t(".contextmenu.all_themes"), :all_cloud
 %br
 .cloud
   - tag_cloud @tags, %w(css0 css1 css2 css3 css4), current_user do |tag, css_class| 
     = link_to h( tag.name), { :controller=>:tag, :action => tag.name }, :class => css_class
-    

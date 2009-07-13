@@ -1,11 +1,12 @@
-%h1 Initiative bearbeiten
+%h1=t(".title")
 
 .contextmenu
-  = link_to 'Anzeigen', @organisation  
+  = link_to t(".contextmenu.show"), @organisation  
   |
-  = link_to 'Zurück zu den Initiativen', organisations_path
+  = link_to t(".contextmenu.back"), organisations_path
 
 - form_for(@organisation) do |f| 
   = render :partial => 'fields', :locals => {:f => f}
-  .buttons= f.submit "Speichern"
+
+  .buttons= f.submit t(".button.submit")
 

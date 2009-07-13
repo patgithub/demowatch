@@ -1,43 +1,48 @@
-﻿
 - content_for :header do
   = auto_discovery_link_tag :rss, :format => 'rss'
 
-%h1 Aktuelle Demonstrationen
+%h1= t(".title")
 
 .contextmenu
-  = link_to 'Aktuelle Demos', events_path
-  |
-  = link_to 'Vergangene Demos', archive_events_path
+  .balancer
+  .balancer
+  .balancer
+  = link_to t(".contextmenu.archive"), archive_events_path
   - if logged_in? 
     |
-    = link_to 'Demo eintragen', new_event_path
+    = link_to t(".contextmenu.new"), new_event_path
   |
-  = link_to h("Karte"), "http://maps.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=http://www.demowatch.de/events.rss&g=%2B52%C2%B0+28'+58.22&ie=UTF8&z=7", { :target=>'_new'}
+  = link_to t(".contextmenu.map"), "http://maps.google.de/maps?f=q&source=s_q&hl=de&geocode=&q=http://www.demowatch.de/events.rss&g=%2B52%C2%B0+28'+58.22&ie=UTF8&z=7", { :target=>'_new', :confirm => cookies[:maps]?nil:t(".confirm.maps") }
   .rss= link_to image_tag('rss.gif'), :format => 'rss'
   .ical= link_to image_tag('ical.gif'), :format => 'ical'
+  .twitter= link_to image_tag('twitter.gif'), "http://twitter.com/demowatchderss"
     
 %br
 .tabletitle
-  Folgende Aktionen sind uns für die kommende Zeit bekannt:
+  = t(".table.title")
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
   %tr
-    %th Termin 
-    %th Demo
-    %th Ort
+    %td{:colspan=>@with_distance?4:3}
+      .anchor_index
+        - index_with_month(@events).each_with_index do |month, index|
+          = " | " if index > 0 
+          = link_to month, "#" + String(month)
+  
+  %tr
+    %th= t(".table.head.startdate")
+    %th= t(".table.head.title")
+    %th= t(".table.head.city")
     - if( @with_distance)
-      %th Entfernung
+      %th= t(".table.head.distance")
   - @events.each_with_index do |event, index|
+    - if index == 0 || event.startdate.to_date.month != @events[index-1].startdate.to_date.month
+      %tr
+        %td{:class=> index==0 ? "separator_first" : "separator", :colspan=>@with_distance?4:3}
+          %a{:name => l(event.startdate.to_date,:format=>"%m-%Y") }
+          = l(event.startdate.to_date,:format=>"%B %Y") 
     %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
-      - if event.startdate.strftime('%d.%m.%Y') == Time.now.strftime('%d.%m.%Y')
-        %td
-          .center
-            .red Heute!
-      - elsif event.startdate <= Time.now && event.startdate > 6.hours.ago
-        %td
-          .center
-            .red Jetzt!
-      - else
-        %td= event.startdate && event.startdate.strftime('%d.%m.%Y')
+      %td.center
+        %nobr= startdate_thisyear(event)
       %td= link_to h( event.title), event
       %td= h( event.city)
       -if @with_distance       
@@ -46,5 +51,4 @@
             .right= sprintf( "%.0f km", event.distance)  
         - else
           %td
-= will_paginate @events, :per_page=>80
 %br

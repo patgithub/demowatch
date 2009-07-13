@@ -1,0 +1,82 @@
+de:
+  users:
+    flash:
+      create:
+        success: "Vielen Dank f&uuml;r die Anmeldung!"
+      update:
+        success: "Einstellungen wurden erfolgreich ge&auml;ndert."
+      activate:
+        success: "Dein Konto wurde aktiviert!"
+      subscribe:
+        event: "Du hast erfolgreich Infos zu dieser Demonstration abonniert."
+        organisation: "Du hast erfolgreich Infos zu diesem Initiator abonniert."
+      unsubscribe:
+        event: "Du hast erfolgreich Infos zu dieser Demonstration abbestellt." 
+        organisation: "Du hast erfolgreich Infos zu diesem Initiator abbestellt."
+        
+    edit:
+      title: "Meine Daten"
+      contextmenu:
+        show: "Anzeigen"
+      text: "Die von Dir hier angegebenen Daten werden von uns streng vertraulich behandelt und weder auf dieser Website veröffentlicht noch an Dritte weitergegeben."
+      data:
+        title: "Daten"
+        field:
+          name: "Name"
+          email: "E-Mail <i>(für Themenabos)</i>"
+          zip: "PLZ <i>(optional, eine oder mehrere Stellen)</i>"
+      password:
+        title: "Passwort ändern"
+        field:
+          password: "Neues Passwort"
+          password_confirmation: "Neuen Passwort bestätigen"
+      subscriptions:
+        title: "Abonnements"
+        field:
+          tag_list: "Themen <i>(mehrere durch Komma getrennt)</i>"
+      submit: "Speichern"
+
+
+
+    new:
+      title: "Registrierung"
+      text: "Hier kannst Du Dich für <i>Demowatch.de</i> registrieren. Dadurch kannst Du Dich über die Themengebiete, die Dich persönlichen interessieren, als E-Mail oder RSS-Feed abonnieren und so Informationen zu einzelnen Demos automatisiert verfolgen."
+      data:
+        title: "Benötigte Daten"
+        field:
+          login: "Login"
+          email: "E-Mail <i>(für Themenabos)</i>"
+          password: "Passwort"
+          password_confirmation: "Passwort bestätigen"
+      options:
+        title: "Optionale Daten"
+        text: "Damit wir die Demos in Deiner Nähe finden können, kannst Du hier den ersten Teil Deiner Postleitzahl eingeben. Du musst es aber nicht!"
+        zip: "PLZ <i>(optional, eine oder mehrere Stellen)</i>"
+      submit: "Registrieren"
+
+
+
+    show:
+      contextmenu:
+        edit: "Bearbeiten"
+      text: "Die von Dir hier angegebenen Daten werden von uns streng vertraulich behandelt und weder auf dieser Website veröffentlicht noch an Dritte weitergegeben."
+      data:
+        title: "Deine Daten"
+        field:
+          name: "Name:"
+          email: "Email:"
+          plz: "PLZ:"
+      owned: 
+        title: "Von Dir verwaltete Inhalte"
+        organisations:
+          title: "Initiatoren"
+        events:
+          title: "Demonstrationen"
+      subscriptions:
+        title: "Deine Abonnements"
+        themes:
+          title: "Themen"
+          rss: "Diese Themen als RSS Feed abonnieren"
+        events_organisations:
+          title: "Demos & Inititativen"
+        

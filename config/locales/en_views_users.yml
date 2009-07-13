@@ -1,0 +1,82 @@
+en:
+  users:
+    flash:
+      create:
+        success: "Thank you for registering!"
+      update:
+        success: "Preferences successfully updated."
+      activate:
+        success: "Your account has been activated!"
+      subscribe:
+        event: "You have successfully subscribed informations about this demo."
+        organisation: "You have successfully subscribed informations about this promoter."
+      unsubscribe:
+        event: "You have successfully unsubscribed informations about this demo."
+        organisation: "You have successfully unsubscribed informations about this promoter."
+
+    edit:
+      title: "Preferences"
+      contextmenu:
+        show: "Show"
+      text: "All of your personal data are kept strictly confidential and will not be published on this website nor disclosed to third parties."
+      data:
+        title: "Data"
+        field:
+          name: "Name"
+          email: "E-mail <i>(for topic subscribtions)</i>"
+          zip: "postal code <i>(optional, one or more numbers)</i>"
+      password:
+        title: "Change passphrase"
+        field:
+          password: "New passphrase"
+          password_confirmation: "Confirm new passphrase"
+      subscriptions:
+        title: "Subscriptions"
+        field:
+          tag_list: "Topics <i>(separated by commas)</i>"
+      submit: "Save"
+
+
+
+    new:
+      title: "Sign up"
+      text: "Here you can sig up for Demowatch.de. Thus you can subscribe to the topics in which you are personally interested to track your demonstrations automatically via e-mail or RSS feed."
+      data:
+        title: "Required Information"
+        field:
+          login: "Login"
+          email: "E-mail <i>(for topic subscriptions)</i>"
+          password: "Passphrase"
+          password_confirmation: "Confirm passhrase"
+      options:
+        title: "Optional Data"
+        text: "In order to find demonstations in your surrounding area, you can enter here the first part(s) of your zip code. You do not need it if you are scarry and/or paranoid ;)"
+        zip: "Zip Code <i>(optional, one or more numbers)</i>"
+      submit: "Sign up"
+
+
+
+    show:
+      contextmenu:
+        edit: "Edit"
+      text: "All of your personal data are kept strictly confidential and will not be published on this website nor disclosed to third parties."
+      data:
+        title: "Your personal data"
+        field:
+          name: "Name:"
+          email: "E-mail:"
+          plz: "Zip Code:"
+      owned: 
+        title: "Your managed Content"
+        organisations:
+          title: "Promoter"
+        events:
+          title: "Demonstrations"
+      subscriptions:
+        title: "Your subscriptions"
+        themes:
+          title: "Topics"
+          rss: "Subscribe to these topics as RSS feed"
+        events_organisations:
+          title: "Demonstrations & Initiatives"
+        
