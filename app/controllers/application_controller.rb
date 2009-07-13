@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   end
   def redirect_to_www_demowatch_de
     if !request.host.include?('localhost') 
-      if request.host.match( /^www\.demowatch\.de/i).nil? || request.host.match( /^www\.demowatch\.eu/i).nil?
+      if request.host.match( /^www\.demowatch\.de/i).nil? && request.host.match( /^www\.demowatch\.eu/i).nil?
         redirect_to "http://www.demowatch.eu" + request.path, :status=>:moved_permanently
       end
     end
