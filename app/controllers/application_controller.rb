@@ -48,7 +48,16 @@ protected
   end
 private
   def extract_locale_from_accept_language_header
-    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
-  end  # zur hauptdomain umleiten
-
+    # some browsers (eg epiphany) don't send HTTP_ACCEPT_LANGUAGE ... so we use domain as language indicator
+    if request.env['HTTP_ACCEPT_LANGUAGE'].nil?
+      matches = request.host.match(/.*\.([a-z]+)/i)
+      domain2language = { :de=>:de, :eu=>:en }
+      if matches.nil? || domain2language[matches[1]].nil?
+        return 'en' #default language if everything fails
+      end
+      return matches[1]
+    else
+      request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+    end
+  end
 end
