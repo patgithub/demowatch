@@ -6,8 +6,8 @@ de:
       update:
         success: "Demonstration wurde erfolgreich ge&auml;ndert."
       add_comment:
-        success: "Kommentar wurde gespeichert"
-      delete_comment_success: "Kommentar wurde entfernt"
+        success: "Ergänzung wurde gespeichert"
+      delete_comment_success: "Ergänzung wurde entfernt"
     fields:
       title: "Benötigte Angaben"
       name:
@@ -119,7 +119,7 @@ de:
           title: "Neue Ergänzung eingeben"
           hint: "Hier können Sie einen Kommentar oder weitere Hinweise zu dieser Veranstaltung eingeben. Dabei wird Ihr Name den anderen Benutzern <u>nicht</u> angezeigt!"
         list:
-          title: "Kommentare"
+          title: "Ergänzungen"
         field:
           title: "Titel"
           comment: "Ergänzung"
