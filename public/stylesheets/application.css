@@ -457,3 +457,7 @@ hr  {
 	font-weight: bold;
 	color: red;	
 }
+
+.translation_missing {
+	border-bottom:1px solid red;
+}

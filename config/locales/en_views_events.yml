@@ -94,7 +94,6 @@ en:
         subscribe: "Subscribe"
       confirm:
         delete: "Really delete Demonstration"
-        maps: "Please note Google Maps is able to store your IP address when accessing and viewing the maps."
       themes:
         title: "Topics"
       venue:
@@ -131,5 +130,14 @@ en:
       button:
         add_comment: "Submit comment"
       card:
-        show: "Show map"
         hide: "Hide map"
+      openlayers_maps:
+        confirm: "Please note that OpenLayers is able to store your IP address and assign it with the URL of this page when accessing and viewing the maps."
+        show: "Show OpenLayers map"
+      google_maps:
+        confirm: "Please note that Google Maps is able to store your IP address and assign it with the URL of this page when accessing and viewing the maps."
+        show: "Show Goole map"
+      yahoo_maps:
+        confirm: "Please note that Yahoo Maps is able to store your IP address and assign it with the URL of this page when accessing and viewing the maps."
+        show: "Show Yahoo map"
+        

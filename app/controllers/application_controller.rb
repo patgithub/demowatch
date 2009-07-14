@@ -37,7 +37,11 @@ class ApplicationController < ActionController::Base
   def redirect_to_www_demowatch_de
     if !request.host.include?('localhost') 
       if request.host.match( /^www\.demowatch\.de/i).nil? && request.host.match( /^www\.demowatch\.eu/i).nil?
-        redirect_to "http://www.demowatch.eu" + request.path, :status=>:moved_permanently
+        matches = request.host.match(/.*\.([a-z]+)$/i)
+        if matches.nil?
+          redirect_to "http://www.demowatch.eu" + request.path, :status=>:moved_permanently
+        end
+        redirect_to "http://www.demowatch." + matches[1] + request.path, :status=>:moved_permanently
       end
     end
   end  
@@ -56,12 +60,12 @@ private
   def extract_locale_from_accept_language_header
     # some browsers (eg epiphany) don't send HTTP_ACCEPT_LANGUAGE ... so we use domain as language indicator
     if request.env['HTTP_ACCEPT_LANGUAGE'].nil?
-      matches = request.host.match(/.*\.([a-z]+)/i)
+      matches = request.host.match(/.*\.([a-z]+)$/i)
       domain2language = { :de=>:de, :eu=>:en }
       if matches.nil? || domain2language[matches[1]].nil?
         return 'en' #default language if everything fails
       end
-      return matches[1]
+      return domain2language[matches[1]]
     else
       request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
     end
