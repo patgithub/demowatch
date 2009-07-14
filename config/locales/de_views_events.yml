@@ -117,7 +117,7 @@ de:
       comments:
         add:
           title: "Neue Ergänzung eingeben"
-          hint: "Hier können Sie eine Kommentar oder weitere Hinweise zu dieser Veranstaltung eingeben. Dabei wird Ihr Name den anderen Benutzern <u>nicht</u> angezeigt!"
+          hint: "Hier können Sie einen Kommentar oder weitere Hinweise zu dieser Veranstaltung eingeben. Dabei wird Ihr Name den anderen Benutzern <u>nicht</u> angezeigt!"
         list:
           title: "Kommentare"
         field:
