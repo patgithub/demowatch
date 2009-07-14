@@ -45,7 +45,7 @@
         %td
           = link_to h( event.title), event
           - if event.comments.size > 0
-            = link_to " (" + String(event.comments.size) + ")", event_path(event) + "#1"
+            = link_to " (" + String(event.comments.size) + ")", event_path(event) + "#" + String(event.comments.first.id)
         %td= h( event.address)
         -if @with_distance       
           - if !event.distance.nil?
