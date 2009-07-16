@@ -89,7 +89,7 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.xml
   def new
-    @event = Event.new(:startdate => Time.now)
+    @event = Event.new(:startdate => Time.now, :event_type_id => Event::DemoEvent)
     @organisations = Organisation.find(:all, :order => 'title')
     
     respond_to do |format|

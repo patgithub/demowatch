@@ -18,10 +18,22 @@ class Event < ActiveRecord::Base
   validates_presence_of  :link
   validates_presence_of  :tag_list
 
-
   belongs_to :organisation
   belongs_to :user
+
+  DemoEvent = 0
+  PicketEvent = 1
+  FlashmobEvent = 2
+  ChainEvent = 3
   
+  def self.event_types
+    [
+      [ I18n.t("events.event_types.DemoEvent"), DemoEvent ],
+      [ I18n.t("events.event_types.PicketEvent"), PicketEvent ],
+      [ I18n.t("events.event_types.FlashmobEvent"), FlashmobEvent ],
+      [ I18n.t("events.event_types.ChainEvent"), ChainEvent ]
+      ]
+  end
 
 # SEO friendly URLs
   def to_param

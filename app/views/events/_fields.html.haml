@@ -6,6 +6,11 @@
 
 
 %h2= t(".title")
+
+%p
+  = f.label :type, t(".information.field.event_type")
+  = select_tag 'event[event_type_id]', options_for_select(Event.event_types)
+
 %p
   = f.label :title, t(".name.field.title")
   = f.text_field :title, :size=>60
@@ -15,6 +20,10 @@
   = f.text_field :tag_list, :size=>60, :autocomplete => "off"
   #event_tag_list_auto_complete.auto_complete{:style=>'display:none'}
 %p= t(".name.theme_hint")
+
+%p
+  = f.label :organisation, t(".information.field.initiator")
+  = select_tag 'event[organisation_id]', "<option value='-1'>" + t(".organisation.pleaseselect") + "</option>" + "<option value='-1'>" + t(".organisation.separator") + "</option>" + options_from_collection_for_select(@organisations, "id", "title", @event.organisation_id)
 
 %h3= t(".venue.title")
 %div{:id => 'addressContainer'}
@@ -63,10 +72,6 @@
 %p
   = f.label :link, t(".information.field.link")
   = f.text_field :link, :size=>60
-
-%p
-  = f.label :organisation, t(".information.field.initiator")
-  = select_tag 'event[organisation_id]', options_from_collection_for_select(@organisations, "id", "title", @event.organisation_id)
 
 %h2= t(".hint.title")
 
