@@ -5,28 +5,13 @@
   = f.error_messages
 
 
-%h2= t(".title")
-%p
-  = f.label :title, t(".name.field.title")
-  = f.text_field :title, :size=>60
-
-%p
-  = f.label :tag_list, t(".name.field.themes")
-  = f.text_field :tag_list, :size=>60, :autocomplete => "off"
-  #event_tag_list_auto_complete.auto_complete{:style=>'display:none'}
-%p= t(".name.theme_hint")
-
-%h3= t(".venue.title")
+%h2= t(".venue.title")
 %div{:id => 'addressContainer'}
   %p
     %a{:name => 'addressAnchor'}
     = f.label :address, t(".venue.field.address")
     = f.text_field :address, :size=>60
     %span{:id => 'addressDialogue', :style => 'display:none'} 
-
-%p
-  = f.label :location, t(".venue.field.location")
-  = f.text_field :location, :size=>60
 
 %p
   = f.label :startdate, t(".venue.field.startdate")
@@ -39,6 +24,21 @@
   
   :javascript
     var startcal = new scal('startcal', 'event_startdate', {weekdaystart: 1, updateformat:'dd.mm.yyyy'});
+
+%h2= t(".title")
+%p
+  = f.label :title, t(".name.field.title")
+  = f.text_field :title, :size=>60
+
+%p
+  = f.label :tag_list, t(".name.field.themes")
+  = f.text_field :tag_list, :size=>60, :autocomplete => "off"
+  #event_tag_list_auto_complete.auto_complete{:style=>'display:none'}
+%p= t(".name.theme_hint")
+
+%p
+  = f.label :location, t(".venue.field.location")
+  = f.text_field :location, :size=>60
 
 %h3= t(".information.title")
 %p
