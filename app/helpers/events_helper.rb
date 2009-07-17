@@ -42,7 +42,7 @@ module EventsHelper
   def index_with_year events 
     result = []
     events.reverse.each_with_index do |event, index|
-      if index == 0 || event.startdate.to_date.year != @events[-index].startdate.to_date.year
+      if index == 0 || event.startdate.to_date.year != events[-index].startdate.to_date.year
         result << event.startdate.to_date.year
       end
     end

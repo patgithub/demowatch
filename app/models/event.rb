@@ -17,6 +17,7 @@ class Event < ActiveRecord::Base
   validates_length_of    :title, :within => 3..100
   validates_presence_of  :link
   validates_presence_of  :tag_list
+  validates_presence_of  :organisation
 
   belongs_to :organisation
   belongs_to :user
