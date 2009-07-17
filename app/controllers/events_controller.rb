@@ -155,7 +155,7 @@ class EventsController < ApplicationController
       c = Comment.create(params[:comment])
       if c.update_attributes(params[:comment])
         @event.comments << c
-        CommentMailer::deliver_mail(current_user, c)
+        CommentMailer::deliver_mail(current_user, @event, c)
         flash[:notice] = t("events.flash.add_comment.success")
         format.html { redirect_to(@event) }
         format.xml  { head :ok }

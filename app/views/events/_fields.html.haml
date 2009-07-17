@@ -50,6 +50,11 @@
   = f.text_field :location, :size=>60
 
 %h3= t(".information.title")
+
+%p
+  = f.label :link, t(".information.field.link")
+  = f.text_field :link, :size=>60
+
 %p
   = f.label :description, t(".information.field.description")
   = f.text_area :description, :cols=>60
@@ -68,10 +73,6 @@
   content_css : "/stylesheets/tinymce.css",
   language : "de"
   });
-
-%p
-  = f.label :link, t(".information.field.link")
-  = f.text_field :link, :size=>60
 
 %h2= t(".hint.title")
 
