@@ -69,4 +69,10 @@ module EventsHelper
     result
   end
   
+  def type_image event
+    if event.event_type_id == Event::DemoEvent
+      "type_demo.gif"
+    end
+  end
+  
 end

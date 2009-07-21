@@ -195,7 +195,7 @@ class EventsController < ApplicationController
       format.html { redirect_to(@event) }
     end
   end
-  
+
 protected
   def find_event
     @event = Event.find(params[:id])

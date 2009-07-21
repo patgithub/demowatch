@@ -72,7 +72,7 @@ de:
           title: "Weitere Informationen"
       demonstrations:
         title: "Demonstrationen"
-        emtpy: "Diese Organisation unterstützte bisher keine Demonstrationen."
+        empty: "Diese Organisation unterstützte bisher keine Demonstrationen."
         table:
           title: "Diese Organisation unterstützt die folgenden Demonstrationen:"
           head:

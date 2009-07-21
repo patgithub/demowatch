@@ -85,9 +85,9 @@ de:
         title: "Folgende Aktionen sind uns für die kommende Zeit bekannt:"
         head:
           startdate: "Termin"
-          title: "Demo"
-          city: "Ort"
-          distance: "Entfernung"
+          title: "Demonstration"
+          city: "Location"
+          distance: "Distance"
 
 
 
