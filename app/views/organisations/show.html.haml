@@ -46,7 +46,7 @@
           %td{:class=> index==0 ? "separator_first" : "separator", :colspan=>@with_distance?4:3}
             %a{:name => event.startdate.to_date.year}
             = event.startdate.to_date.year
-      %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago}"}
+      %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago} #{'canceled' if event.canceled}"}
         %td.center
           %nobr= startdate_thisyear(event)
         %td
