@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_filter :login_required, :except => [:index, :show, :archive, :maps_on, :maps_off]
-  before_filter :find_event, :only => [:show, :edit, :update, :destroy]
-  allow :edit, :update, :destroy, :user => [:owns?, :is_admin?]
+  before_filter :find_event, :only => [:show, :edit, :update, :destroy, :cancel]
+  allow :edit, :update, :destroy, :cancel, :user => [:owns?, :is_admin?]
   
   skip_before_filter :verify_authenticity_token, :only => 'auto_complete_for_tag_name'
 
@@ -145,6 +145,30 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(events_url) }
+      format.xml  { head :ok }
+    end
+  end
+  
+  def cancel
+    @event = Event.find(params[:id])
+    @event.canceled = true
+    @event.save
+
+    respond_to do |format|
+      flash[:notice] = t("events.flash.cancel.success")
+      format.html { redirect_to(@event) }
+      format.xml  { head :ok }
+    end
+  end
+
+  def uncancel
+    @event = Event.find(params[:id])
+    @event.canceled = false
+    @event.save
+
+    respond_to do |format|
+      flash[:notice] = t("events.flash.uncancel.success")
+      format.html { redirect_to(@event) }
       format.xml  { head :ok }
     end
   end

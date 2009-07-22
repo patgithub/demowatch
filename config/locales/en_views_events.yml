@@ -8,6 +8,18 @@ en:
       add_comment:
         success: "Comment submitted"
       delete_comment_success: "Comment deleted"
+      cancel:
+        success: "Demonstration has been canceled!"
+      uncancel:
+        success: "Demonstration has been assured!"
+      
+    event_types:
+      DemoEvent: "Demonstration"
+      PicketEvent: "Mahnwache"
+      FlashmobEvent: "Flashmob"
+      ChainEvent: "Menschenkette"
+
+
     fields:
       title: "Required information"
       name:
@@ -31,6 +43,10 @@ en:
         title: "Notice"
         text: "We want to offer our visitors always as accurate and reliable information of demonstrations taking place. <u>All unconstitutional or illegal content will be deleted</u> by us immediately, and its author, if applicable, will be locked <i>Demowatch.de</i>!"
 
+      organisation:
+        none: "Unknown"
+        pleaseselect: "Please select..."
+        separator: "----------------------------------------------------------------------------------------"
 
 
     archive:
@@ -92,8 +108,12 @@ en:
         delete: "Delete"
         unsubscribe: "Unsubscribe"
         subscribe: "Subscribe"
+        cancel: "Assure"
+        uncancel: "Cancel"
       confirm:
-        delete: "Really delete Demonstration"
+        delete: "Really delete demonstration"
+        cancel: "Really cancel this demonstration?"
+        uncancel: "Really re-assure this demonstration?"
       themes:
         title: "Topics"
       venue:
@@ -105,6 +125,7 @@ en:
           tomorrow: "<span class='red'>This action will start </span>at <b>{{startdate}}</b>."
           soon: "<span class='red'>This action will start in {{timespan}}</span> on <b>{{startdate}}</b>."
           future: "This action will start in <b>{{timespan}}</b> on <b>{{startdate}}</b>."
+        canceled: "This event was canceld by the initiator!!"
         address: "Meeting place is <b>{{address}}</b>"
         location: "({{location}})"
       description:

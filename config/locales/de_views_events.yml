@@ -8,6 +8,10 @@ de:
       add_comment:
         success: "Ergänzung wurde gespeichert"
       delete_comment_success: "Ergänzung wurde entfernt"
+      cancel:
+        success: "Aktion wurde abgesagt!"
+      uncancel:
+        success: "Aktion wurde wieder zugesagt!"
       
     event_types:
       DemoEvent: "Demonstration"
@@ -106,8 +110,12 @@ de:
         delete: "Löschen"
         unsubscribe: "Abbestellen"
         subscribe: "Abonnieren"
+        cancel: "Absagen"
+        uncancel: "Zusagen"
       confirm:
-        delete: "Demonstration wirklich löschen?"
+        delete: "Aktion wirklich löschen?"
+        cancel: "Aktion wirklich absagen?"
+        uncancel: "Aktion wirklich wieder zusagen?"
       themes:
         title: "Themen"
       venue:
@@ -119,6 +127,7 @@ de:
           tomorrow: "<span class='red'>Diese Aktion beginnt morgen</span>, am <b>{{startdate}}</b>."
           soon: "<span class='red'>Diese Aktion beginnt in {{timespan}}</span>, am <b>{{startdate}}</b>."
           future: "Diese Aktion beginnt in <b>{{timespan}}</b>, am <b>{{startdate}}</b>."
+        canceled: "Diese Aktion wurde von den Veranstaltern abgesagt!!"
         address: "Treffpunkt ist <b>{{address}}</b>"
         location: "({{location}})"
       description:

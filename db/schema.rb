@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090716173025) do
+ActiveRecord::Schema.define(:version => 20090722084449) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "title",                   :limit => 50, :default => ""
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20090716173025) do
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "events", :force => true do |t|
-    t.integer  "organisation_id",                     :null => false
+    t.integer  "organisation_id",                         :null => false
     t.text     "title"
     t.text     "description"
     t.datetime "startdate"
@@ -55,8 +55,9 @@ ActiveRecord::Schema.define(:version => 20090716173025) do
     t.datetime "new_delivered_at"
     t.datetime "updated_delivered_at"
     t.datetime "deleted_at"
-    t.integer  "user_id",                             :null => false
+    t.integer  "user_id",                                 :null => false
     t.integer  "event_type_id",        :default => 0
+    t.boolean  "canceled",             :default => false
   end
 
   create_table "organisations", :force => true do |t|

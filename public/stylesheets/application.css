@@ -461,3 +461,7 @@ hr  {
 .translation_missing {
 	border-bottom:1px solid red;
 }
+
+.canceled  { 
+  text-decoration:line-through; 
+}
