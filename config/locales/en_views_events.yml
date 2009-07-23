@@ -134,7 +134,7 @@ en:
         title: "Description"
         initiator:
           title: "Promoters"
-          text: "This demonstration was submitted by"
+          text: "This demonstration is provided by"
         info:
           title: "Additional Information"
       comments:
