@@ -114,6 +114,8 @@ en:
         delete: "Really delete demonstration"
         cancel: "Really cancel this demonstration?"
         uncancel: "Really re-assure this demonstration?"
+      times:
+        updated_at: "Last update:"
       themes:
         title: "Topics"
       venue:

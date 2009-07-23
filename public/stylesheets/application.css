@@ -472,3 +472,10 @@ hr  {
   margin-right: -5px;
   margin-bottom: -5px;
 }
+
+.event_updated_at {
+  text-align: right;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-style: italic;
+}

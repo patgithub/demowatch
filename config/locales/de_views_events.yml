@@ -116,6 +116,8 @@ de:
         delete: "Aktion wirklich löschen?"
         cancel: "Aktion wirklich absagen?"
         uncancel: "Aktion wirklich wieder zusagen?"
+      times:
+        updated_at: "Letzte Änderung:"
       themes:
         title: "Themen"
       venue:

@@ -13,6 +13,7 @@
 
   
 .ical= link_to image_tag('ical.gif'), :format => 'ics'
+  
 %h1{ :class => "#{'canceled' if @event.canceled}" }
   = h @event.title
 
@@ -33,7 +34,7 @@
           = link_to t(".contextmenu.cancel"), cancel_event_path(@event), :confirm => t(".confirm.cancel"), :method => :post
         | 
         = link_to t(".contextmenu.delete"), @event, :confirm => t(".confirm.delete"), :method => :delete
-         
+  
 %h2= t(".themes.title")
 %p= @event.tags.map{|tag| link_to h( tag.name), :controller=>:tag, :action=>tag.name}.join(', ')
 
@@ -78,6 +79,10 @@
 
 %h3= t(".description.info.title")
 %p= sanitize link_to( h(@event.link), @event.link, :target=>'_new')
+
+.event_updated_at
+  = t(".times.updated_at")
+  = l(@event.updated_at)
 
 - comments = @event.comments.recent.all
 - if !comments.empty? 
