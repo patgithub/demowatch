@@ -75,4 +75,8 @@ module EventsHelper
     end
   end
   
+  def age_opacity time, max_hours
+    "opacity:#{'%.1f' % (1.0-(Time.now-time)/60/60/max_hours)}"
+  end 
+  
 end
