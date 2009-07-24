@@ -65,6 +65,10 @@ class Event < ActiveRecord::Base
     end
   end
   
+  def coordinates
+    [ latitude, longitude ]
+  end
+  
 private
 
   def validate

@@ -52,9 +52,9 @@ en:
     archive:
       title: "Past demonstrations"
       contextmenu:
-        current: "Current Demonstrations"
-        archive: "Past demonstrations"
-        new: "New Demonstration"
+        current: "Current demos"
+        archive: "Past demos"
+        new: "New Demo"
       table:
         title: "The following actions have already passed:"
         head:
@@ -78,11 +78,11 @@ en:
     index:
       title: "Current demonstrations"
       contextmenu:
-        archive: "Past demonstrations"
-        new: "New demonstration"
+        archive: "Past demo"
+        new: "New demo"
         map: "Map"
       confirm:
-        maps: "Note: This link will forward you to Google Maps."
+        maps: "Please note that the map provider is able to store your IP address and assign it with the URL of this page when accessing and viewing the maps."
       table:
         title: "The following actions are known for the next time:"
         head:
@@ -163,4 +163,22 @@ en:
       yahoo_maps:
         confirm: "Please note that Yahoo Maps is able to store your IP address and assign it with the URL of this page when accessing and viewing the maps."
         show: "Show Yahoo map"
-        
+
+
+
+    map:
+      title: "Map of current demonstrations"
+      contextmenu:
+        current: "List"
+        new: "New demo"
+      card:
+        hide: "Hide map"
+      openlayers_maps:
+        confirm: "Please note that OpenLayers is able to store your IP address and assign it with the URL of this page when accessing and viewing the maps."
+        show: "Show OpenLayers map"
+      google_maps:
+        confirm: "Please note that Google Maps is able to store your IP address and assign it with the URL of this page when accessing and viewing the maps."
+        show: "Show Goole map"
+      yahoo_maps:
+        confirm: "Please note that Yahoo Maps is able to store your IP address and assign it with the URL of this page when accessing and viewing the maps."
+        show: "Show Yahoo map"

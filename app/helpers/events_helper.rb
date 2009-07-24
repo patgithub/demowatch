@@ -78,5 +78,30 @@ module EventsHelper
   def age_opacity time, max_hours
     "opacity:#{'%.1f' % (1.0-(Time.now-time)/60/60/max_hours)}"
   end 
+
+  def events_coordinates events
+    result = []
+    events.each do |event|
+      result << event.coordinates
+    end
+    result
+  end
   
+  def events_bounds events
+    min = events.first.coordinates
+    max = events.first.coordinates
+    events.each do |event|
+      min = [ (min[0] < event.latitude) ? min[0] : event.latitude, (min[1] < event.longitude) ? min[1] : event.longitude ]
+      max = [ (max[0] > event.latitude) ? max[0] : event.latitude, (max[1] > event.longitude) ? max[1] : event.longitude ]
+    end
+    [ min, max ]
+  end
+  
+  def events_markers events
+    result = []
+    events.each do |event|
+      result << Marker.new(event.coordinates,:label => event.title, :info_bubble => link_to("<b>" + event.title + "</b>",event_path(event)) + "<br><br>" + l(event.startdate) + "<br>" + h(event.city))
+    end
+    result
+  end
 end

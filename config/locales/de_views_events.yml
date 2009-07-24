@@ -84,7 +84,7 @@ de:
         new: "Demo eintragen"
         map: "Karte"
       confirm:
-        maps: "Hinweis: Dieser Link führt Sie auf die Seiten von Google Maps."
+        maps: "Bitte beachten Sie, dass der Kartenanbieter die IP Ihres Rechners speichern und diese der URL dieser Seite zuordnen kann, wenn die Karten angezeigt werden."
       table:
         title: "Folgende Aktionen sind uns für die kommende Zeit bekannt:"
         head:
@@ -166,3 +166,21 @@ de:
         confirm: "Bitte beachten Sie, dass Yahoo Maps die IP Ihres Rechners speichern und diese der URL dieser Seite zuordnen kann, wenn die Karten angezeigt werden."
         show: "Yahoo Maps-Karte"
 
+
+
+    map:
+      title: "Karte aktueller Demonstrationen"
+      contextmenu:
+        current: "Liste"
+        new: "Demo eintragen"
+      card:
+        hide: "Karte ausblenden"
+      openlayers_maps:
+        confirm: "Bitte beachten Sie, dass openlayers.org die IP Ihres Rechners speichern und diese der URL dieser Seite zuordnen kann, wenn die Karten angezeigt werden."
+        show: "OpenLayers-Karte"
+      google_maps:
+        confirm: "Bitte beachten Sie, dass Google Maps die IP Ihres Rechners speichern und diese der URL dieser Seite zuordnen kann, wenn die Karten angezeigt werden."
+        show: "Google Maps-Karte"
+      yahoo_maps:
+        confirm: "Bitte beachten Sie, dass Yahoo Maps die IP Ihres Rechners speichern und diese der URL dieser Seite zuordnen kann, wenn die Karten angezeigt werden."
+        show: "Yahoo Maps-Karte"
