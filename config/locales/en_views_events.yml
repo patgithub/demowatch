@@ -81,8 +81,6 @@ en:
         archive: "Past demo"
         new: "New demo"
         map: "Map"
-      confirm:
-        maps: "Please note that the map provider is able to store your IP address and assign it with the URL of this page when accessing and viewing the maps."
       table:
         title: "The following actions are known for the next time:"
         head:

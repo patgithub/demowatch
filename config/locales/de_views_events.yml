@@ -83,8 +83,6 @@ de:
         archive: "Vergangene Demos"
         new: "Demo eintragen"
         map: "Karte"
-      confirm:
-        maps: "Bitte beachten Sie, dass der Kartenanbieter die IP Ihres Rechners speichern und diese der URL dieser Seite zuordnen kann, wenn die Karten angezeigt werden."
       table:
         title: "Folgende Aktionen sind uns für die kommende Zeit bekannt:"
         head:
