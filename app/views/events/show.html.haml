@@ -86,7 +86,7 @@
 
 -if !@event.contras.empty?
   %h2= t(".contras.title")
-  = render :partial => 'events/list', :locals => {:title => t(".contras.table_title"), :events => @event.contras, :show_index => 'year'}
+  = render :partial => 'events/list', :locals => {:title => t(".contras.table_title"), :events => @event.contras, :show_index => nil}
       
 - comments = @event.comments.recent.all
 - if !comments.empty? 
