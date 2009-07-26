@@ -70,7 +70,7 @@ class Event < ActiveRecord::Base
   end
   
   def contras
-    Event.find(:all, :conditions => [ "(NOT id='" + String(id) + "') AND city LIKE '" + city + "' AND startdate >= '" + String(startdate - 4.hours) + "' AND startdate <= '" + String(startdate + 4.hours) + "'"])
+    Event.find(:all, :conditions => [ "(NOT id='" + String(id) + "') AND city LIKE '" + city + "' AND startdate >= '" + I18n.l(startdate - 4.hours,:format => "%Y-%m-%d %H:%M:%S") + "' AND startdate <= '" + I18n.l(startdate + 4.hours,:format => "%Y-%m-%d %H:%M:%S") + "'"])
   end
 
 private
