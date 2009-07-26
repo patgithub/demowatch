@@ -133,16 +133,10 @@ de:
         unsubscribe: "Thema abbestellen"
         subscribe: "Thema abonnieren"
         whatis: "Was bedeutet <i>{{tag}}</i>?"
-      demonstrations:
+      events:
         title: "Demonstrationen"
         emtpy: "Zu diesem Thema sind zur Zeit keine Demonstrationen eingetragen."
-        table:
-          title: "Die folgenden Demonstrationen sind uns zu diesem Thema bekannt:"
-          head:
-            time: "Termin"
-            name: "Demo"
-            place: "Ort"
-            distance: "Entfernung"
+        table_title: "Die folgenden Demonstrationen sind uns zu diesem Thema bekannt:"
       initiators:
         title: "Initiatoren"
         empty: "Zur Zeit sind keine Initiatoren eingetragen, die sich mit diesem Thema beschäftigen.."

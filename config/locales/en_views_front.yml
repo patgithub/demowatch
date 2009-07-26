@@ -133,16 +133,10 @@ en:
         unsubscribe: "Unsubscribe topic"
         subscribe: "Subscribe topic"
         whatis: "What means <i>{{tag}}</i>?"
-      demonstrations:
+      events:
         title: "Demonstrations"
         emtpy: "No demonstrations are currently listet to this topic."
-        table:
-          title: "The following demonstrations are known to this topic:"
-          head:
-            time: "Date"
-            name: "Action"
-            place: "Location"
-            distance: "Distance"
+        table_title: "The following demonstrations are known to this topic:"
       initiators:
         title: "Promoters"
         empty: "Currently there are no promoters listet which who are interested in this topic.."
