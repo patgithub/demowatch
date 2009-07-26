@@ -70,14 +70,9 @@ en:
         title: "Description"
         info:
           title: "Further Information"
-      demonstrations:
+      events:
         title: "Demonstrations"
         empty: "This organisation currently doesn't support any events."
-        table:
-          title: "This organisation supports the following events:"
-          head:
-            time: "Date"
-            name: "Demo"
-            place: "Ort"
-            distance: "Entfernung"
+        table_title: "This organisation supports the following events:"
+
           

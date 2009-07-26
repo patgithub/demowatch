@@ -1,0 +1,58 @@
+-if !title.nil?
+  .tabletitle=title
+%table{:border=>0, :cellspacing=>0, :cellpadding=>0}
+  - if show_index == 'year'
+    %tr
+      %td{:colspan=>@with_distance?4:3}
+        .anchor_index
+          - index_with_year(events).each_with_index do |year, index|
+            = " | " if index > 0 
+            = link_to year, "#" + String(year)
+  - elsif show_index == 'month'
+    %tr
+      %td{:colspan=>@with_distance?4:3}
+        .anchor_index
+          - index_with_month(@events).each_with_index do |month, index|
+            = " | " if index > 0 
+            = link_to month, "#" + String(month)
+  
+  %tr
+    %th=t(".table.head.time")
+    %th=t(".table.head.name")
+    %th=t(".table.head.place")
+    - if( @with_distance)
+      %th=t(".table.head.distance")
+    
+  - events.each_with_index do |event, index|
+    - if show_index == 'year'
+      - if (index == 0 || event.startdate.to_date.year != events[index-1].startdate.to_date.year)
+        %tr
+          %td{:class=> index==0 ? "separator_first" : "separator", :colspan=>@with_distance?4:3}
+            %a{:name => event.startdate.to_date.year}
+            = event.startdate.to_date.year
+    - elsif show_index == 'month'
+      - if index == 0 || event.startdate.to_date.month != @events[index-1].startdate.to_date.month
+        %tr
+          %td{:class=> index==0 ? "separator_first" : "separator", :colspan=>@with_distance?4:3}
+            %a{:name => l(event.startdate.to_date,:format=>"%B" + ((event.startdate.to_date.year != Time.now.year) ? " %Y" : "")) }
+            = l(event.startdate.to_date,:format=>"%B" + ((event.startdate.to_date.year != Time.now.year) ? " %Y" : ""))
+    
+    %tr{:class => "#{'even' if index.even?} #{'old' if event.startdate <= 6.hours.ago} #{'canceled' if event.canceled}"}
+      %td.center
+        %nobr= startdate_thisyear(event)
+      %td
+      
+        - if event.created_at > 2.days.ago
+          = image_tag "new.png", :class => "bondedimage", :style => age_opacity(event.created_at,48)
+        - elsif event.updated_at > 2.days.ago
+          = image_tag "update.png", :class => "bondedimage", :style => age_opacity(event.updated_at,48)
+
+        = link_to h( event.title), event
+        - if event.comments.size > 0
+          = link_to " (" + String(event.comments.size) + ")", event_path(event) + "#comments"
+      %td= h( event.address)
+      -if @with_distance       
+        - if !event.distance.nil?
+          %td= sprintf( "%.0f km", event.distance)  
+        - else
+          %td

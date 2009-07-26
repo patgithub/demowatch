@@ -70,15 +70,8 @@ de:
         title: "Beschreibung"
         info:
           title: "Weitere Informationen"
-      demonstrations:
+      events:
         title: "Demonstrationen"
         empty: "Diese Organisation unterstützte bisher keine Demonstrationen."
-        table:
-          title: "Diese Organisation unterstützt die folgenden Demonstrationen:"
-          head:
-            time: "Termin"
-            name: "Demo"
-            place: "Ort"
-            distance: "Entfernung"
-          
+        table_title: "Diese Organisation unterstützt die folgenden Demonstrationen:"
           

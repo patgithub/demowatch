@@ -69,6 +69,10 @@ class Event < ActiveRecord::Base
     [ latitude, longitude ]
   end
   
+  def contras
+    Event.find(:all, :conditions => [ "(NOT id='" + String(id) + "') AND city LIKE '" + city + "' AND startdate >= '" + String(startdate - 4.hours) + "' AND startdate <= '" + String(startdate + 4.hours) + "'"])
+  end
+
 private
 
   def validate

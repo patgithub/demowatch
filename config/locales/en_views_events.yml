@@ -39,6 +39,7 @@ en:
           description: "Description"
           link: "Website (or e-mail address)"
           initiator: "Promoters"
+          event_type: "Event Type"
       hint:
         title: "Notice"
         text: "We want to offer our visitors always as accurate and reliable information of demonstrations taking place. <u>All unconstitutional or illegal content will be deleted</u> by us immediately, and its author, if applicable, will be locked <i>Demowatch.de</i>!"
@@ -49,19 +50,15 @@ en:
         separator: "----------------------------------------------------------------------------------------"
 
 
+
     archive:
       title: "Past demonstrations"
       contextmenu:
         current: "Current demos"
         archive: "Past demos"
         new: "New Demo"
-      table:
-        title: "The following actions have already passed:"
-        head:
-          startdate: "Date"
-          title: "Demonstration"
-          city: "Location"
-          distance: "Distance"
+      events:
+        table_title: "The following actions have already passed:"
 
 
 
@@ -81,13 +78,7 @@ en:
         archive: "Past demo"
         new: "New demo"
         map: "Map"
-      table:
-        title: "The following actions are known for the next time:"
-        head:
-          startdate: "Date"
-          title: "Demonstration"
-          city: "Location"
-          distance: "Distance"
+      table_title: "The following actions are known for the next time:"
 
 
 
@@ -135,6 +126,9 @@ en:
           text: "This demonstration is provided by"
         info:
           title: "Additional Information"
+      contras:
+          title: "Potential Counter-Demonstrations"
+          table_title: "The following events are at the same time and the same place:"
       comments:
         add:
           title: "Leave a comment"
@@ -170,7 +164,7 @@ en:
         current: "List"
         new: "New demo"
       card:
-        hide: "Hide map"
+        hide: "Karte ausblenden"
       openlayers_maps:
         confirm: "Please note that OpenLayers is able to store your IP address and assign it with the URL of this page when accessing and viewing the maps."
         show: "Show OpenLayers map"
@@ -180,3 +174,11 @@ en:
       yahoo_maps:
         confirm: "Please note that Yahoo Maps is able to store your IP address and assign it with the URL of this page when accessing and viewing the maps."
         show: "Show Yahoo map"
+
+    list:
+      table: 
+        head:
+          time: "Date"
+          name: "Demo"
+          place: "Place"
+          distance: "Distance"

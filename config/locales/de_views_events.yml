@@ -57,13 +57,8 @@ de:
         current: "Aktuelle Demos"
         archive: "Vergangene Demos"
         new: "Demo eintragen"
-      table:
-        title: "Folgende Aktionen sind bereits vorbei:"
-        head:
-          startdate: "Termin"
-          title: "Demo"
-          city: "Ort"
-          distance: "Entfernung"
+      events:
+        table_title: "Folgende Aktionen sind bereits vorbei:"
 
 
 
@@ -83,13 +78,7 @@ de:
         archive: "Vergangene Demos"
         new: "Demo eintragen"
         map: "Karte"
-      table:
-        title: "Folgende Aktionen sind uns für die kommende Zeit bekannt:"
-        head:
-          startdate: "Termin"
-          title: "Demonstration"
-          city: "Location"
-          distance: "Distance"
+      table_title: "Folgende Aktionen sind uns für die kommende Zeit bekannt:"
 
 
 
@@ -137,6 +126,9 @@ de:
           text: "Diese Demo wird unterstützt von"
         info:
           title: "Weitere Informationen"
+      contras:
+          title: "Mögliche Gegendemonstrationen"
+          table_title: "Folgende Aktionen finden zum gleichen Zeitpunkt in der Nähe statt:"
       comments:
         add:
           title: "Neue Ergänzung eingeben"
@@ -182,3 +174,11 @@ de:
       yahoo_maps:
         confirm: "Bitte beachten Sie, dass Yahoo Maps die IP Ihres Rechners speichern und diese der URL dieser Seite zuordnen kann, wenn die Karten angezeigt werden."
         show: "Yahoo Maps-Karte"
+
+    list:
+      table: 
+        head:
+          time: "Datum"
+          name: "Demo"
+          place: "Ort"
+          distance: "Entfernung"
