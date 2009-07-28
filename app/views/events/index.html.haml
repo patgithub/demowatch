@@ -19,5 +19,5 @@
     
 %br
 
-= render :partial => 'events/list', :locals => {:title => t(".table_title"), :events => @events, :show_index => 'month'}
+= render :partial => 'events/list', :locals => {:title => t(".table_title"), :events => @events, :index_type => Event::Monthly }
 

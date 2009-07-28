@@ -1,20 +1,16 @@
-- # das gehört natürlich in den helper
-- sections = []
-- events.each do |event| 
-  - format =  show_index == 'year' ? '%Y' : "%B#{' %Y' if event.startdate.year != Time.now.year}"
-  - section = l(event.startdate, :format => format)
-  - if sections.empty? || sections.last.first != section
-    - sections << [section, [event]]
-  - else
-    - sections.last.last << event
+- index_type = Event::Yearly if local_assigns[:index_type].nil?
+- autohide_index = true if local_assigns[:autohide_index].nil? 
 
--if !title.nil?
+- sections = Event.chron_sections(events,index_type)
+- show_index = autohide_index ? sections.size > 1 : true
+- if !title.nil?
   .tabletitle=title
 %table{:border=>0, :cellspacing=>0, :cellpadding=>0}
-  %tr
-    %td{:colspan => @with_distance ? 4 : 3}
-      .anchor_index
-        = sections.map{|section| link_to section.first, "##{section.first}"}.join(' | ')
+  - if show_index
+    %tr
+      %td{:colspan => @with_distance ? 4 : 3}
+        .anchor_index
+          = sections.map{|section| link_to section.first, "##{section.first}"}.join(' | ')
 
   %tr
     %th=t(".table.head.time")

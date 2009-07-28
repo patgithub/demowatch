@@ -52,7 +52,6 @@ en:
         back: "Back to list of promoters"
       button:
         submit: "Create"
-      warning: "<div class='red'>Please enter only the data from the promoter and <u>not</u> the actual demonstration!</div>"
 
 
 
