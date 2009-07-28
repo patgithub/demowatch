@@ -18,7 +18,7 @@
 - if @events.empty? 
   %p=t(".events.empty")
 - else
-  = render :partial => 'events/list', :locals => {:title => t(".events.table_title"), :events => @events, :show_index => 'year'}
+  = render :partial => 'events/list', :locals => {:title => t(".events.table_title"), :events => @events}
   
 %h2=t(".initiators.title")
 
