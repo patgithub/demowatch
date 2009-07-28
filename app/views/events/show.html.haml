@@ -9,8 +9,6 @@
   - if cookies[:openlayers_maps]
     = Mapstraction.header(:openlayers, :host=>request.host)
     = @map.to_html
-
-
   
 .ical= link_to image_tag('ical.gif'), :format => 'ics'
   
@@ -47,27 +45,16 @@
     = t(".venue.address", :address => @event.address)
     = t(".venue.location", :location => h(@event.location)) if @event.location?
 
-  -if cookies[:google_maps] || cookies[:yahoo_maps] || cookies[:openlayers_maps]
+  - maps = [:google, :yahoo, :openlayers]
+  -if maps.any?{|m| cookies["#{m}_maps"]}
     #map_canvas.indent{:style=>"width: 550px; height: 300px; border:solid 1px black;"}
       = @map.div(:width => 550, :height => 300)
     .center
-      - if !cookies[:google_maps]
-        = link_to t(".google_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:google}, :confirm => t(".google_maps.confirm")
-        |
-      - if !cookies[:yahoo_maps]
-        = link_to t(".yahoo_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:yahoo}, :confirm => t(".yahoo_maps.confirm")
-        |
-      - if !cookies[:openlayers_maps]
-        = link_to t(".openlayers_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:openlayers}, :confirm => t(".openlayers_maps.confirm")
-        |
+      = maps.reject{|m| cookies["#{m}_maps"]}.map{|m| link_to t(".#{m}_maps.show"), maps_on_event_path(@event, :type => m), :confirm => t(".#{m}_maps.confirm")}.join(' | ')
+      |
       = link_to t(".card.hide"), { :controller => "events", :action => "maps_off", :id => @event.id}
   -else
-    .center
-      = link_to t(".google_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:google}, :confirm => t(".google_maps.confirm")
-      |
-      = link_to t(".yahoo_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:yahoo}, :confirm => t(".yahoo_maps.confirm")
-      |
-      = link_to t(".openlayers_maps.show"), { :controller => "events", :action => "maps_on", :id => @event.id, :type=>:openlayers}, :confirm => t(".openlayers_maps.confirm")
+    .center= maps.map{|m| link_to t(".#{m}_maps.show"), maps_on_event_path(@event, :type => m), :confirm => t(".#{m}_maps.confirm")}.join(' | ')
 
 %h2= t(".description.title")
 %p= sanitize @event.description
