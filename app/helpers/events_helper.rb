@@ -40,39 +40,19 @@ module EventsHelper
   end
 
   def index_with_year events 
-    result = []
-    events.reverse.each_with_index do |event, index|
-      if index == 0 || event.startdate.to_date.year != events[-index].startdate.to_date.year
-        result << event.startdate.to_date.year
-      end
-    end
-    result
+    events.map{|e| e.startdate.to_date.year}.uniq
   end
 
   def index_with_month events
-    result = []
-    events.each_with_index do |event, index|
-      if index == 0 || event.startdate.to_date.month != events[index-1].startdate.to_date.month
-        result << l(event.startdate.to_date,:format=>"%B" + ((event.startdate.to_date.year != Time.now.year) ? " %Y" : ""))
-      end
-    end
-    result
+    events.map{|e| l(e.startdate.to_date,:format=>"%B" + ((e.startdate.to_date.year != Time.now.year) ? " %Y" : ""))}.uniq
   end
   
   def index_with_literals organisations
-    result = []
-    organisations.each_with_index do |organisation, index|
-      if index == 0 || organisation.title.upcase[0] != @organisations[index-1].title.upcase[0]
-        result << organisation.title.upcase.split(//).first.tr('äöü','ÄÖÜ')
-      end
-    end
-    result
+    organisations.map{|o| o.title.upcase.split(//).first}.uniq
   end
   
   def type_image event
-    if event.event_type_id == Event::DemoEvent
-      "type_demo.gif"
-    end
+    "type_demo.gif" if event.event_type_id == Event::DemoEvent
   end
   
   def age_opacity time, max_hours
@@ -80,21 +60,13 @@ module EventsHelper
   end 
 
   def events_coordinates events
-    result = []
-    events.each do |event|
-      result << event.coordinates
-    end
-    result
+    events.map{|e| e.coordinates}
   end
   
   def events_bounds events
-    min = events.first.coordinates
-    max = events.first.coordinates
-    events.each do |event|
-      min = [ (min[0] < event.latitude) ? min[0] : event.latitude, (min[1] < event.longitude) ? min[1] : event.longitude ]
-      max = [ (max[0] > event.latitude) ? max[0] : event.latitude, (max[1] > event.longitude) ? max[1] : event.longitude ]
-    end
-    [ min, max ]
+    la =  events.map{|e| e.latitude}
+    lo = events.map{|e| e.longitude}
+    [[la.min, lo.min], [la.max, lo.max]]
   end
   
   def events_markers events

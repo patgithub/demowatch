@@ -43,4 +43,4 @@
           = link_to " (#{event.comments.size})", "#{event_path event}#comments" if event.comments.size > 0
         %td= h(event.city)
         -if @with_distance       
-          %td= "%.0f km" % event.distance unless !event.distance.nil? 
+          %td= "%.0f km" % event.distance unless event.distance.nil? 
