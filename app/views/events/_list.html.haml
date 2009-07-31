@@ -32,8 +32,8 @@
         %td
           - if event.created_at > 2.days.ago
             = image_tag "new.png", :class => "bondedimage", :style => age_opacity(event.created_at, 48)
-          - elsif event.updated_at > 2.days.ago
-            = image_tag "update.png", :class => "bondedimage", :style => age_opacity(event.updated_at, 48)
+          - elsif event.changed_at > 2.days.ago
+            = image_tag "update.png", :class => "bondedimage", :style => age_opacity(event.changed_at, 48)
 
           = link_to h(event.title), event
           = link_to " (#{event.comments.size})", "#{event_path event}#comments" if event.comments.size > 0

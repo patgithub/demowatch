@@ -72,6 +72,11 @@ class Event < ActiveRecord::Base
   def contras
     Event.find(:all, :conditions => [ "(NOT id='" + String(id) + "') AND city LIKE '" + city + "' AND startdate >= '" + I18n.l(startdate - 4.hours,:format => "%Y-%m-%d %H:%M:%S") + "' AND startdate <= '" + I18n.l(startdate + 4.hours,:format => "%Y-%m-%d %H:%M:%S") + "'"])
   end
+  
+  def changed_at
+    last = comments.map{|c| c.updated_at} << updated_at
+    last.max
+  end
 
   # index types  
   Yearly = 0
