@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090722084449) do
+ActiveRecord::Schema.define(:version => 20090805200052) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "title",                   :limit => 50, :default => ""
@@ -74,6 +74,11 @@ ActiveRecord::Schema.define(:version => 20090722084449) do
     t.integer  "role",            :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "page_views", :force => true do |t|
+    t.string  "url"
+    t.integer "count"
   end
 
   create_table "taggings", :force => true do |t|
