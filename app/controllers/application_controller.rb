@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
     end
   end  
   def save_count
-    pv = PageView.find_or_create_by_url(request.path)
+    pv = PageView.find_or_create_by_url_and_date(request.path, Date.today)
     PageView.increment_counter(:count, pv)
   end
 
