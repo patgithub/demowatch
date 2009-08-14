@@ -52,6 +52,8 @@ en:
         title: "Optional Data"
         text: "In order to find demonstations in your surrounding area, you can enter here the first part(s) of your zip code. You do not need it if you are scarry and/or paranoid ;)"
         zip: "Zip Code <i>(optional, one or more numbers)</i>"
+      nextsteps:
+        text: "When you click 'register' you will get an e-mail which includes an activation link. After you have followed that link your account is activated and you can login."
       submit: "Sign up"
 
 
