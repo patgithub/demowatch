@@ -52,6 +52,8 @@ de:
         title: "Optionale Daten"
         text: "Damit wir die Demos in Deiner Nähe finden können, kannst Du hier den ersten Teil Deiner Postleitzahl eingeben. Du musst es aber nicht!"
         zip: "PLZ <i>(optional, eine oder mehrere Stellen)</i>"
+      nextsteps:
+        text: "Wenn Du \"Registrieren\" klickst, erhälst Du eine E-Mail in der Du einen Bestätigungslink findest. Wenn Du diesen Link ausführst, kannst Du Dich mit Deinem Account einloggen."
       submit: "Registrieren"
 
 

@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   
   
+  before_filter 'Thread.current[:host] = request.host_with_port'
   before_filter :redirect_to_www_demowatch_de
   before_filter :set_locale
   before_filter :save_count
