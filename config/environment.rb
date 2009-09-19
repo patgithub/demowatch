@@ -7,7 +7,6 @@
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 
-
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
@@ -160,4 +159,7 @@ GeoKit::Geocoders::provider_order = [:google,:us]
 
 #ActionMailer::Base.register_template_extension('haml')
 ActionMailer::Base.default_charset = "UTF-8"
+
+# load twitter configuration
+TWITTER_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/twitter.yml")
 

@@ -18,7 +18,6 @@ class ApplicationController < ActionController::Base
   rescue_from Authorization::PermissionDenied, :with => :permission_denied
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   
-  
   before_filter 'Thread.current[:host] = request.host_with_port'
   before_filter :redirect_to_www_demowatch_de
   before_filter :set_locale
@@ -52,7 +51,6 @@ class ApplicationController < ActionController::Base
     pv = PageView.find_or_create_by_url_and_date(request.path, Date.today)
     PageView.increment_counter(:count, pv)
   end
-
 protected
   def permission_denied(exception)
     flash[:notice] = t("layouts.application.flash.no_permission")

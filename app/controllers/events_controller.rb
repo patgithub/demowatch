@@ -116,6 +116,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     respond_to do |format|
       if @event.save
+        Tweet.update_status(@event.tweet)
         flash[:notice] = t("events.flash.create.success")
         format.html { redirect_to(@event) }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
@@ -132,6 +133,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update_attributes(params[:event])
+        Tweet.update_status(@event.tweet)
         flash[:notice] = t("events.flash.update.success")
         format.html { redirect_to(@event) }
         format.xml  { head :ok }
@@ -233,7 +235,7 @@ class EventsController < ApplicationController
       end
     end
   end
-
+  
 protected
   def find_event
     @event = Event.find(params[:id])

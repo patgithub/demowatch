@@ -96,6 +96,40 @@ class Event < ActiveRecord::Base
     result
   end
   
+  def tweet
+    # every event type gets a tweet hash
+    tweetshashes = { 
+      DemoEvent => "#demo",
+      PicketEvent => "#picket",
+      FlashmobEvent => "#flashmob",
+      ChainEvent => "#humanchain"
+      }
+    # text bricks that will build the tweet text
+    bricks = [
+      # the correct tweet hash for this event type
+      tweetshashes[self.event_type_id],
+      # city with hash
+      "#" + self.city,
+      # start date and title
+      self.startdate.to_date,
+      self.title,
+      # shortened link to it
+      self.short_link,
+      # add tags as tweet hashes
+      self.tags.collect { |t| "#" + t.name.tr(' ','_') }
+      ].flatten
+    text = bricks.join(' ')
+    while text.length > 140 do
+      bricks.pop
+      text = bricks.join(' ')
+    end
+    text
+  end
+  
+  def short_link
+    "http://demowatch.eu/" + self.id.to_s
+  end
+  
 private
 
   def validate

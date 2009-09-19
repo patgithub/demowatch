@@ -24,4 +24,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  
+  # event link shortener e.g. for twitter
+  map.event_short '/:id', :controller => 'events', :action => 'show', :requirements => {:id => /.*/}
+  
 end
