@@ -160,6 +160,3 @@ GeoKit::Geocoders::provider_order = [:google,:us]
 #ActionMailer::Base.register_template_extension('haml')
 ActionMailer::Base.default_charset = "UTF-8"
 
-# load twitter configuration
-TWITTER_CONFIG = YAML.load_file("#{RAILS_ROOT}/config/twitter.yml")
-
