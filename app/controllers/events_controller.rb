@@ -162,6 +162,8 @@ class EventsController < ApplicationController
     @event.canceled = true
     @event.save
 
+    Tweet.update_status(@event.tweet)
+
     respond_to do |format|
       flash[:notice] = t("events.flash.cancel.success")
       format.html { redirect_to(@event) }
@@ -173,6 +175,8 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.canceled = false
     @event.save
+
+    Tweet.update_status(@event.tweet)
 
     respond_to do |format|
       flash[:notice] = t("events.flash.uncancel.success")

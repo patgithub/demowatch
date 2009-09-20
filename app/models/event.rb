@@ -106,18 +106,20 @@ class Event < ActiveRecord::Base
       }
     # text bricks that will build the tweet text
     bricks = [
+      canceled ? "CANCELED:" : nil,
       # the correct tweet hash for this event type
       tweetshashes[self.event_type_id],
       # city with hash
       "#" + self.city,
-      # start date and title
+      # start date
       self.startdate.to_date,
-      self.title,
       # shortened link to it
       self.short_link,
+      # title
+      self.title,
       # add tags as tweet hashes
       self.tags.collect { |t| "#" + t.name.tr(' ','_') }
-      ].flatten
+      ].flatten.compact
     text = bricks.join(' ')
     while text.length > 140 do
       bricks.pop
