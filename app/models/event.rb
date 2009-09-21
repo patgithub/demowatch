@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
-
+  include ActionView::Helpers::TextHelper
+    
   acts_as_taggable
   acts_as_bookmarkable
   acts_as_mappable :default_units => :kms, 
@@ -108,17 +109,17 @@ class Event < ActiveRecord::Base
     bricks = [
       canceled ? "CANCELED:" : nil,
       # the correct tweet hash for this event type
-      tweethashes[self.event_type_id],
+      tweethashes[event_type_id],
       # city with hash
-      "#" + self.city,
+      "#" + city,
       # start date
-      self.startdate.to_date,
+      startdate.to_date,
       # shortened link to it
-      self.short_link,
+      short_link,
       # title
-      self.title,
+      truncate(title,:length => 80),
       # add tags as tweet hashes
-      self.tags.collect { |t| "#" + t.name.tr(' ','_') }
+      tags.collect { |t| "#" + t.name.tr(' ','_') }
       ].flatten.compact
     text = bricks.join(' ')
     while text.length > 140 do
@@ -130,7 +131,6 @@ class Event < ActiveRecord::Base
   
   def calc_tweetlevel
     return 0 if canceled
-    return 4 if startdate > 4.weeks.from_now
     return 3 if startdate > 1.weeks.from_now
     return 2 if startdate > 1.days.from_now
     return 1 if startdate > 3.hours.from_now
