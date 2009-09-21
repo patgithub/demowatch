@@ -10,14 +10,12 @@ namespace :demowatch do
         # tweet message
         Tweet.update_status event.tweet
         # initialize next trigger
-        event.tweetlevel = [event.calc_tweetlevel-1,0].max
-        event.save
+        event.init_tweetlevel
       elsif event.tweetlevel > 0 && event.tweetlevel == event.calc_tweetlevel
         # tweet message
         Tweet.update_status event.tweet
         # next tweet level
-        event.tweetlevel -= 1
-        event.save
+        event.decrement_tweetlevel
       end
     end
   end

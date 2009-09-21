@@ -138,6 +138,24 @@ class Event < ActiveRecord::Base
     0
   end
   
+  def init_tweetlevel
+    self.record_timestamps = false
+    update_attribute(:tweetlevel,[calc_tweetlevel-1,0].max)
+    self.record_timestamps = true
+  end
+
+  def reset_tweetlevel
+    self.record_timestamps = false
+    update_attribute(:tweetlevel,nil)
+    self.record_timestamps = true
+  end
+
+  def decrement_tweetlevel
+    self.record_timestamps = false
+    update_attribute(:tweetlevel,[tweetlevel-1,0].max)
+    self.record_timestamps = true
+  end
+  
   def short_link
     "http://demowatch.eu/" + self.id.to_s
   end

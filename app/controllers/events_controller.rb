@@ -114,7 +114,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     @event.user = current_user
-    @event.tweetlevel = nil
+    @event.reset_tweetlevel
     respond_to do |format|
       if @event.save
         flash[:notice] = t("events.flash.create.success")
@@ -132,7 +132,7 @@ class EventsController < ApplicationController
   # PUT /events/1.xml
   def update
     respond_to do |format|
-      @event.tweetlevel = nil
+      @event.reset_tweetlevel
       if @event.update_attributes(params[:event])
         flash[:notice] = t("events.flash.update.success")
         format.html { redirect_to(@event) }
@@ -160,7 +160,7 @@ class EventsController < ApplicationController
   def cancel
     @event = Event.find(params[:id])
     @event.canceled = true
-    @event.tweetlevel = nil
+    @event.reset_tweetlevel
     @event.save
 
     respond_to do |format|
@@ -173,7 +173,7 @@ class EventsController < ApplicationController
   def uncancel
     @event = Event.find(params[:id])
     @event.canceled = false
-    @event.tweetlevel = nil
+    @event.reset_tweetlevel
     @event.save
 
     respond_to do |format|
