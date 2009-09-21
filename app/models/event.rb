@@ -98,7 +98,7 @@ class Event < ActiveRecord::Base
   
   def tweet
     # every event type gets a tweet hash
-    tweetshashes = { 
+    tweethashes = { 
       DemoEvent => "#demo",
       PicketEvent => "#picket",
       FlashmobEvent => "#flashmob",
@@ -108,7 +108,7 @@ class Event < ActiveRecord::Base
     bricks = [
       canceled ? "CANCELED:" : nil,
       # the correct tweet hash for this event type
-      tweetshashes[self.event_type_id],
+      tweethashes[self.event_type_id],
       # city with hash
       "#" + self.city,
       # start date
@@ -126,6 +126,16 @@ class Event < ActiveRecord::Base
       text = bricks.join(' ')
     end
     text
+  end
+  
+  def calc_tweetlevel
+    return 0 if canceled
+    return 4 if startdate > 4.weeks.from_now
+    return 3 if startdate > 1.weeks.from_now
+    return 2 if startdate > 1.days.from_now
+    return 1 if startdate > 3.hours.from_now
+    # no more message triggers
+    0
   end
   
   def short_link

@@ -160,3 +160,5 @@ GeoKit::Geocoders::provider_order = [:google,:us]
 #ActionMailer::Base.register_template_extension('haml')
 ActionMailer::Base.default_charset = "UTF-8"
 
+Thread.new { while true do sleep 1; puts "x"; end }
+
