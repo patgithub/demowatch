@@ -114,9 +114,9 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     @event.user = current_user
-    @event.reset_tweetlevel
     respond_to do |format|
       if @event.save
+        @event.reset_tweetlevel
         flash[:notice] = t("events.flash.create.success")
         format.html { redirect_to(@event) }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
@@ -132,8 +132,8 @@ class EventsController < ApplicationController
   # PUT /events/1.xml
   def update
     respond_to do |format|
-      @event.reset_tweetlevel
       if @event.update_attributes(params[:event])
+        @event.reset_tweetlevel
         flash[:notice] = t("events.flash.update.success")
         format.html { redirect_to(@event) }
         format.xml  { head :ok }

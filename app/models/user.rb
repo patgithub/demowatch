@@ -125,8 +125,9 @@ class User < ActiveRecord::Base
         organizer = organizers & item.organizers
         !organizer.empty? && organizer.first.role == Organizer::RoleAdmin  
       when Event
-       organizer = organizers & item.organisation.organizers
-       item.user == self || !organizer.empty? && organizer.first.role == Organizer::RoleAdmin
+        return false if item.organisation.nil?
+        organizer = organizers & item.organisation.organizers
+        item.user == self || !organizer.empty? && organizer.first.role == Organizer::RoleAdmin
       when User
         item == self 
       when Comment

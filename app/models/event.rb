@@ -23,6 +23,8 @@ class Event < ActiveRecord::Base
   belongs_to :organisation
   belongs_to :user
 
+  MaximumTweetLength = 140
+
   DemoEvent = 0
   PicketEvent = 1
   FlashmobEvent = 2
@@ -122,8 +124,10 @@ class Event < ActiveRecord::Base
       # add tags as tweet hashes
       tags.collect { |t| "#" + t.name.tr(' ','_') }
       ].flatten.compact
+    # join the text
     text = bricks.join(' ')
-    while text.length > 140 do
+    # cut the text to a maximum of 140 characters
+    while text.length > MaximumTweetLength do
       bricks.pop
       text = bricks.join(' ')
     end
