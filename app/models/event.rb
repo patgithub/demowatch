@@ -144,21 +144,24 @@ class Event < ActiveRecord::Base
   end
   
   def init_tweetlevel
-    record_timestamps = false
-    update_attribute(:tweetlevel,[calc_tweetlevel-1,0].max)
-    record_timestamps = true
+    self.class.record_timestamps = false
+    self[:tweetlevel] = [calc_tweetlevel-1,0].max
+    save!
+    self.class.record_timestamps = true
   end
 
   def reset_tweetlevel
-    record_timestamps = false
-    update_attribute(:tweetlevel,nil)
-    record_timestamps = true
+    self.class.record_timestamps = false
+    self[:tweetlevel] = nil
+    save!
+    self.class.record_timestamps = true
   end
 
   def decrement_tweetlevel
-    record_timestamps = false
-    update_attribute(:tweetlevel,[tweetlevel-1,0].max)
-    record_timestamps = true
+    self.class.record_timestamps = false
+    self[:tweetlevel] = [tweetlevel-1,0].max
+    save!
+    self.class.record_timestamps = true
   end
   
   def short_link
